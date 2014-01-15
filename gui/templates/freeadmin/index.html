@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block dojango_header_extra %}
+<script type="text/javascript" src="{% url django.views.i18n.javascript_catalog %}"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}lib/js/freeadmin.js?cache={{ cache_hash }}"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}lib/js/top.js?cache={{ cache_hash }}"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}lib/js/alert.js?cache={{ cache_hash }}"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}lib/js/shell.js?cache={{ cache_hash }}"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}lib/js/msg.js?cache={{ cache_hash }}"></script>
+<script type="text/javascript">
+require(["dojo/ready"], function(ready) {
+    ready(function(){
+        Menu.urlInfo = '{% url system_info %}';
+        Menu.urlSettings = '{% url system_settings %}';
+        Menu.urlReporting = '{% url system_reporting %}';
+        Menu.urlNetwork = '{% url network_home %}';
+        Menu.urlSharing = '{% url sharing_home %}';
+        Menu.urlServices = '{% url services_home %}';
+        Menu.urlAccount = '{% url account_home %}';
+        Menu.urlStorage = '{% url storage_home %}';
+        Menu.urlISCSI = '{% url services_iscsi %}';
+
+        Menu.openSystem();
+
+        {% if consolemsg %}_msg_start();{% endif %}
+    });
+});
+</script>
+{% endblock %}
+
+{% block dojango_content %}
+{{ block.super }}
+<div id="top_dialog" data-dojo-type="dijit.Dialog" data-dojo-props="title: '{% trans "Running Processes"|force_escape|force_escape %}'">
+    <script type="dojo/method" data-dojo-event="onShow">
+        ttop.stop();
+        ttop.start();
+    </script>
+    <pre class="ix" id="top_output">{% trans "Loading..." %}</pre>
+</div>
+<div id="shell_dialog_holder">
+</div>
+<div id="log_dialog" data-dojo-type="dijit.Dialog" dojo-data-props="title: '/var/log/messages'">
+    <script type="dojo/method" data-dojo-event="onShow">
+        document.getElementById('msgfull_output').innerHTML = '{% trans "Loading..."|force_escape|force_escape %}';
+    _msg_t.stop();
+    _msg_t.start();
+    loadlog(true);
+    </script>
+    <pre class="ix" id="msgfull_output">{% trans "Loading..." %}</pre>
+    <input id="stopmsgrefresh" data-dojo-type="dijit.form.CheckBox" /><label for="stopmsgrefresh">Stop refresh</label>
+</div>
+
+<div dojoType="dijit.Dialog" id="helpDialog" title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% trans "Help & Support" %}"  
+style="background:#fff;width:400px;">
+    <img src="{{ STATIC_URL }}images/ui/menu/help.png" style="float:left;position:relative;top:-36px;right:5px;">
+    <h2>{{ metanas_version }}</h2>
+    <div style="float:left;">
+    <h3>{% trans "Product Home Page" %}</h3>
+    <ul>
+        <li><a href="http://Network.MetaComplex.Com/Products/MetaNAS/" title="MetaNAS Product Home Page" target="_blank">{% trans "MetaComplex MetaNAS" %}</a></li>
+    </ul>
+    </div>
+   
+    <div style="float:left;padding-left:36px;">
+    <h3>{% trans "Forums" %}</h3>
+    <ul>
+        <li><a href="http://Network.MetaComplex.Com/Products/Forums/index.php?id=1" target="_blank" title="MetaNAS Support Forum">{% trans "MetaNAS Community Forum" %}</a></li>
+    </ul>
+    </div>
+    <div style="float:left;padding-left:36px;">
+    <h3>{% trans "Documentations" %}</h3>
+    <ul>
+        <li><a href="http://Network.MetaComplex.Com/Products/Docs/MetaNAS" title="MetaNAS Documentations" target="_blank">{% trans "User Manual Documentations" %}</a></li>        
+    </ul>
+    </div>
+  
+    <div style="float:left;padding-left:36px;">
+    <h3>{% trans "Bug Tracker and Product Issues" %}</h3>
+    <ul>
+        <li><a href="http://Network.MetaComplex.Com/Products/Bugs/MetaNAS" target="_blank" title="MetaNAS Bug Tracker">{% trans "Bug Tracker" %}</a></li>
+    </ul>
+    </div>
+
+    <div style="float:left;padding-left:36px;">
+    <h3>{% trans "IRC (Chat)" %}</h3>
+    <ul>
+        <li><a href="http://webchat.freenode.net/?channels=metanas" target="_blank" title="MetaNAS IRC Chat">{% trans "#MetaNAS on Freenode" %}</a></li>
+    </ul>
+    </div>
+
+    <br />
+   </div>
+
+
+<div dojoType="dijit.Dialog" id="aboutDialog" title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{% trans "About Product" %}"  
+style="background:#fff;width:450px;height:430px;">
+    <img src="{{ STATIC_URL }}images/ui/menu/about.png" style="float:left;position:relative;top:-36px;right:5px;" />
+    <div style="position:relative;top:-33px;float:left;width:440px;height:400px;overflow-y:scroll;">
+
+    <h1>MetaNAS 1.0.0</h1>
+
+    <h2>Software Producer:</h2>
+    <ul><li><h5>Product of <a href="http://MetaComplex.Com" target="blank">MetaComplex Corp</a>, Networks Department.<br />Address: #18383, SaadatAbad st. Isfahan-IRAN.<br />
+    Call: +98 (311) 6638866-9</h5></li></ul>
+
+    <h2>Software Team:</h2>
+    <ul><li><h5>Business Developer: Mohammad Davoudi &nbsp;&nbsp;<a href="mailto:Network@MetaComplex.Com">☻</a></h5></li>
+    <li><h5>Core Developer: Roozbeh Shafiee &nbsp;&nbsp;<a href="mailto:Linux@MetaComplex.Com">☻</a></h5></li>
+    <li><h5>Developer: Mehdi Saedi &nbsp;&nbsp;<a href="mailto:Software@MetaComplex.Com">☻</a></h5></li>
+    <li><h5>Developer: Mojdeh Karbaschi &nbsp;&nbsp;<a href="mailto:mozhdehk@Yahoo.Com">☻</a></h5></li></ul>
+
+    <h2>Developed On:</h2>
+    <ul><li><h5>FreeBSD 8.2, as Software Platform OS</h5></li>
+    <li><h5>Python, as Programming Language</h5></li>
+    <li><h5>Django, as Programming Framework</h5></li>
+    <li><h5>Arch Linux with KDE Desktop, as Development Environment</li></h5>
+    <li><h5>Kdevelop/Kate/Eclipse/Vim, as Development IDE and Editors</li></h5></ul>
+
+    <h2>Special Thanks:</h2>
+    <ul><li><h5>Managing Director: Majid Karbaschi</h5></li>
+    <li><h5>Graphic Designer: Shahrzad Shojaei</h5></li></ul>
+</div>
+</div>
+{% endblock %}

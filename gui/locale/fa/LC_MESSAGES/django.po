@@ -1,0 +1,6429 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-06 09:42-0800\n"
+"PO-Revision-Date: 2012-05-16 11:16+0330\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.6\n"
+"X-Poedit-Bookmarks: 117,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#: choices.py:40
+msgid "Plain"
+msgstr "واضح"
+
+#: choices.py:41
+#: choices.py:553
+#: system/models.py:298
+#: templates/system/settings.html:9
+msgid "SSL"
+msgstr "SSL"
+
+#: choices.py:42
+#: choices.py:554
+msgid "TLS"
+msgstr "TLS"
+
+#: choices.py:47
+msgid "HTTP"
+msgstr "HTTP"
+
+#: choices.py:48
+msgid "HTTPS"
+msgstr "HTTPS"
+
+#: choices.py:53
+#: choices.py:223
+msgid "Auto"
+msgstr "خودکار"
+
+#: choices.py:54
+msgid "PIO0"
+msgstr "PIO۰"
+
+#: choices.py:55
+msgid "PIO1"
+msgstr "PIO۱"
+
+#: choices.py:56
+msgid "PIO2"
+msgstr "PIO۲"
+
+#: choices.py:57
+msgid "PIO3"
+msgstr "PIO۳"
+
+#: choices.py:58
+msgid "PIO4"
+msgstr "PIO۴"
+
+#: choices.py:59
+msgid "WDMA0"
+msgstr "WDMA۰"
+
+#: choices.py:60
+msgid "WDMA1"
+msgstr "WDMA۱"
+
+#: choices.py:61
+msgid "WDMA2"
+msgstr "WDMA۲"
+
+#: choices.py:62
+msgid "UDMA-16"
+msgstr "UDMA-۱۶"
+
+#: choices.py:63
+msgid "UDMA-33"
+msgstr "UDMA-۳۳"
+
+#: choices.py:64
+msgid "UDMA-66"
+msgstr "UDMA-۶۶"
+
+#: choices.py:65
+msgid "UDMA-100"
+msgstr "UDMA-۱۰۰"
+
+#: choices.py:66
+msgid "UDMA-133"
+msgstr "UDMA-۱۳۳"
+
+#: choices.py:67
+msgid "SATA 1.5Gbit/s"
+msgstr "SATA ۱٫۵Gbit/s"
+
+#: choices.py:68
+msgid "SATA 3.0Gbit/s"
+msgstr "SATA ۳٫۰Gbit/s"
+
+#: choices.py:72
+msgid "Always On"
+msgstr "همیشه روشن"
+
+#: choices.py:86
+#: choices.py:95
+msgid "Disabled"
+msgstr "غیر فعال"
+
+#: choices.py:87
+msgid "Level 1 - Minimum power usage with Standby (spindown)"
+msgstr "پایه‌ی ۱ - استفاده‌ی کمینه‌ی برق با جانشین (spindown)"
+
+#: choices.py:88
+msgid "Level 64 - Intermediate power usage with Standby"
+msgstr "سطح ۶۴ - استفاده‌ی متوسط از برق با جانشین"
+
+#: choices.py:89
+msgid "Level 127 - Intermediate power usage with Standby"
+msgstr "پایه‌ی ۱۲۷ - استفاده‌ی متوسط از برق با جانشین"
+
+#: choices.py:90
+msgid "Level 128 - Minimum power usage without Standby (no spindown)"
+msgstr "پایه‌ی ۱۲۸ - استفاده‌ی کمینه از برق بدون جانشین (no spindown)"
+
+#: choices.py:91
+msgid "Level 192 - Intermediate power usage without Standby"
+msgstr "پایه‌ی ۱۹۲ - استفاده‌ی کمینه از برق بدون جانشین"
+
+#: choices.py:92
+msgid "Level 254 - Maximum performance, maximum power usage"
+msgstr "پایه‌ی ۲۵۴ - کارایی بیشینه، بیشنیه‌ی استفاده از برق"
+
+#: choices.py:96
+#: choices.py:184
+msgid "Minimum"
+msgstr "حداقل"
+
+#: choices.py:97
+msgid "Medium"
+msgstr "متوسط"
+
+#: choices.py:98
+msgid "Maximum"
+msgstr "حداکثر"
+
+#: choices.py:132
+#: templates/storage/tasks.html:84
+msgid "January"
+msgstr "ژانویه"
+
+#: choices.py:133
+#: templates/storage/tasks.html:87
+msgid "February"
+msgstr "فوریه"
+
+#: choices.py:134
+#: templates/storage/tasks.html:90
+msgid "March"
+msgstr "مارس"
+
+#: choices.py:135
+#: templates/storage/tasks.html:93
+msgid "April"
+msgstr "آوریل"
+
+#: choices.py:136
+#: templates/storage/tasks.html:96
+msgid "May"
+msgstr "مِی"
+
+#: choices.py:137
+#: templates/storage/tasks.html:99
+msgid "June"
+msgstr "ژوئن"
+
+#: choices.py:138
+#: templates/storage/tasks.html:102
+msgid "July"
+msgstr "جولای"
+
+#: choices.py:139
+#: templates/storage/tasks.html:105
+msgid "August"
+msgstr "اوت"
+
+#: choices.py:140
+#: templates/storage/tasks.html:108
+msgid "September"
+msgstr "سپتامبر"
+
+#: choices.py:141
+#: templates/storage/tasks.html:111
+msgid "October"
+msgstr "اکتبر"
+
+#: choices.py:142
+#: templates/storage/tasks.html:114
+msgid "November"
+msgstr "نوامبر"
+
+#: choices.py:143
+#: templates/storage/tasks.html:117
+msgid "December"
+msgstr "دسامبر"
+
+#: choices.py:146
+#: templates/storage/tasks.html:55
+msgid "Monday"
+msgstr "دوشنبه"
+
+#: choices.py:147
+#: templates/storage/tasks.html:58
+msgid "Tuesday"
+msgstr "سه‌شنبه"
+
+#: choices.py:148
+#: templates/storage/tasks.html:61
+msgid "Wednesday"
+msgstr "چهارشنبه"
+
+#: choices.py:149
+#: templates/storage/tasks.html:64
+msgid "Thursday"
+msgstr "پنج‌شنبه"
+
+#: choices.py:150
+#: templates/storage/tasks.html:67
+msgid "Friday"
+msgstr "جمعه"
+
+#: choices.py:151
+#: templates/storage/tasks.html:70
+msgid "Saturday"
+msgstr "شنبه"
+
+#: choices.py:152
+#: templates/storage/tasks.html:73
+msgid "Sunday"
+msgstr "یک‌شنبه"
+
+#: choices.py:163
+msgid "Anonymous"
+msgstr "ناشناس"
+
+#: choices.py:164
+msgid "Local User"
+msgstr "کاربر محلی"
+
+#: choices.py:185
+msgid "Normal"
+msgstr "عادی"
+
+#: choices.py:186
+msgid "Full"
+msgstr "کامل"
+
+#: choices.py:187
+msgid "Debug"
+msgstr "اشکال‌زدایی"
+
+#: choices.py:191
+msgid "Default"
+msgstr "پیش‌فرض"
+
+#: choices.py:192
+msgid "Time Machine"
+msgstr "Time Machine"
+
+#: choices.py:195
+msgid "No case folding"
+msgstr "موردی برای به‌هم آمیختن نیست"
+
+#: choices.py:196
+#: choices.py:197
+msgid "Lowercase names in both directions"
+msgstr "اسم ها با حروف کوچک در هر دو جهت"
+
+#: choices.py:198
+msgid "Client sees lowercase, server sees uppercase"
+msgstr "سرویس گیرنده حروف را کوچک و سرویس دهنده حروف را بزرگ می‌بیند"
+
+#: choices.py:199
+msgid "Client sees uppercase, server sees lowercase"
+msgstr "سرویس گیرنده حروف را بزرگ و سرویس دهنده حروف را کوچک می‌بیند"
+
+#: choices.py:203
+msgid "File"
+msgstr "پرونده"
+
+#: choices.py:204
+msgid "Device"
+msgstr "افزار"
+
+#: choices.py:205
+msgid "ZFS Volume"
+msgstr "درایو ZFS"
+
+#: choices.py:209
+#: storage/models.py:424
+#: system/models.py:628
+#: templates/storage/autoimport.html:5
+#: templates/storage/import.html:18
+#: templates/storage/wizard.html:114
+msgid "Disk"
+msgstr "دیسک"
+
+#: choices.py:217
+msgid "read-write"
+msgstr "خواندنی-نوشتنی"
+
+#: choices.py:218
+msgid "read-only"
+msgstr "فقط خواندنی"
+
+#: choices.py:222
+#: choices.py:228
+#: services/forms.py:532
+#: services/forms.py:534
+#: services/forms.py:912
+#: templates/storage/scrub.html:24
+#: templates/storage/wizard.html:115
+#: templates/system/rsync.html:30
+msgid "None"
+msgstr "هیچ‌کدام"
+
+#: choices.py:224
+msgid "CHAP"
+msgstr "CHAP"
+
+#: choices.py:225
+msgid "Mutual CHAP"
+msgstr "CHAP دوطرفه"
+
+#: choices.py:247
+msgid "UPS reaches low battery"
+msgstr "باتری UPS به میزان کمی رسیده"
+
+#: choices.py:248
+msgid "UPS goes on battery"
+msgstr "UPS از باتری تغذیه می‌شود"
+
+#: choices.py:251
+#, fuzzy
+msgid "Preferred"
+msgstr "ترجیحی"
+
+#: choices.py:252
+msgid "Tolerated"
+msgstr "تحمل"
+
+#: choices.py:253
+msgid "Required"
+msgstr "ضروری"
+
+#: choices.py:280
+#: choices.py:286
+msgid "Inherit"
+msgstr "وراثت"
+
+#: choices.py:281
+msgid "On"
+msgstr "روشن"
+
+#: choices.py:282
+#: choices.py:287
+#: choices.py:552
+msgid "Off"
+msgstr "خاموش"
+
+#: choices.py:288
+msgid "lzjb (recommended)"
+msgstr "lzjb (توصیه می شود)"
+
+#: choices.py:289
+msgid "gzip (default level, 6)"
+msgstr "gzip(مقدار بیش فرض، 6)"
+
+#: choices.py:290
+msgid "gzip (fastest)"
+msgstr "gzip (سریعترین)"
+
+#: choices.py:291
+msgid "gzip (maximum, slow)"
+msgstr "gzip ( آهسته ،حداکثر)"
+
+#: choices.py:485
+msgid "Hour(s)"
+msgstr "(ساعت (ها"
+
+#: choices.py:486
+msgid "Day(s)"
+msgstr "(روز (ها"
+
+#: choices.py:487
+msgid "Week(s)"
+msgstr "( هفته (ها"
+
+#: choices.py:488
+msgid "Month(s)"
+msgstr "(ماه  (ها"
+
+#: choices.py:489
+msgid "Year(s)"
+msgstr "(سال (ها"
+
+#: choices.py:493
+#: storage/models.py:262
+#: storage/models.py:287
+#: system/models.py:383
+#: system/models.py:408
+#: system/models.py:585
+#: system/models.py:606
+#: system/models.py:672
+#: system/models.py:693
+msgid "Everyday"
+msgstr "هر روز"
+
+#: choices.py:494
+msgid "Every selected weekday"
+msgstr "هر روز هفته که انتخاب شده باشد"
+
+#: choices.py:500
+msgid "Read-only"
+msgstr "فقط خواندنی"
+
+#: choices.py:501
+msgid "Write-only"
+msgstr "فقط نوشتنی"
+
+#: choices.py:502
+msgid "Read and Write"
+msgstr "خواندن و نوشتن"
+
+#: choices.py:506
+#: choices.py:507
+#, python-format
+msgid "%(minutes)s minutes"
+msgstr " دقیقه %(minutes)s"
+
+#: choices.py:508
+#, python-format
+msgid "%(hour)s hour"
+msgstr "  ساعت %(hour)s"
+
+#: choices.py:509
+#: choices.py:510
+#: choices.py:511
+#: choices.py:512
+#: choices.py:513
+#, python-format
+msgid "%(hours)s hours"
+msgstr " ساعت ها %(hours)s"
+
+#: choices.py:514
+#, python-format
+msgid "%(day)s day"
+msgstr " روز %(day)s "
+
+#: choices.py:515
+#, python-format
+msgid "%(week)s week"
+msgstr " هفته %(week)s"
+
+#: choices.py:519
+msgid "Never - Check the device regardless of its power mode"
+msgstr "هرگز) - دستگاه را صرفنظر از وضعيت برق آن، بررسي كنيد) Never "
+
+#: choices.py:520
+msgid "Sleep - Check the device unless it is in SLEEP mode"
+msgstr " دستگاه را بررسي كنيد مگر آنكه در حالت خواب (اسليپ) باشد - SLEEP"
+
+#: choices.py:521
+msgid "Standby - Check the device unless it is in SLEEP or STANDBY mode"
+msgstr "آماده به كار ) -دستگاه را بررسي نماييد، مگر آنكه در حالت خواب (اسليپ) و يا آماده به كار (استند باي) باشد) Standby "
+
+#: choices.py:522
+msgid "Idle - Check the device unless it is in SLEEP, STANDBY or IDLE mode"
+msgstr " بيكار) - دستگاه را بررسي نماييد، مگر آنكه در حالت خواب (اسليپ) ، يا آماده به كار (استند باي) و يا بيكار (آيدل) باشد )  Idle"
+
+#: choices.py:526
+msgid "Long Self-Test"
+msgstr "آزمايش طولاني مدت خود"
+
+#: choices.py:527
+msgid "Short Self-Test"
+msgstr "آزمايش كوتاه مدت خود"
+
+#: choices.py:528
+msgid "Conveyance Self-Test (ATA  only)"
+msgstr "( ATA آزمايش انتقال خود (فقط "
+
+#: choices.py:529
+msgid "Offline Immediate Test (ATA only)"
+msgstr "(ATA فقط ) Offline آزمايش فوري در حالت"
+
+#: choices.py:558
+msgid "Rsync module"
+msgstr "Rsyncماژول "
+
+#: choices.py:559
+msgid "Rsync over SSH"
+msgstr "SSH روي Rsync "
+
+#: choices.py:563
+msgid "Push"
+msgstr "قرار دادن روي"
+
+#: choices.py:564
+msgid "Pull"
+msgstr "برداشتن از روي"
+
+#: account/forms.py:52
+msgid "Your name cannot start with \"-\""
+msgstr "\"-\"  اسم شما نمي تواند با كاراكترهاي روبرو شروع شود  "
+
+#: account/forms.py:54
+msgid "The character $ is only allowed as the final character"
+msgstr "كاراكتر $ فقط به عنوان آخرين كاراكتر قابل استفاده مي باشد"
+
+#: account/forms.py:61
+#, python-format
+msgid "Your name contains invalid characters (%s)."
+msgstr " (%s) اسم شما شامل كاراكترهاي نامعتبر است"
+
+#: account/forms.py:70
+#, python-format
+msgid "Your full name contains invalid characters (%s)."
+msgstr " (%s) اسم كامل شما شامل كاراكترهاي نامعتبر است"
+
+#: account/forms.py:120
+#: templates/storage/volumes.html:61
+msgid "Available"
+msgstr "در دسترس"
+
+#: account/forms.py:171
+msgid "Selected"
+msgstr "انتخاب شده"
+
+#: account/forms.py:199
+#: account/forms.py:225
+#: account/forms.py:456
+#: account/models.py:88
+#: services/models.py:733
+#: services/models.py:1047
+#: system/models.py:224
+#: templates/account/bsdusers.html:5
+#: templates/account/bsdusers.html.py:84
+msgid "Username"
+msgstr "نام كاربر"
+
+#: account/forms.py:200
+msgid "Required. 16 characters or fewer. Letters, digits and ./-/_ only."
+msgstr "./-/_ به 16 كاراكتر يا كمتر نياز دارد، شامل حروف، ارقام و فقط "
+
+#: account/forms.py:201
+msgid "This value may contain only letters, numbers and ./-/_ characters."
+msgstr " ./-/_  اين مقدار فقط مي تواند شامل كاراكترهاي روبرو باشد: حروف، ارقام و "
+
+#: account/forms.py:228
+#: account/forms.py:457
+#: services/models.py:737
+#: system/forms.py:272
+#: system/models.py:231
+#: templates/account/bsdusers.html:9
+#: templates/account/bsdusers.html.py:88
+msgid "Password"
+msgstr "كلمه عبور"
+
+#: account/forms.py:232
+#: account/forms.py:458
+#: system/forms.py:273
+msgid "Password confirmation"
+msgstr "تكرار كلمه عبور"
+
+#: account/forms.py:234
+#: account/forms.py:459
+#: system/forms.py:274
+msgid "Enter the same password as above, for verification."
+msgstr "براي تاييد، \"تكرار كلمه عبور\"  بايد مانند \"كلمه عبور\" بالا باشد"
+
+#: account/forms.py:237
+#: account/forms.py:500
+#: account/models.py:114
+#: freeadmin/navtree.py:371
+#: templates/account/bsdusers.html:8
+#: templates/account/bsdusers.html.py:87
+msgid "Shell"
+msgstr "(پوسته (لايه محافظ"
+
+#: account/forms.py:241
+#: account/forms.py:498
+msgid "Disable password logins"
+msgstr "غیر فعال کردن ورود رمز عبور"
+
+#: account/forms.py:243
+#: account/forms.py:499
+msgid "Lock user"
+msgstr "قفل شدن كاربر"
+
+#: account/forms.py:245
+msgid "Create a new primary group for the user"
+msgstr "يك گروه اوليه جديد براي كاربر بسازيد"
+
+#: account/forms.py:248
+msgid "Primary Group"
+msgstr "گروه اوليه"
+
+#: account/forms.py:251
+#: account/forms.py:504
+msgid "SSH Public Key"
+msgstr "SSH كليد عمومي "
+
+#: account/forms.py:256
+msgid "Home Directory Mode"
+msgstr "حالت دايركتوري اصلي"
+
+#: account/forms.py:259
+#: account/forms.py:693
+msgid "Auxiliary groups"
+msgstr "گروه هاي كمكي"
+
+#: account/forms.py:318
+msgid "A user with that uid already exists."
+msgstr "درحال حاضر يك كاربر با اين شناسه كاربري وجود دارد"
+
+#: account/forms.py:329
+msgid "A user with that username already exists."
+msgstr "درحال حاضر يك كاربر با اين نام كاربري وجود دارد"
+
+#: account/forms.py:337
+#: storage/forms.py:223
+#: system/forms.py:302
+#: system/forms.py:308
+#: system/forms.py:313
+#: system/forms.py:545
+#: system/forms.py:552
+msgid "This field is required"
+msgstr "اين فيلد بايد تكميل شود"
+
+#: account/forms.py:344
+#: account/forms.py:481
+#: account/forms.py:732
+#: services/forms.py:284
+#: services/forms.py:381
+#: sharing/forms.py:98
+#: system/forms.py:317
+msgid "The two password fields didn't match."
+msgstr "دو كلمه عبور وارد شده با هم يكسان نيستند"
+
+#: account/forms.py:351
+msgid "Home directory has to start with /mnt/ or be /nonexistent"
+msgstr "شروع شود يا بايد معدوم شود /mnt/  دايركتوري اصلي بايد با "
+
+#: account/forms.py:366
+#: account/forms.py:703
+msgid "A user cannot belong to more than 64 auxiliary groups"
+msgstr "يك كاربر نمي تواند متعلق به بيش از 64 گروه كمكي باشد "
+
+#: account/forms.py:381
+#: account/forms.py:582
+msgid "Home directory is not writable, leave this blank"
+msgstr "دايركتوري اصلي قابل نوشتن نيست، آن را خالي بگذاريد"
+
+#: account/forms.py:388
+msgid "Password is disabled, leave this blank"
+msgstr "كلمه عبور غير فعال شده است، آن را خالي بگذاريد"
+
+#: account/forms.py:394
+#: plugins/forms.py:103
+#: plugins/forms.py:145
+#: services/forms.py:622
+#: services/forms.py:925
+#: storage/forms.py:194
+#: system/forms.py:423
+#: system/forms.py:451
+msgid "This field is required."
+msgstr "اين فيلد بايد تكميل شود"
+
+#: account/forms.py:562
+msgid "Home directory has to start with /mnt or be /nonexistent"
+msgstr "شروع شود يا بايد معدوم گردد /mnt دايركتوري اصلي بايد با "
+
+#: account/forms.py:634
+msgid "Allow repeated GIDs"
+msgstr "اجازه شناسه گروه هاي تكراري"
+
+#: account/forms.py:647
+msgid "A group with that name already exists."
+msgstr "يك گروه با اين نام وجود دارد"
+
+#: account/forms.py:665
+msgid "A group with this gid already exists"
+msgstr "در حال حاضر يك گروه با اين شناسه گروه وجود دارد"
+
+#: account/forms.py:675
+msgid "Member users"
+msgstr "كاربران عضو"
+
+#: account/forms.py:720
+msgid "New password"
+msgstr "كلمه عبور جديد"
+
+#: account/forms.py:721
+msgid "New password confirmation"
+msgstr "تكرار كلمه عبور جديد"
+
+#: account/forms.py:746
+msgid "Change root password as well"
+msgstr "را بصورت شايسته تغيير دهيد (root) كلمه عبور ريشه "
+
+#: account/forms.py:753
+msgid "Old password"
+msgstr "كلمه عبور قديمي"
+
+#: account/forms.py:770
+msgid "Your old password was entered incorrectly. Please enter it again."
+msgstr "كلمه عبور قديمي شما بصورت نادرست وارد شده است. لطفاً دوباره وارد نماييد"
+
+#: account/forms.py:778
+msgid "Do you want to delete all users with this primary group?"
+msgstr "آيا ميخواهيد تمامي كاربران با اين گروه اوليه حذف شوند؟"
+
+#: account/models.py:36
+#: services/models.py:518
+#: services/models.py:563
+#: templates/services/iscsi_auth.html:5
+#: templates/services/iscsi_authini.html:5
+#: templates/services/iscsi_portals.html:4
+msgid "Group ID"
+msgstr "شناسه گروه"
+
+#: account/models.py:41
+msgid "Group Name"
+msgstr "نام گروه"
+
+#: account/models.py:49
+#: account/models.py:171
+#: services/models.py:1339
+#: templates/account/bsdgroups.html:5
+#: templates/account/bsdgroups.html:70
+#: templates/account/bsdusers.html:6
+#: templates/account/bsdusers.html.py:85
+msgid "Group"
+msgstr "گروه"
+
+#: account/models.py:50
+#: templates/account/index.html:13
+msgid "Groups"
+msgstr "گروه ها"
+
+#: account/models.py:67
+#, python-format
+msgid "Group %s is built-in and can not be deleted!"
+msgstr "جزو ساختار سيستم است و نمي تواند حذف شود %s گروه"
+
+#: account/models.py:82
+msgid "User ID"
+msgstr "شناسه كاربر"
+
+#: account/models.py:87
+msgid "User &"
+msgstr "& كاربر "
+
+#: account/models.py:94
+msgid "Hashed UNIX password"
+msgstr "شده يونيكس Hash كلمه عبور "
+
+#: account/models.py:100
+msgid "Hashed SMB password"
+msgstr "SMB شده  Hash  پسورد "
+
+#: account/models.py:105
+msgid "Primary Group ID"
+msgstr "شناسه گروه اوليه"
+
+#: account/models.py:109
+msgid "Home Directory"
+msgstr "دايركتوري اصلي"
+
+#: account/models.py:118
+msgid "Full Name"
+msgstr "نام كامل"
+
+#: account/models.py:125
+#: templates/account/bsdusers.html:90
+msgid "E-mail"
+msgstr "(E-mail) آدرس نامه الكترونيكي "
+
+#: account/models.py:130
+#: account/models.py:175
+#: services/models.py:567
+#: services/models.py:1332
+#: system/models.py:306
+#: system/models.py:495
+#: templates/services/iscsi_auth.html:6
+#: templates/system/cronjob.html:10
+#: templates/system/rsync.html:14
+msgid "User"
+msgstr "كاربر"
+
+#: account/models.py:131
+#: templates/account/index.html:19
+msgid "Users"
+msgstr "كاربران"
+
+#: account/models.py:150
+#, python-format
+msgid "User %s is built-in and can not be deleted!"
+msgstr "جزو ساختار سيستم است و قابل حذف نمي باشد %s كاربر "
+
+#: account/nav.py:5
+#: templates/menubar.html:53
+msgid "Account"
+msgstr "حساب"
+
+#: account/nav.py:11
+#: templates/account/index.html:2
+msgid "Admin Account"
+msgstr "حساب مدير سيستم"
+
+#: account/nav.py:17
+#: templates/account/bsdusers.html:33
+#: templates/account/bsdusers.html.py:35
+#: templates/account/bsdusers.html:112
+#: templates/account/bsdusers.html:114
+#: templates/account/index.html:8
+msgid "Change Password"
+msgstr "كلمه عبور را تغيير دهيد"
+
+#: account/nav.py:22
+#: templates/account/changeform.html:2
+#: templates/account/index.html:3
+msgid "Change Admin User"
+msgstr "كاربر مدير سيستم را تغيير دهيد"
+
+#: account/views.py:95
+msgid "Password successfully updated."
+msgstr "كلمه عبور با موفقيت بروز رساني شد"
+
+#: account/views.py:112
+msgid "Admin user successfully updated."
+msgstr " كاربر مدير سيستم با موفقيت بروز رساني شد"
+
+#: account/views.py:125
+msgid "Users successfully updated."
+msgstr "كاربران با موفقيت بروز رساني شدند"
+
+#: account/views.py:138
+msgid "Groups successfully updated."
+msgstr "گروه ها با موفقيت به روز رساني شدند"
+
+#: freeadmin/forms.py:112
+#, python-format
+msgid "The user %s is not valid."
+msgstr "معتبر نيست %s كاربر "
+
+#: freeadmin/forms.py:146
+#, python-format
+msgid "The group %s is not valid."
+msgstr "معتبر نيست %s گروه "
+
+#  volume mount =?
+#: freeadmin/forms.py:165
+msgid "The path must reside within a volume mount point"
+msgstr "مستقر شود volume مسير بايد در يك نقطه اوج "
+
+#: freeadmin/middleware.py:116
+#: freeadmin/views.py:430
+#: freeadmin/views.py:654
+#, python-format
+msgid "Error: %s"
+msgstr "%s خطا"
+
+#: freeadmin/navtree.py:334
+#, python-format
+msgid "Add %s"
+msgstr "%s اضافه كنيد"
+
+#: freeadmin/navtree.py:346
+#, python-format
+msgid "View %s"
+msgstr "%s مشاهده كنيد"
+
+#: freeadmin/navtree.py:366
+msgid "Display System Processes"
+msgstr "فرايندهاي سيستم نمايش داده شود"
+
+#: freeadmin/navtree.py:375
+#: templates/system/reboot_dialog.html:14
+msgid "Reboot"
+msgstr "راه اندازي مجدد"
+
+#: freeadmin/navtree.py:379
+#: templates/system/shutdown_dialog.html:14
+msgid "Shutdown"
+msgstr "خاموش كردن"
+
+#: freeadmin/navtree.py:395
+#, python-format
+msgid "Empty data returned from %s"
+msgstr "هيچ داده اي دريافت نشده است %s از "
+
+#: freeadmin/navtree.py:398
+#, python-format
+msgid "Couldn't retrieve %(url)s: %(error)s"
+msgstr "%(error)s ،  نمي تواند بازيابي شود  %(url)s"
+
+#: freeadmin/navtree.py:432
+#, python-format
+msgid "An error occurred while unserializing from %(url)s: %(error)s"
+msgstr "%(error)s :يك خطا به وقوع پيوسته است %(url)s در حين نامرتب كردن از آدرس"
+
+#: freeadmin/views.py:245
+msgid "It was not possible to retrieve the current status"
+msgstr "امكان بازيابي وضعيت فعلي وجود نداشته است"
+
+#: freeadmin/views.py:428
+#: freeadmin/views.py:648
+#: freeadmin/views.py:650
+#, python-format
+msgid "%s successfully updated."
+msgstr "با موفقيت بروز رساني شد %s"
+
+#: freeadmin/views.py:432
+#: freeadmin/views.py:652
+msgid "The service failed to restart."
+msgstr "سرويس نمي تواند دوباره راه اندازي شود"
+
+#: freeadmin/views.py:761
+#: freeadmin/views.py:765
+#, python-format
+msgid "%s successfully deleted."
+msgstr "با موفقيت حذف شد %s "
+
+#: middleware/zfs.py:527
+#: storage/models.py:556
+msgid "Error getting total space"
+msgstr "خطا تمام فضا را اشغال كرده است"
+
+#: middleware/zfs.py:533
+#: storage/models.py:562
+msgid "Error getting available space"
+msgstr "خطاي دريافت فضاي آزاد"
+
+#: middleware/zfs.py:544
+#: storage/models.py:573
+msgid "Error getting used space"
+msgstr "خطاي دريافت فضاي استفاده شده"
+
+#: middleware/zfs.py:550
+#: middleware/zfs.py:557
+#: storage/models.py:89
+#: storage/models.py:579
+#: storage/models.py:586
+msgid "Error"
+msgstr "خطا"
+
+#: network/forms.py:40
+#: network/models.py:86
+msgid "NIC"
+msgstr "كنترل كننده واسط كاربري شبكه"
+
+#: network/forms.py:77
+#: network/forms.py:88
+#: network/forms.py:330
+#: network/forms.py:344
+#, python-format
+msgid "You cannot configure multiple interfaces with the same IP address (%s)"
+msgstr "%s يكسان تنظيم نماييد  IP شما نمي توانيد چندين كارت را با آدرس"
+
+#: network/forms.py:106
+msgid "You have to specify IPv4 address as well"
+msgstr " نگارش 4  استفاده نماييد IP شما بايد يك آدرس "
+
+#: network/forms.py:108
+msgid "You have to choose IPv4 netmask as well"
+msgstr " نگارش 4  انتخاب نماييد IP  شما بايد يك ماسك شبكه  "
+
+#: network/forms.py:113
+msgid "You have to specify IPv6 address as well"
+msgstr " نگارش 6  استفاده نماييد IP شما بايد يك آدرس "
+
+#: network/forms.py:115
+msgid "You have to choose IPv6 netmask as well"
+msgstr " نگارش 6 انتخاب نماييد  IP  شما بايد يك ماسك شبكه  "
+
+#: network/forms.py:118
+msgid "You have to choose between IPv4 or IPv6"
+msgstr "نگارش 4 يا 6 يكي را انتخاب نماييد IP شما بايد بين آدرس "
+
+#: network/forms.py:133
+msgid "Loopback is not a valid nameserver"
+msgstr "يك نام معتبر براي نام سرور نيست Loopback "
+
+#: network/forms.py:135
+msgid "Unspecified addresses are not valid as nameservers"
+msgstr "آدرس هاي مشخص نشده براي سرويس دهنده هاي نام معتبر نيستند"
+
+#: network/forms.py:138
+msgid "This is not a valid nameserver address"
+msgstr "اين يك آدرس معتبر براي سرويس دهنده نام نيست"
+
+#: network/forms.py:140
+msgid "169.254/16 subnet is not valid for nameserver"
+msgstr " زير شبكه 169.254/16 براي سرويس دهنده نام معتبر نيست "
+
+#: network/forms.py:160
+msgid "Must fill out nameserver 2 before filling out nameserver 3"
+msgstr "بايد سرويس دهنده نام شماره 2 را قبل از سرويس دهنده نام شماره 3 تكميل نماييد"
+
+#: network/forms.py:163
+#: network/forms.py:170
+#: network/forms.py:181
+msgid "Required when using nameserver 3"
+msgstr "هنگام استفاده از سرويس دهنده نام شماره 3، مورد نياز است"
+
+#: network/forms.py:167
+msgid "Must fill out nameserver 1 before filling out nameserver 3"
+msgstr "بايد سرويس دهنده نام شماره 1 را قبل از سرويس دهنده نام شماره 3 تكميل نماييد"
+
+#: network/forms.py:178
+msgid "Must fill out nameserver 1 before filling out nameserver 2"
+msgstr "بايد سرويس دهنده نام شماره 1 را قبل از سرويس دهنده نام شماره 2 تكميل نماييد"
+
+#: network/forms.py:193
+msgid "Parent Interface"
+msgstr "رابط مادر"
+
+#: network/forms.py:202
+msgid "The name must be vlanXX where XX is a integer"
+msgstr "يك عدد صحيح است XX باشد كه  vlanXX اسم بايد "
+
+#: network/forms.py:208
+msgid "VLAN Tags are 1 - 4095 inclusive"
+msgstr "شامل اعداد 1 تا 4095 است VLAN  برچسب هاي "
+
+#: network/forms.py:233
+msgid "Physical NICs in the LAGG"
+msgstr "LAGG كنترل كننده هاي واسط كاربري شبكه در"
+
+#: network/forms.py:241
+msgid "LAGG Physical NIC"
+msgstr "LAGG كارت شبكه فيزيكي"
+
+#: network/forms.py:298
+#, python-format
+msgid "The network '%s' is not valid, CIDR expected."
+msgstr "لازم است CIDR معتبر نيست،  %s شبكه "
+
+#: network/forms.py:360
+msgid "You have to specify IPv4 address as well per alias"
+msgstr "نگارش 4 به عنوان نام مستعار مشخص نماييد IP شما بايد آدرس"
+
+#: network/forms.py:362
+msgid "You have to choose IPv4 netmask as well per alias"
+msgstr "نگارش 4 به عنوان نام مستعار انتخاب نماييد IP شما بايد ماسك شبكه از"
+
+#: network/forms.py:367
+msgid "You have to specify IPv6 address as well per alias"
+msgstr "نگارش 6 به عنوان نام مستعار مشخص نماييد IP شما بايد آدرس"
+
+#: network/forms.py:369
+msgid "You have to choose IPv6 netmask as well per alias"
+msgstr "نگارش 6 به عنوان نام مستعار انتخاب نماييد IP شما بايد ماسك شبكه از"
+
+#: network/forms.py:372
+msgid "You have to choose between IPv4 or IPv6 per alias"
+msgstr "نگارش 4 يا نگارش 6، يكي را براي هر نام مستعار انتخاب نماييد IP شما بايد بين آدرس "
+
+#: network/forms.py:374
+msgid "You must specify either an valid IPv4 or IPv6 with maskbit per alias"
+msgstr "براي هر نام مستعار مشخص نماييد maskbit معتبر نگارش 4 يا نگارش 6 را به همراه   IP شما بايد هريك از آدرس هاي "
+
+#: network/models.py:42
+#: services/models.py:1202
+#: templates/system/system_info.html:5
+msgid "Hostname"
+msgstr "ميزبان"
+
+#: network/models.py:46
+msgid "Domain"
+msgstr "دامنه"
+
+#: network/models.py:51
+msgid "IPv4 Default Gateway"
+msgstr " نگارش 4  IPدروازه پيش فرض"
+
+#: network/models.py:56
+msgid "IPv6 Default Gateway"
+msgstr " نگارش 6  IPدروازه پيش فرض"
+
+#: network/models.py:61
+msgid "Nameserver 1"
+msgstr "سرويس دهنده نام شماره 1"
+
+#: network/models.py:66
+msgid "Nameserver 2"
+msgstr "سرويس دهنده نام شماره 2"
+
+#: network/models.py:71
+msgid "Nameserver 3"
+msgstr "سرويس دهنده نام شماره 3"
+
+#: network/models.py:76
+#: network/models.py:77
+#: network/nav.py:21
+#: templates/network/index.html:3
+msgid "Global Configuration"
+msgstr "تنظيمات سراسري"
+
+#: network/models.py:87
+msgid "Pick your NIC"
+msgstr "كارت شبكه خود را انتخاب نماييد"
+
+#: network/models.py:91
+msgid "Interface Name"
+msgstr "نام واسط كاربر"
+
+#: network/models.py:92
+msgid "Name your NIC."
+msgstr "كارت شبكه خود را نامگذاري كنيد"
+
+#: network/models.py:95
+#: templates/network/interface.html:7
+msgid "DHCP"
+msgstr " پروتكل پيكربندي ميزبان پويا  (Dynamic Host Configuration Protocol) DHCP"
+
+#: network/models.py:96
+msgid "When enabled, use DHCP to obtain IPv4 address as well as default router, etc."
+msgstr "... نگارش 4 به عنوان مسيرياب پيش فرض دريافت نمايد و  IP استفاده نماييد تا يك آدرس DHCP هنگامي كه فعال شده، از "
+
+#: network/models.py:99
+#: network/models.py:215
+#: templates/network/interface.html:8
+#: templates/network/summary.html:6
+msgid "IPv4 Address"
+msgstr "نگارش 4 IP آدرس "
+
+#: network/models.py:108
+#: network/models.py:224
+msgid "IPv4 Netmask"
+msgstr "نگارش 4 IP شبكه mask"
+
+#: network/models.py:112
+msgid "Auto configure IPv6"
+msgstr "نگارش 6 IP پيكربندي اتوماتيك"
+
+#: network/models.py:113
+msgid "When enabled, automatically configurate IPv6 address via rtsol(8)."
+msgstr "پيكربندي مي نمايد rtsol(8) نگارش 4 را از طريق  IP هنگامي كه فعال شد، بصورت اتوماتيك آدرس "
+
+#: network/models.py:116
+#: network/models.py:228
+#: templates/network/interface.html:10
+msgid "IPv6 Address"
+msgstr "نگارش 6 IP آدرس "
+
+#: network/models.py:125
+#: network/models.py:237
+msgid "IPv6 Prefix Length"
+msgstr "نگارش 6 IP طول پيشوند "
+
+#: network/models.py:130
+#: network/models.py:359
+#: templates/network/interface.html:11
+msgid "Options"
+msgstr "گزينه ها"
+
+#: network/models.py:156
+#: network/models.py:212
+#: network/models.py:311
+#: templates/network/interface.html:5
+msgid "Interface"
+msgstr "واسط كاربر"
+
+#: network/models.py:157
+#: templates/network/index.html:9
+msgid "Interfaces"
+msgstr "واسط هاي كارير"
+
+#: network/models.py:253
+#: templates/services/iscsi_targets.html:6
+msgid "Alias"
+msgstr "نام مستعار"
+
+#: network/models.py:254
+msgid "Aliases"
+msgstr "نام هاي مستعار"
+
+#: network/models.py:266
+#: templates/network/lagg.html:5
+#: templates/network/vlan.html:5
+msgid "Virtual Interface"
+msgstr "واسط كاربري مجازي"
+
+#: network/models.py:267
+msgid "Interface names must be vlanXX where XX is a number. Example: vlan0."
+msgstr "vlan0 يك عدد است مانند  XX باشد كه  vlanXX نام هاي واسط كاربر بايد "
+
+#: network/models.py:272
+#: templates/network/lagg_members.html:5
+#: templates/network/vlan.html:6
+msgid "Physical Interface"
+msgstr "واسط كاربري فيزيكي"
+
+#: network/models.py:275
+#: templates/network/vlan.html:7
+msgid "VLAN Tag"
+msgstr "VLAN برچسب"
+
+#: network/models.py:279
+#: network/models.py:393
+#: services/models.py:76
+#: services/models.py:863
+#: storage/models.py:194
+#: storage/models.py:335
+#: storage/views.py:226
+#: templates/network/staticroute.html:7
+#: templates/network/vlan.html:8
+#: templates/system/cronjob.html:4
+#: templates/system/smarttest.html:5
+msgid "Description"
+msgstr "تشريح"
+
+#: network/models.py:293
+#: templates/network/index.html:24
+msgid "VLAN"
+msgstr "(شبكه مجازي) Virtual LAN"
+
+#: network/models.py:294
+msgid "VLANs"
+msgstr "(شبكه هاي مجازي) Virtual LANs"
+
+#: network/models.py:315
+msgid "Protocol Type"
+msgstr "نوع پروتكل"
+
+#: network/models.py:320
+#: network/models.py:373
+#: templates/network/index.html:14
+msgid "Link Aggregation"
+msgstr "تجمع پيوند"
+
+#: network/models.py:321
+#: network/models.py:374
+#: network/nav.py:33
+msgid "Link Aggregations"
+msgstr "تجمعات پيوندي"
+
+#: network/models.py:347
+msgid "LAGG Interface group"
+msgstr "گروه واسط كاربري توده ارتباط"
+
+#: network/models.py:350
+msgid "LAGG Priority Number"
+msgstr "عدد اولويت توده ارتباط"
+
+#: network/models.py:355
+msgid "Physical NIC"
+msgstr "كارت شبكه فيزيكي"
+
+#: network/models.py:385
+msgid "Destination network"
+msgstr "شبكه مقصد"
+
+#: network/models.py:389
+#: templates/network/staticroute.html:6
+msgid "Gateway"
+msgstr "دروازه"
+
+#: network/models.py:398
+msgid "Static Route"
+msgstr " مسير استاتيك  "
+
+#: network/models.py:399
+#: templates/network/index.html:19
+msgid "Static Routes"
+msgstr "مسيرهاي استاتيك"
+
+#: network/nav.py:6
+#: templates/menubar.html:13
+msgid "Network"
+msgstr "شبكه"
+
+#: network/nav.py:13
+#: templates/network/index.html:29
+msgid "Network Summary"
+msgstr "خلاصه شبكه"
+
+#: network/nav.py:41
+msgid "Create Link Aggregation"
+msgstr "ساخت تجمع پيوند"
+
+#: network/nav.py:50
+msgid "View Link Aggregations"
+msgstr "مشاهده تجمعات پيوندي"
+
+#: network/views.py:188
+msgid "LAGG successfully added"
+msgstr "با موفقيت اضافه شد LAGG"
+
+#: plugins/forms.py:73
+msgid "Place to temporarily place PBI file"
+msgstr "را درون محلي موقتي قرار دهيد PBI  فايل"
+
+#: plugins/forms.py:73
+msgid "The system will use this place to temporarily store the PBI file before it's installed."
+msgstr "قبل از نصب آن، استفاده مي نمايد PBI سيستم اين محل را براي نگهداري موقت فايل"
+
+#: plugins/forms.py:87
+msgid "PBI file to be installed"
+msgstr "نصب شد PBI فايل"
+
+#: plugins/forms.py:88
+#: plugins/forms.py:119
+msgid "SHA256 sum for the PBI file"
+msgstr "PBI براي فايل SHA256 جمع "
+
+#: plugins/forms.py:99
+#: plugins/forms.py:141
+#: system/forms.py:419
+#: system/forms.py:447
+msgid "Invalid checksum"
+msgstr "نا معتبر  (checksum) مجموع مقابله اي "
+
+#: plugins/forms.py:115
+msgid "Plugins Jail PBI"
+msgstr "PBI اتصالات محدود "
+
+#: plugins/forms.py:129
+msgid "Jail path cannot contain plugins path."
+msgstr "نمي تواند شامل مسير  اتصالات باشد Jail مسير محدود"
+
+#: plugins/forms.py:131
+msgid "Plugins path cannot contain jail path."
+msgstr "باشد Jail مسير اتصالات نمي تواند شامل مسير محدود "
+
+#: plugins/models.py:36
+#: templates/plugins/plugin_info.html:5
+#, fuzzy
+msgid "Plugin name"
+msgstr "نام دامنه"
+
+#: plugins/models.py:37
+msgid "Name of the plugin"
+msgstr "نام اتصال"
+
+#: plugins/models.py:42
+msgid "Plugin info name"
+msgstr "نام اطلاعاتي اتصال"
+
+#: plugins/models.py:43
+msgid "Info name of the plugin"
+msgstr "نام اطلاعاتي اتصال"
+
+#: plugins/models.py:48
+msgid "Plugin version"
+msgstr "نگارش اتصال"
+
+#: plugins/models.py:49
+msgid "Version of the plugin"
+msgstr "نگارش اتصال"
+
+#: plugins/models.py:54
+#: plugins/models.py:55
+msgid "Plugin architecture"
+msgstr "معماري اتصال"
+
+#: plugins/models.py:60
+#: templates/plugins/plugin_info.html:9
+#, fuzzy
+msgid "Plugin uname"
+msgstr "نام دامنه"
+
+#: plugins/models.py:61
+msgid "UName of the plugin"
+msgstr "اتصال UName"
+
+#: plugins/models.py:66
+#: plugins/models.py:67
+#: templates/plugins/plugin_info.html:13
+msgid "Plugin view"
+msgstr "نماي اتصال"
+
+#: plugins/models.py:72
+#: plugins/models.py:73
+#: templates/plugins/plugin_info.html:17
+msgid "Plugin icon"
+msgstr "تصوير اتصال"
+
+#: plugins/models.py:77
+#: plugins/models.py:78
+#: templates/plugins/plugin_info.html:21
+msgid "Plugin enabled"
+msgstr "اتصال فعال شد"
+
+#: plugins/models.py:84
+#: plugins/models.py:85
+#: templates/plugins/plugin_info.html:25
+msgid "Plugin IP address"
+msgstr "اتصال IP آدرس "
+
+#: plugins/models.py:90
+#: plugins/models.py:91
+#: templates/plugins/plugin_info.html:29
+msgid "Plugin TCP port"
+msgstr "اتصال TCP پورت "
+
+#: plugins/models.py:96
+#: plugins/models.py:97
+msgid "Path to plugin"
+msgstr "مسير دهي به اتصال"
+
+#: plugins/models.py:101
+#: plugins/models.py:102
+#: plugins/nav.py:33
+#: services/models.py:790
+#: services/models.py:791
+#: services/nav.py:166
+#: templates/menubar.html:33
+#: templates/services/index.html:99
+msgid "Plugins"
+msgstr "اتصالات"
+
+#: plugins/nav.py:40
+msgid "Control Plugins"
+msgstr "اتصالات كنترلي"
+
+#: plugins/nav.py:48
+msgid "Configure Plugins"
+msgstr "اتصالات پيكربندي"
+
+#: plugins/views.py:69
+msgid "Plugin successfully updated."
+msgstr "اتصال با موفقيت بروز رساني شد"
+
+#: plugins/views.py:95
+msgid "Plugin successfully removed."
+msgstr "اتصال با موفقيت حذف شد"
+
+#: plugins/views.py:99
+msgid "Unable to remove plugin."
+msgstr "امكان حذف اتصال نيست"
+
+#: services/forms.py:65
+msgid "This is not a valid mask"
+msgstr "اين يك ماسك معتبر نيست"
+
+#: services/forms.py:82
+msgid "This field is required for \"Enable home directories browsing\"."
+msgstr "اين فيلد براي  \" مشاهده شاخه اصلي فعال \"  لازم است"
+
+#: services/forms.py:85
+msgid "This field is required for \"Home directories\"."
+msgstr "اين فيلد براي  \" شاخه هاي اصلي \"  لازم است"
+
+#: services/forms.py:93
+msgid "The CIFS service failed to reload."
+msgstr "نتوانست بارگزاري شود CIFS سرويس"
+
+#: services/forms.py:102
+msgid "The AFP service failed to reload."
+msgstr "نتوانست بارگزاري شود AFP سرويس"
+
+#: services/forms.py:111
+msgid "The NFS service failed to reload."
+msgstr "نتوانست بارگزاري شود NFS سرويس"
+
+#: services/forms.py:130
+msgid "The plugins path cannot be the same or reside within jail path."
+msgstr "Jail مسير اتصالات نمي تواند شبيه باشد يا مقيم شود در مسير محدود "
+
+#: services/forms.py:139
+msgid "This IP already exists."
+msgstr "وجود دارد IP درحال حاضر اين"
+
+#: services/forms.py:146
+msgid "The Plugins service failed to reload."
+msgstr "سرويس اتصالات نتوانست بارگزاري شود"
+
+#: services/forms.py:151
+msgid "File Permission"
+msgstr "مجوز فايل"
+
+#: services/forms.py:152
+msgid "Directory Permission"
+msgstr "مجوز شاخه"
+
+#: services/forms.py:180
+msgid "This value must be between 1024 and 65535, inclusive. 0 for default"
+msgstr "اين مقدار بايد بين 1024 و  65535 باشد، به علاوه 0 به عنوان پيش فرض"
+
+#: services/forms.py:186
+msgid "This value must be between 1024 and 65535, inclusive. 0 for default."
+msgstr "اين مقدار بايد بين 1024 و  65535 باشد، به علاوه 0 به عنوان پيش فرض"
+
+#: services/forms.py:205
+msgid "This field is required for anonymous login"
+msgstr "اين فيلد براي ورود ناشناس لازم است"
+
+#: services/forms.py:212
+msgid "The ftp service failed to start."
+msgstr "نتوانست بارگزاري شود ftp سرويس"
+
+#: services/forms.py:224
+msgid "The tftp service failed to reload."
+msgstr "نتوانست بارگزاري شود  tftp سرويس"
+
+#: services/forms.py:231
+msgid "The SSH service failed to reload."
+msgstr "نتوانست بارگزاري شود SSH سرويس"
+
+#: services/forms.py:243
+#: services/forms.py:268
+msgid "The Rsync service failed to reload."
+msgstr "نتوانست بارگزاري شود Rsync سرويس"
+
+#: services/forms.py:253
+msgid "The name cannot contain slash or a closing square backet."
+msgstr "نام نمي تواند شامل اسلش و يا يك براكت بسته باشد"
+
+#: services/forms.py:272
+msgid "Confirm Password"
+msgstr "تكرار يا تاييد كلمه رمز"
+
+#: services/forms.py:300
+msgid "The DynamicDNS service failed to reload."
+msgstr "نتوانست بارگزاري شود DynamicDNS سرويس"
+
+#: services/forms.py:310
+msgid "This is not a valid e-mail address"
+msgstr "اين يك آدرس معتبر نامه الكترونيكي نيست"
+
+#: services/forms.py:312
+msgid "The contact must contain only alphanumeric characters, _, - or a valid e-mail address"
+msgstr "اطلاعات تماس بايد فقط شامل كاراكترهاي حروف و اعداد ، _ ، - و يا يك آدرس معتبر نامه الكترونيكي باشد "
+
+#: services/forms.py:317
+msgid "The community must contain only alphanumeric characters, _ or -"
+msgstr "انجمن فقط بايد شامل كاراكترهاي حروف و اعداد ، _ و يا- باشد"
+
+#: services/forms.py:323
+msgid "The SNMP service failed to reload."
+msgstr "نتوانست بارگزاري شود SNMP سرويس"
+
+#: services/forms.py:335
+#: services/models.py:503
+#: services/models.py:852
+#: services/models.py:913
+#: services/models.py:1040
+msgid "Port"
+msgstr "درگاه"
+
+#: services/forms.py:345
+msgid "Use alphanumeric characters, \".\", \"-\" and \"_\"."
+msgstr "از كاراكترهاي حروف و اعداد، . ،- و _  استفاده نماييد"
+
+#: services/forms.py:356
+#: services/forms.py:965
+#, python-format
+msgid "The email %(email)s is not valid"
+msgid_plural "The following emails are not valid: %(email)s"
+msgstr[0] "معتبر نيست %(email)s آدرس الكترونيكي "
+
+#: services/forms.py:365
+msgid "The UPS service failed to reload."
+msgstr "نتوانست بارگزاري شود UPS سرويس "
+
+#: services/forms.py:369
+msgid "Confirm Administrator Password"
+msgstr "تاييد نمودن كلمه رمز مدير سيستم"
+
+#: services/forms.py:392
+msgid "The activedirectory service failed to reload."
+msgstr "نتوانست بارگزاري شود activedirectoryسرويس "
+
+#: services/forms.py:403
+msgid "The ldap service failed to reload."
+msgstr "نتوانست بارگزاري شود ldapسرويس "
+
+#: services/forms.py:409
+#: services/models.py:572
+msgid "Secret"
+msgstr "محرمانه"
+
+#: services/forms.py:411
+#: services/models.py:573
+msgid "Target side secret."
+msgstr "مقصد محرمانه"
+
+#: services/forms.py:412
+msgid "Secret (Confirm)"
+msgstr "(رمز  (تاييد نمودن"
+
+#: services/forms.py:414
+#: services/forms.py:422
+msgid "Enter the same secret above for verification."
+msgstr " يك رمز مانند رمز بالا، براي تاييد وارد نماييد"
+
+#: services/forms.py:415
+msgid "Initiator Secret"
+msgstr "آغاز سازي رمز"
+
+#: services/forms.py:417
+#: services/models.py:579
+#: services/models.py:584
+msgid "Initiator side secret. (for mutual CHAP authentication)"
+msgstr "(دوطرفه CHAP آغاز رمز جانبي (براي تصديق  "
+
+#: services/forms.py:420
+msgid "Initiator Secret (Confirm)"
+msgstr "(رمز آغاز كننده ( تاييد"
+
+#: services/forms.py:429
+msgid "Secret does not match"
+msgstr "رمزها يكسان نيستند"
+
+#: services/forms.py:444
+#: services/forms.py:445
+msgid "The peer secret is required if you set a peer user."
+msgstr "اگر شما يك جفت كاربر تنظيم كرده ايد، يك جفت رمز نياز داريد"
+
+#: services/forms.py:448
+msgid "The peer secret cannot be the same as user secret."
+msgstr "رمز جفت نمي تواند مانند رمز كاربر باشد"
+
+#: services/forms.py:451
+#: services/forms.py:454
+msgid "The peer user is required if you set a peer secret."
+msgstr "اگر شما يك جفت رمز تنظيم كرده ايد، يك جفت كاربر نياز است"
+
+#: services/forms.py:471
+#: services/forms.py:518
+#: services/forms.py:635
+#: services/forms.py:693
+#: services/forms.py:796
+#: services/forms.py:818
+#: services/forms.py:885
+#: services/forms.py:940
+#: services/models.py:492
+#: services/models.py:709
+msgid "The iSCSI service failed to reload."
+msgstr "نتوانست بارگزاري شود iSCSI سرويس "
+
+#: services/forms.py:510
+msgid "LUN already exists in the same target."
+msgstr "در  همان مقصد وجود دارد  LUN در حال حاضر "
+
+#: services/forms.py:521
+#: services/models.py:367
+msgid "Controller Auth Group"
+msgstr "گروه احراز هويت كنترل كننده "
+
+#: services/forms.py:522
+#: services/models.py:368
+msgid "The istgtcontrol can access the targets with correct user and secret in specific Auth Group."
+msgstr "مي تواند با كاربر و رمزي صحيح در گروه اعتبارسنجي مشخصي،  به اهداف دسترسي داشته باشد istgtcontrol "
+
+#: services/forms.py:523
+#: services/models.py:262
+msgid "Discovery Auth Group"
+msgstr "كشف گروه احراز هويت  "
+
+#: services/forms.py:553
+#, python-format
+msgid "This value must be between %(start)d and %(end)d, inclusive."
+msgstr "باشد %(end)d  و  %(start)d اين مقدار بايد بين "
+
+#: services/forms.py:561
+msgid "This field is required if discovery method is set to CHAP or CHAP Mutual."
+msgstr "تنظيم شده است، اين فيلد مورد نياز است CHAP Mutual  يا CHAP  اگر روش اكتشاف با "
+
+#: services/forms.py:609
+msgid "This field is required whether CHAP or Mutual CHAP are set for Controller Auth Method."
+msgstr "براي روش احراز هويت كنترل كننده تنظيم شده است، اين فيلد مورد نياز است CHAP Mutual  يا CHAP  اگر  "
+
+#: services/forms.py:647
+msgid "You need to specify a filepath, not a directory."
+msgstr "شما بايد يك مسير فايل را مشخص نماييد نه يك شاخه را"
+
+#: services/forms.py:651
+msgid "You need to specify a file inside your volume/dataset."
+msgstr "خودتان مشخص نماييد volume/dataset شما بايد يك فايل را درون "
+
+# ؟؟؟؟؟؟؟؟؟؟؟؟؟؟
+#: services/forms.py:655
+msgid "Your path to the extent must reside inside a volume/dataset mount point."
+msgstr "ثبت شده باشد volume/dataset  مسير شما به محدوده بايد درون يك نقطه اوج"
+
+#: services/forms.py:669
+msgid "This value can be a size in bytes, or can be postfixed with KB, MB, GB, TB"
+msgstr "داشته باشد KB, MB, GB, TB اين مقدار بايد يك اندازه با مقياس بايت باشد، يا پسوندي مانند "
+
+#: services/forms.py:676
+msgid "The file must exist if the extent size is set to auto (0)"
+msgstr "(0) اگر محدوده اندازه روي اتوماتيك تنظيم شده است، بايد فايل وجود داشته باشد"
+
+#: services/forms.py:698
+msgid "Disk device"
+msgstr "دستگاه خواننده ديسك"
+
+#: services/forms.py:812
+#, python-format
+msgid "Your Portal Group ID cannot be higher than %d"
+msgstr "باشد %d شناسه گروه پرتال شما نمي تواند بيشتر از "
+
+#: services/forms.py:859
+#, python-format
+msgid "Your Group ID cannot be higher than %d"
+msgstr "باشد %d شناسه گروه شما نمي تواند بيشتر از "
+
+#: services/forms.py:877
+msgid "The field is a not a valid IP address or network. The keyword \"ALL\" can be used to allow everything."
+msgstr "استفاده كرد تا هر چيزي قابل استفاده باشد   \"ALL\" يا شبكه معتبر نيست. مي توان از كلمه كليدي  IP اين فيلد يك آدرس"
+
+#: services/forms.py:888
+msgid "Authentication Group number"
+msgstr "شماره گروه اعتبارسنجي   "
+
+#: services/forms.py:917
+msgid "Use alphanumeric characters, \".\", \"-\" and \":\"."
+msgstr "استفاده نماييد \":\" ، \"-\" ، \".\" از كاركتر هاي حروف ، اعداد و "
+
+#: services/forms.py:943
+msgid "Delete underlying file"
+msgstr "فايل مورد نظر را حذف نماييد"
+
+#: services/forms.py:974
+msgid "The S.M.A.R.T. service failed to reload."
+msgstr "نتوانست بارگزاري شود S.M.A.R.T سرويس "
+
+#: services/models.py:42
+msgid "Service"
+msgstr "سرويس"
+
+#: services/models.py:43
+msgid "Name of Service, should be auto-generated at build time"
+msgstr "نام سرويس بايد در زمان ساخت، بصورات اتوماتيك توليد شود"
+
+#: services/models.py:46
+msgid "Enable Service"
+msgstr "سرويس فعال "
+
+#: services/models.py:49
+#: services/models.py:50
+#: services/nav.py:7
+#: templates/menubar.html:28
+#: templates/services/index.html:3
+msgid "Services"
+msgstr "سرويس ها"
+
+#: services/models.py:62
+msgid "Authentication Model"
+msgstr "مدل اعتبارسنجي"
+
+#: services/models.py:63
+msgid "Using Active Directory or LDAP authentication will supersede this option"
+msgstr "اين گزينه را لغو خواهد كرد  LDAP  يا اعتبارسنجي   Active Directory استفاده از "
+
+#: services/models.py:67
+msgid "NetBIOS name"
+msgstr "NetBIOS نام "
+
+#: services/models.py:71
+msgid "Workgroup"
+msgstr "گروه كاري"
+
+#: services/models.py:72
+msgid "Workgroup the server will appear to be in when queried by clients (maximum 15 characters)."
+msgstr "يك گروه كاري كردن سرور وقتي اتفاق مي افتد كه توسط سرويس گيرنده ها جستجو شود (حداكثر 15 كاراكتر) "
+
+#: services/models.py:78
+msgid "Server description. This can usually be left blank."
+msgstr "شرح سرويس دهنده. اين معمولاً مي تواند خالي باشد"
+
+#: services/models.py:84
+msgid "DOS charset"
+msgstr "DOS مجموعه كاراكتر"
+
+#: services/models.py:90
+msgid "UNIX charset"
+msgstr "UNIX مجموعه كاراكتر"
+
+#: services/models.py:96
+msgid "Log level"
+msgstr "سطح گزارش"
+
+#: services/models.py:99
+msgid "Local Master"
+msgstr "مدير محلي"
+
+#: services/models.py:101
+msgid "Time Server for Domain"
+msgstr "سرويس دهنده زمان براي دامنه"
+
+#: services/models.py:106
+#: services/models.py:208
+msgid "Guest account"
+msgstr "حساب مهمان"
+
+#: services/models.py:107
+#: services/models.py:209
+msgid "Use this option to override the username ('nobody' by default) which will be used for access to services which are specified as guest. Whatever privileges this user has will be available to any client connecting to the guest service. This user must exist in the password file, but does not require a valid login. The user root can not be used as guest account."
+msgstr " كه بصورت مهمان براي دسترسي به سرويس ها استفاده خواهد شد، استفاده نماييد. هر مجوزي كه اين كاربر دارد روي هر سرويس گيرنده اي كه از طريق آن به سرويس مهمان وصل شود، موجود خواهد بود. اين كاربر بايد در  به عنوان مهمان نمي توان استفاده كردroot فايل كلمه عبور وجود داشته باشد ولي يك ورود معتبر لازم نيست. از كاربر (است nobody از اين گزينه براي برتري دادن به  نام كاربري (بصورت پيش فرض "
+
+#: services/models.py:110
+msgid "Allow guest access"
+msgstr "اجازه دسترسي مهمان"
+
+#: services/models.py:112
+msgid "Only allow guest access"
+msgstr "فقط اجازه دسترسي مهمان"
+
+#: services/models.py:115
+#: services/models.py:959
+msgid "File mask"
+msgstr "نقاب فايل"
+
+#: services/models.py:117
+msgid "Use this option to override the file creation mask (0666 by default)."
+msgstr "(توليد فايل بكار ببريد( بصورت پيش فرض0666  mask اين گزينه را براي لغو كردن  "
+
+#: services/models.py:121
+#: services/models.py:965
+msgid "Directory mask"
+msgstr "نقاب شاخه"
+
+#: services/models.py:123
+msgid "Use this option to override the directory creation mask (0777 by default)."
+msgstr "(توليد شاخه بكار ببريد( بصورت پيش فرض0777  mask اين گزينه را براي لغو كردن  "
+
+#: services/models.py:126
+msgid "Large RW support"
+msgstr "پشتيباني ازخواندن و نوشتن وسيع  "
+
+#: services/models.py:128
+msgid "Send files with sendfile(2)"
+msgstr "ارسال نماييد sendfile(2) فايل ها را با "
+
+#: services/models.py:130
+msgid "EA Support"
+msgstr "EA پشتيباني "
+
+#: services/models.py:132
+msgid "Support DOS File Attributes"
+msgstr "DOS پشتيباني از خصوصيات فايل "
+
+#: services/models.py:134
+msgid "Allow Empty Password"
+msgstr "اجازه كلمه عبور خالي"
+
+#: services/models.py:136
+#: services/models.py:751
+#: services/models.py:823
+#: services/models.py:1019
+#: services/models.py:1290
+#: services/models.py:1354
+msgid "Auxiliary parameters"
+msgstr "پارامترهاي كمكي"
+
+#: services/models.py:138
+#, fuzzy
+msgid "These parameters are added to [global] section of smb.conf"
+msgstr "این پارامترها به تنظیمات کلی در inadyn.conf اضافه خواهند شد."
+
+#: services/models.py:141
+msgid "Enable home directories"
+msgstr "فعال سازي شاخه هاي اصلي"
+
+#: services/models.py:142
+msgid "Enable/disable home directories for samba user."
+msgstr "samba فعال يا غير فعال سازي شاخه هاي اصلي براي كاربر "
+
+#: services/models.py:145
+msgid "Enable home directories browsing"
+msgstr "فعال سازي مشاهده و جستجو شاخه هاي اصلي"
+
+#: services/models.py:146
+msgid "Enable/disable home directories browsing for samba user."
+msgstr "samba فعال يا غير فعال سازي مشاهده شاخه هاي اصلي براي كاربر "
+
+#: services/models.py:150
+msgid "Home directories"
+msgstr "شاخه هاي اصلي"
+
+#: services/models.py:154
+msgid "Homes auxiliary parameters"
+msgstr "پارامترهاي كمكي بخش هاي ورودي"
+
+#: services/models.py:156
+#, fuzzy
+msgid "These parameters are added to [homes] section of smb.conf"
+msgstr "این پارامترها به تنظیمات کلی در inadyn.conf اضافه خواهند شد."
+
+#: services/models.py:159
+msgid "Unix Extensions"
+msgstr "UNIX پسوند هاي "
+
+#: services/models.py:161
+msgid "These extensions enable Samba to better serve UNIX CIFS clients by supporting features such as symbolic links, hard links, etc..."
+msgstr "سرويس دهد UNIX CIFS و ... كمك مي كند تا بهتر به سرويس گيرنده هاي hard links ، symbolic links  با پشتيباني از امكاناتي مانند  Samba اين پسوند ها به  "
+
+#: services/models.py:165
+msgid "Enable AIO"
+msgstr "AIO فعال سازي "
+
+#: services/models.py:166
+msgid "Enable/disable AIO support."
+msgstr "AIO پشتيباني فعال يا غير فعال نمودن"
+
+#: services/models.py:170
+msgid "Minimum AIO read size"
+msgstr "AIO حداقل سايز خواندن "
+
+#: services/models.py:171
+msgid "Samba will read asynchronously if request size is larger than this value."
+msgstr "بصورت غير همزمان آنها را مي خواند Samba اگر اندازه درخواست بيشتر از اين مقدار باشد، "
+
+#: services/models.py:176
+msgid "Minimum AIO write size"
+msgstr "AIO حداقل سايز  نوشتن "
+
+#: services/models.py:177
+msgid "Samba will write asynchronously if request size is larger than this value."
+msgstr "بصورت غير همزمان آنها را مي نويسد Samba اگر اندازه درخواست بيشتر از اين مقدار باشد، "
+
+#: services/models.py:181
+msgid "Zeroconf share discovery"
+msgstr "Zeroconf  بازيابي بخش اشتراكي "
+
+#: services/models.py:183
+msgid "Zeroconf support via Avahi allows clients (the Mac OSX finder in particular) to automatically discover the CIFS shares on the system similar to the Computer Browser service in Windows."
+msgstr "روي سيستم را شبيه سرويس مشاهده گر و جستجوگر كامپيوتر در ويندوز، بازيابي نمايد  CIFS تا بصورت اتوماتيك بخش اشتراك  (Mac OSX finderبخصوص ) AVAHI توسط كاربران مجاز Zeroconf پشتيباني از"
+
+#: services/models.py:187
+#: services/models.py:188
+#: templates/services/index.html:29
+msgid "CIFS"
+msgstr "CIFS"
+
+#: services/models.py:197
+msgid "Server Name"
+msgstr "نام سرويس دهنده"
+
+#: services/models.py:198
+msgid "Name of the server. If this field is left empty the default server is specified."
+msgstr "نام سرويس دهنده. اگر اين فيلد از سمت چپ خالي باشد، سرويس دهنده پيش فرض مشخص شده است"
+
+#: services/models.py:201
+msgid "Guest Access"
+msgstr "دسترسي مهمان"
+
+#: services/models.py:202
+msgid "Allows guest access to all apple shares on this box."
+msgstr "درون اين جعبه را به كاربر مهمان مي دهد apple اجازه دسترسي به تمام بخش هاي "
+
+#: services/models.py:213
+msgid "Max. Connections"
+msgstr "بیشینه‌ی ارتباطات"
+
+#: services/models.py:215
+msgid "Maximum number of connections permitted via AFP. The default limit is 50."
+msgstr "، حداكثر تعداد ارتباطات، اجازه داده شد. حد پيش فرض 50 است AFP بوسيله "
+
+#: services/models.py:220
+#: services/models.py:221
+#: templates/services/index.html:7
+msgid "AFP"
+msgstr "AFP"
+
+#: services/models.py:230
+msgid "Number of servers"
+msgstr "تعداد سرويس دهنده ها"
+
+#: services/models.py:231
+msgid "Specifies how many servers to create. There should be enough to handle the maximum level of concurrency from its clients, typically four to six."
+msgstr " مشخص مي نمايد كه چه تعداد سرويس دهنده توليد شوند. اين تعداد بايد آنقدر كافي باشد كه حداكثر سرويس گيرنده همزمان خودش را پشتيباني نمايد معمولاً 4 تا 6 "
+
+#: services/models.py:235
+msgid "Asynchronous mode"
+msgstr "حالت غير همزمان"
+
+#: services/models.py:236
+msgid "Enable asynchronous mode, which will help performance beyond gigabit network speed."
+msgstr "فعال سازي حالت غير همزماني، كه به كارايي سرعت شبكه هاي ماوراء گيگابيت كمك مي نمايد"
+
+#: services/models.py:241
+#: services/models.py:242
+#: templates/services/index.html:88
+msgid "NFS"
+msgstr "NFS"
+
+#: services/models.py:251
+msgid "Base Name"
+msgstr "نام پايه"
+
+#: services/models.py:252
+msgid "The base name (e.g. iqn.2007-09.jp.ne.peach.istgt, see RFC 3720 and 3721 for details) will append the target name that is not starting with 'iqn.'"
+msgstr "شروع نشده باشند  'iqn' هاي 3720 و 3721 را ببينيد)  اضافه مي شوند به نام نهايي كه با RFC براي جزئيات بيشتر , iqn.2007-09.jp.ne.peach.istgt نام پايه (مانند "
+
+#: services/models.py:258
+msgid "Discovery Auth Method"
+msgstr "روش تاييد بازيابي"
+
+#: services/models.py:269
+msgid "I/O Timeout"
+msgstr " I/O پايان زمان "
+
+#: services/models.py:270
+msgid "I/O timeout in seconds (30 by default)."
+msgstr "(به ثانيه (پيش فرض 30  I/O پايان زمان "
+
+#: services/models.py:275
+msgid "NOPIN Interval"
+msgstr "NOPIN  مدت "
+
+#: services/models.py:276
+msgid "NOPIN sending interval in seconds (20 by default)."
+msgstr " به ثانيه. پيش فرض 20 NOPIN  مدت ارسال "
+
+#: services/models.py:281
+msgid "Max. sessions"
+msgstr "حداكثر جلسات بازشده"
+
+#: services/models.py:282
+msgid "Maximum number of sessions holding at same time (16 by default)."
+msgstr "حداكثر تعداد جلسات نگهداري شده در يك زمان. پيش فرض 16"
+
+#: services/models.py:287
+msgid "Max. connections"
+msgstr "حداكثر ارتباطات برقرار شده"
+
+#: services/models.py:288
+msgid "Maximum number of connections in each session (8 by default)."
+msgstr "حداكثر تعداد ارتباطات نگهداري شده در يك جلسه. پيش فرض 8"
+
+#: services/models.py:293
+msgid "Max. pre-send R2T"
+msgstr "قبل از ارسال R2T حداكثر "
+
+#: services/models.py:294
+msgid "Maximum number of pre-send R2T in each connection (32 by default). The actual number is limited to QueueDepth of the target."
+msgstr " قبل از ارسال در هر اتصال، پيش فرض 32 است. عدد واقعي محدود است به عمق صف هدف R2T حداكثر تعداد  "
+
+# Outstanding =?
+#: services/models.py:299
+msgid "MaxOutstandingR2T"
+msgstr "برجسته R2T حداكثر "
+
+#: services/models.py:300
+msgid "iSCSI initial parameter (16 by default)."
+msgstr " (پيش فرض 16)  iSCSI  پارامتر اوليه "
+
+#: services/models.py:305
+msgid "First burst length"
+msgstr "اولين طول قطار"
+
+#: services/models.py:306
+msgid "iSCSI initial parameter (65536 by default)."
+msgstr " (پيش فرض 65536)  iSCSI  پارامتر اوليه "
+
+#: services/models.py:311
+msgid "Max burst length"
+msgstr " حداكثر طول قطار"
+
+#: services/models.py:312
+#: services/models.py:318
+msgid "iSCSI initial parameter (262144 by default)."
+msgstr " (پيش فرض 262144)  iSCSI  پارامتر اوليه "
+
+#: services/models.py:317
+msgid "Max receive data segment length"
+msgstr "حداكثر طول قطعه داده رسيده"
+
+#: services/models.py:323
+msgid "DefaultTime2Wait"
+msgstr " زمان انتظار پيش فرض"
+
+#: services/models.py:324
+msgid "iSCSI initial parameter (2 by default)."
+msgstr " (پيش فرض 2)  iSCSI  پارامتر اوليه "
+
+#: services/models.py:329
+msgid "DefaultTime2Retain"
+msgstr " زمان نگهداري پيش فرض"
+
+#: services/models.py:330
+msgid "iSCSI initial parameter (60 by default)."
+msgstr " (پيش فرض 60)  iSCSI  پارامتر اوليه "
+
+#: services/models.py:335
+msgid "Enable LUC"
+msgstr "LUC فعال سازي"
+
+#: services/models.py:339
+msgid "Controller IP address"
+msgstr "كنترل كننده IP آدرس"
+
+#: services/models.py:340
+msgid "Logical Unit Controller IP address (127.0.0.1(localhost) by default)"
+msgstr "((كنترل كننده واحد منطقي (پيش فرض 127.0.0.1 (ميزبان محلي  IP آدرس  "
+
+#: services/models.py:345
+msgid "Controller TCP port"
+msgstr "كنترل كننده TCP پورت"
+
+#: services/models.py:346
+msgid "Logical Unit Controller TCP port (3261 by default)"
+msgstr "(كنترل كننده واحد منطقي (پيش فرض 3261 TCP پورت "
+
+#: services/models.py:352
+msgid "Controller Authorized netmask"
+msgstr "كنترل كننده مجاز netmask"
+
+#: services/models.py:354
+msgid "Logical Unit Controller Authorized netmask (255.255.255.0 by default)"
+msgstr "(كنترل كننده مجاز واحد منطقي (پيش فرض 255.255.255.0   netmask "
+
+#: services/models.py:361
+msgid "Controller Auth Method"
+msgstr "متد اعتبارسنجي كنترل كننده"
+
+#: services/models.py:362
+msgid "The method can be accepted in the controller."
+msgstr "متد مي تواند توسط كنترل كننده قبول شود"
+
+#: services/models.py:374
+#: services/models.py:375
+#: templates/services/iscsi.html:2
+msgid "Target Global Configuration"
+msgstr "تنظيمات محلي نهايي"
+
+#: services/models.py:387
+msgid "Extent Name"
+msgstr "نام محدوده"
+
+#: services/models.py:388
+msgid "String identifier of the extent."
+msgstr "عبارت مشخص كننده پسوند"
+
+#: services/models.py:392
+msgid "Extent Type"
+msgstr "نوع محدوده"
+
+#: services/models.py:393
+msgid "Type used as extent."
+msgstr "نوع استفاده شده به عنوان محدوده"
+
+#: services/models.py:398
+msgid "Path to the extent"
+msgstr "مسير محدوده"
+
+#: services/models.py:399
+msgid "File path (e.g. /mnt/sharename/extent/extent0) used as extent."
+msgstr "استفاده شده به عنوان محدوده ( /mnt/sharename/extent/extent0) مسير فايل، به عنوان مثال"
+
+#: services/models.py:404
+msgid "Extent size"
+msgstr "اندازه محدوده"
+
+#: services/models.py:405
+msgid "Size of extent, 0 means auto, a raw number is bytes, or suffix with KB, MB, TB for convenience."
+msgstr "براي سادگي كار KB, MB, TB اندازه محدوده، 0 به معني اتوماتيك، يك عدد خام به بايت و يا پسوند   "
+
+#: services/models.py:410
+#: services/models.py:462
+#: services/models.py:535
+#: services/models.py:1311
+#: sharing/models.py:43
+#: sharing/models.py:252
+#: system/models.py:740
+#: system/models.py:778
+#: templates/services/iscsi_authini.html:8
+#: templates/services/iscsi_portals.html:6
+#: templates/services/rsyncmod.html:6
+#: templates/sharing/apple.html:13
+#: templates/sharing/unix.html:13
+#: templates/sharing/windows.html:13
+#: templates/system/sysctl.html:7
+#: templates/system/tunable.html:7
+msgid "Comment"
+msgstr "توضيح"
+
+#: services/models.py:411
+#: services/models.py:463
+#: services/models.py:536
+msgid "You may enter a description here for your reference."
+msgstr "شما مي توانيد در اينجا توضيحي براي رجوع خود وارد نماييد"
+
+#: services/models.py:414
+#: services/models.py:698
+#: templates/services/iscsi_assoctargets.html:6
+#: templates/services/iscsi_dextents.html:5
+msgid "Extent"
+msgstr "محدوده "
+
+#: services/models.py:457
+#: services/models.py:635
+msgid "Portal Group ID"
+msgstr "شناسه گروه دروازه"
+
+#: services/models.py:466
+#: services/models.py:497
+msgid "Portal"
+msgstr "دروازه"
+
+#: services/models.py:500
+msgid "IP Address"
+msgstr "IP آدرس"
+
+#: services/models.py:512
+#, fuzzy
+msgid "Portal IP"
+msgstr "درگاه"
+
+#: services/models.py:522
+#: templates/services/iscsi_authini.html:6
+msgid "Initiators"
+msgstr "آغاز كننده ها"
+
+#: services/models.py:524
+msgid "Initiator authorized to access to the iSCSI target. It takes a name or 'ALL' for any initiators."
+msgstr "براي تمام آغاز كننده ها 'ALL' هدف. مي تواند يك نام باشد يا كلمه  iSCSI  آغاز كننده مجاز براي دسترسي به "
+
+#: services/models.py:528
+msgid "Authorized network"
+msgstr "شبكه مجاز"
+
+#: services/models.py:530
+msgid "Network authorized to access to the iSCSI target. It takes IP or CIDR addresses or 'ALL' for any IPs."
+msgstr "ها باشد IP براي تمام  'ALL' يا CIDR  يا  IP هدف. مي تواند آدرس هاي iSCSI  شبكه مجاز براي دسترسي به "
+
+#: services/models.py:539
+msgid "Initiator"
+msgstr "آغاز كننده"
+
+#: services/models.py:568
+msgid "Target side user name. It is usually the initiator name by default."
+msgstr "نام كاربري  سمت هدف. معمولاً بصورت پيش فرض نام يك آغاز كننده است"
+
+#: services/models.py:578
+msgid "Peer User"
+msgstr "كاربر جفت"
+
+#: services/models.py:583
+msgid "Peer Secret"
+msgstr "رمز جفت"
+
+#: services/models.py:587
+msgid "Authorized Access"
+msgstr "دسترسي مجاز"
+
+#: services/models.py:588
+msgid "Authorized Accesses"
+msgstr "دسترسي هاي مجاز"
+
+#: services/models.py:603
+msgid "Target Name"
+msgstr "نام هدف"
+
+#: services/models.py:604
+msgid "Base Name will be appended automatically when starting without 'iqn.'."
+msgstr "شروع شود، نام پايه بصورت اتوماتيك اضافه مي شود 'iqn'  هنگاميكه بدون "
+
+#: services/models.py:611
+msgid "Target Alias"
+msgstr "نام هاي مستعار هدف"
+
+#: services/models.py:612
+msgid "Optional user-friendly string of the target."
+msgstr "رشته كاربر پسند اختياري به عنوان هدف "
+
+#: services/models.py:615
+#: storage/models.py:318
+#: storage/views.py:226
+msgid "Serial"
+msgstr "سریال"
+
+#: services/models.py:618
+msgid "Serial number for the logical unit"
+msgstr "شماره سريال براي واحد منطقي"
+
+#: services/models.py:624
+#: system/models.py:633
+#: templates/services/iscsi_dextents.html:6
+#: templates/services/iscsi_extents.html:6
+#: templates/services/iscsi_targets.html:7
+msgid "Type"
+msgstr "نوع"
+
+#: services/models.py:625
+msgid "Logical Unit Type mapped to LUN."
+msgstr "LUN نوع واحد منطقي نگاشت شده به "
+
+#: services/models.py:631
+msgid "Target Flags"
+msgstr "پرچم هاي هدف"
+
+#: services/models.py:639
+msgid "Initiator Group ID"
+msgstr "شناسه گروه آغاز كننده"
+
+#: services/models.py:645
+#: services/models.py:657
+msgid "Auth Method"
+msgstr "روش اعتبارسنجي"
+
+#: services/models.py:646
+#: services/models.py:658
+msgid "The method can be accepted by the target. Auto means both none and authentication."
+msgstr "روش مي تواند توسط هدف پذيرفته شود. اتوماتيك يعني  هم اعتبار سنجي و هم هيچ  "
+
+#: services/models.py:650
+msgid "Authentication Group ID"
+msgstr "شناسه گروه اعتبارسنجي"
+
+#: services/models.py:663
+msgid "Queue Depth"
+msgstr "عمق صف"
+
+#: services/models.py:664
+msgid "0=disabled, 1-255=enabled command queuing with specified depth. The recommended queue depth is 32."
+msgstr "غير فعال=0 ، 1-255= فعال ، دستورات صف بندي با عمق مشخص. عمق پيشنهادي صف 32 است"
+
+#: services/models.py:669
+msgid "Logical Block Size"
+msgstr "اندازه بلاك منطقي"
+
+#: services/models.py:670
+msgid "You may specify logical block length (512 by default). The recommended length for compatibility is 512."
+msgstr "ممكن است شما طول بلاك منطقي را انتخاب نماييد (بصورت پيش فرض 512) . طول پيشنهادي براي سازگاري و مطابقت 512 است  "
+
+#: services/models.py:673
+#: services/models.py:692
+#: templates/services/iscsi_assoctargets.html:5
+#: templates/services/iscsi_targets.html:5
+msgid "Target"
+msgstr "هدف"
+
+#: services/models.py:693
+msgid "Target this extent belongs to"
+msgstr "هدف قرار دادن این حد  تعلق دارد به"
+
+#: services/models.py:701
+msgid "Target / Extent"
+msgstr "محدوده / هدف"
+
+#: services/models.py:702
+msgid "Targets / Extents"
+msgstr "محدوده ها / هدف ها"
+
+#: services/models.py:723
+msgid "Provider"
+msgstr "فراهم‌کننده"
+
+#: services/models.py:727
+msgid "Domain name"
+msgstr "نام دامنه"
+
+#: services/models.py:729
+msgid "A host name alias. This option can appear multiple times, for each domain that has the same IP. Use a space to separate multiple alias names."
+msgstr "يكسان باشد، ظاهر شود. از يك فاصله براي جداسازي چندين نام مستعار استفاده نماييد IP يك نام مستعار براي ميزبان. اين گزينه مي تواند چندين بار براي هر دامنه اي كه داراي آدرس"
+
+#: services/models.py:741
+msgid "Update period"
+msgstr "تناوب به‌روز رسانی"
+
+#: services/models.py:743
+msgid "Time in seconds. Default is about 1 min."
+msgstr "زمان به ثانيه. پيش فرض 1 دقيقه"
+
+#: services/models.py:747
+msgid "Forced update period"
+msgstr "بازه هاي بروز رساني اجباري"
+
+#: services/models.py:753
+#: services/models.py:825
+msgid "These parameters will be added to global settings in inadyn.conf."
+msgstr "این پارامترها به تنظیمات کلی در inadyn.conf اضافه خواهند شد."
+
+#: services/models.py:757
+#: services/models.py:758
+#: templates/services/index.html:40
+msgid "Dynamic DNS"
+msgstr "DNS ‌پویا"
+
+#: services/models.py:768
+msgid "Plugins jail path"
+msgstr "اتصالات مسير محرمانه"
+
+#: services/models.py:769
+msgid "Path to the plugins jail"
+msgstr "مسير اتصالات محرمانه"
+
+#: services/models.py:774
+#: templates/services/plugins_info.html:9
+#, fuzzy
+msgid "Jail name"
+msgstr "نام دامنه"
+
+#: services/models.py:775
+msgid "Name of the plugins jail"
+msgstr "نام اتصالات محرمانه"
+
+#: services/models.py:781
+msgid "Jail IP address"
+msgstr "محرمانه IP آدرس"
+
+#: services/models.py:784
+msgid "Plugins Path"
+msgstr "مسير اتصالات"
+
+#: services/models.py:785
+msgid "Path to the plugins directory"
+msgstr "مسير شاخه اتصالات"
+
+#: services/models.py:805
+msgid "Location"
+msgstr "محل"
+
+#: services/models.py:807
+msgid "Location information, e.g. physical location of this system: 'Floor of building, Room xyzzy'."
+msgstr "xyzzy اطلاعات مربوط به محل، بطور مثال مكان فيزيكي سيستم: كف ساختمان، اتاق "
+
+#: services/models.py:811
+msgid "Contact"
+msgstr "تماس"
+
+#: services/models.py:813
+msgid "Contact information, e.g. name or email of the person responsible for this system: 'admin@email.address'."
+msgstr " 'admin@email.address' : اطلاعات تماس، بطور مثال نام يا آدرس پست الكترونيكي شخص مسئول اين سيستم"
+
+#: services/models.py:817
+msgid "Community"
+msgstr "انجمن"
+
+#: services/models.py:818
+msgid "In most cases, 'public' is used here."
+msgstr "در اينجا استفاده مي شود 'public'، در بيشتر حالات "
+
+#: services/models.py:821
+msgid "Send SNMP Traps"
+msgstr "ارسال نماييد SNMPدام هاي "
+
+#: services/models.py:829
+#: services/models.py:830
+#: templates/services/index.html:125
+msgid "SNMP"
+msgstr "SNMP"
+
+#: services/models.py:840
+#: storage/models.py:313
+msgid "Identifier"
+msgstr "شناسه"
+
+#: services/models.py:841
+msgid "This name is used to uniquely identify your UPS on this system."
+msgstr " شما روي سيستم UPS اين نام استفاده مي شود براي شناسايي منحصر به فرد "
+
+#: services/models.py:845
+msgid "Driver"
+msgstr "درايور"
+
+#: services/models.py:848
+msgid "The driver used to communicate with your UPS."
+msgstr "شما UPS استفاده مي شود براي ارتباط با  driver "
+
+#: services/models.py:854
+msgid "The serial or USB port where your UPS is connected."
+msgstr "شما به آن متصل است UPS اي كه  USB  سريال يا پورت"
+
+#: services/models.py:857
+msgid "Auxiliary parameters (ups.conf)"
+msgstr "(ups.conf) پارامترهاي كمكي    "
+
+#: services/models.py:859
+msgid "Additional parameters to the hardware-specific part of the driver."
+msgstr "پارامترهاي اضافه براي بخش سخت افزار مشخص درايور"
+
+#: services/models.py:870
+msgid "Shutdown mode"
+msgstr "Shutdown  حالت "
+
+#: services/models.py:874
+msgid "Shutdown timer"
+msgstr "Shutdown  ساعت "
+
+#: services/models.py:875
+msgid "The time in seconds until shutdown is initiated. If the UPS happens to come back before the time is up the shutdown is canceled."
+msgstr "لغو مي شود shutdown ،  براي برگشت اتفاق بيافتد  قبل از آنكه زمان تمام شود  UPS آغاز شده است. اگر  shutdown  زمان به ثانيه تا موقع"
+
+#: services/models.py:880
+msgid "UPS Master User Password"
+msgstr "UPS كلمه رمز نام كاربري مدير "
+
+#: services/models.py:884
+msgid "Extra users (upsd.users)"
+msgstr "(upsd.users) كاربران اضافي"
+
+#: services/models.py:887
+msgid "Remote Monitor"
+msgstr "مشاهده از دوره"
+
+#: services/models.py:889
+msgid "Send Email Status Updates"
+msgstr "ارسال نامه الكترونيكي بروزرساني هاي وضعيت"
+
+#: services/models.py:892
+msgid "To email"
+msgstr "براي ارسال"
+
+#: services/models.py:894
+msgid "Destination email address. Separate email addresses by semi-colon."
+msgstr "جدا نماييد semi-colon آدرس نامه الكترونيكي مقصد. آدرس هاي نامه هاي الكترونيكي را با "
+
+#: services/models.py:898
+msgid "Email Subject"
+msgstr "عنوان نامه الكترونيكي"
+
+#: services/models.py:899
+msgid "The subject of the email. You can use the following parameters for substitution:<br /><ul><li>%d - Date</li><li>%h - Hostname</li></ul>"
+msgstr "<br /><ul><li>%d - Date</li><li>%h - Hostname</li></ul> عنوان نامه الكترونيكي. شما مي توانيد پارامترهاي زير را براي جانشيني استفاده نماييد"
+
+#: services/models.py:903
+#: services/models.py:904
+#: templates/services/index.html:169
+msgid "UPS"
+msgstr "UPS"
+
+#: services/models.py:915
+msgid "Port to bind FTP server."
+msgstr "FTP پورت براي پيوستن به سرويس دهنده"
+
+#: services/models.py:919
+msgid "Clients"
+msgstr "سرويس گيرنده ها"
+
+#: services/models.py:921
+msgid "Maximum number of simultaneous clients."
+msgstr "حداكثر تعداد سرويس گيرنده هاي همزمان"
+
+#: services/models.py:925
+msgid "Connections"
+msgstr "اتصالات"
+
+#: services/models.py:927
+msgid "Maximum number of connections per IP address (0 = unlimited)."
+msgstr "( 0= نامحدود) IP حداكثر تعداد اتصالات براي هر آدرس"
+
+#: services/models.py:931
+msgid "Login Attempts"
+msgstr "تلاش ها براي ورود"
+
+#: services/models.py:933
+msgid "Maximum number of allowed password attempts before disconnection."
+msgstr " حداكثر تعداد كوشش براي كلمه رمز مجاز قبل از قطع ارتباط"
+
+#: services/models.py:937
+msgid "Timeout"
+msgstr "مهلت"
+
+#: services/models.py:939
+msgid "Maximum idle time in seconds."
+msgstr "حداكثر زمان بيكاري به ثانيه"
+
+#: services/models.py:942
+msgid "Allow Root Login"
+msgstr "Root پذيرفتن ورود"
+
+#: services/models.py:944
+msgid "Allow Anonymous Login"
+msgstr "پذيرفتن ورود بي نام"
+
+#: services/models.py:947
+#: services/models.py:1314
+#: sharing/models.py:47
+#: sharing/models.py:122
+#: sharing/models.py:256
+#: storage/forms.py:117
+#: system/models.py:428
+#: templates/services/iscsi_dextents.html:7
+#: templates/services/iscsi_extents.html:7
+#: templates/services/rsyncmod.html:7
+#: templates/sharing/windows.html:14
+#: templates/storage/volumes.html:59
+#: templates/storage/wizard.html:145
+msgid "Path"
+msgstr "مسير"
+
+#: services/models.py:949
+msgid "Allow Local User Login"
+msgstr "پذيرفتن ورود كاربر محلي"
+
+#: services/models.py:952
+msgid "Banner"
+msgstr "پرچم"
+
+#: services/models.py:954
+msgid "Greeting banner displayed by FTP when a connection first comes in."
+msgstr "نمايش داده مي شود  FTP هنگامي كه يك اتصال براي اولين بار برقرار شود، پرچم سبز توسط    "
+
+#: services/models.py:960
+#: services/models.py:966
+msgid "Use this option to override the file creation mask (077 by default)."
+msgstr "(از اين گزينه براي لغو كردن ماسك توليد فايل استفاده نماييد (پيش فرض 077"
+
+#: services/models.py:969
+msgid "Enable FXP"
+msgstr "FXP فعال سازي"
+
+#: services/models.py:971
+msgid "Allow Transfer Resumption"
+msgstr "پذيرفتن انتقال مجدد"
+
+# ?
+#: services/models.py:973
+msgid "Always Chroot"
+msgstr "Chroot هميشه"
+
+#: services/models.py:975
+msgid "Require IDENT Authentication"
+msgstr "IDENT  نياز به اعتبارسنجي "
+
+#: services/models.py:977
+msgid "Require Reverse DNS for IP"
+msgstr "نياز دارد  IP معكوس براي  DNS به "
+
+#: services/models.py:979
+msgid "Masquerade address"
+msgstr "آدرس مبدل"
+
+#: services/models.py:982
+msgid "Causes the server to display the network information for the specified address to the client, on the assumption that IP address or DNS host is acting as a NAT gateway or port forwarder for the server."
+msgstr "يا بخش فرستنده براي سرويس دهنده باشد NAT به عنوان يك دروازه  DNS يا ميزبان IP موجب مي شود كه سرويس دهنده اطلاعات شبكه را براي آدرس مشخص شده اي براي سرويس گيرنده نمايش دهد با اين فرض كه آن آدرس "
+
+#: services/models.py:986
+msgid "Minimum passive port"
+msgstr "حداقل پورت غير فعال"
+
+#: services/models.py:988
+msgid "The minimum port to allocate for PASV style data connections (0 = use any port)."
+msgstr "   استفاده از هر پورتي = 0 ،  PASV حداقل پورت براي اختصاص دادن به ارتباطات داده اي نوع "
+
+#: services/models.py:992
+msgid "Maximum passive port"
+msgstr "حداكثر پورت غير فعال"
+
+#: services/models.py:993
+msgid "The maximum port to allocate for PASV style data connections (0 = use any port). Passive ports restricts the range of ports from which the server will select when sent the PASV command from a client. The server will randomly choose a number from within the specified range until an open port is found. The port range selected must be in the non-privileged range (eg. greater than or equal to 1024). It is strongly recommended that the chosen range be large enough to handle many simultaneous passive connections (for example, 49152-65534, the IANA-registered ephemeral port range)."
+msgstr "از يك سرويس گيرنده،  انتخاب مي نمايد، محدود مي كنند. سرويس دهنده بصورت تصادفي يك عدد از دامنه مشخص شده انتخاب مي كند تا وقتي كه يك پورت باز پيدا شود. محدوده پورت انتخاب شده باید در محدوده های غیر ( IANA-registeredمجاز باشد (بطور مثال بزرگتر يا مساوي 1024). موكداً پيشنهاد مي شود دامنه انتخاب شده آنقدر بزرگ باشد كه بتواندچندين اتصال غير فعال همزمان را پشتيباني نمايد (براي مثال 49152 تا 65534، دامنه پورت بي دوام     PASV  استفاده از هر پورتي=0 ). پورت هاي غير فعال دامنه پورت ها را از آنچه كه سرويس دهنده هنگام  ارسال دستور   ) PASVحداكثر تعداد پورتي كه اختصاص داده مي شود به اتصالات داده سبك  "
+
+#: services/models.py:997
+msgid "Local user upload bandwidth"
+msgstr "پهناي باند بارگزاري براي كاربر محلي"
+
+#: services/models.py:998
+msgid "Local user upload bandwidth in KB/s. Zero means infinity."
+msgstr "پهناي باند بارگزاري براي كاربر محلي بر مبناي كيلو بايت بر ثانيه. صفر به معناي نامحدود است"
+
+#: services/models.py:1002
+msgid "Local user download bandwidth"
+msgstr "پهناي باند دانلود براي كاربر محلي"
+
+#: services/models.py:1003
+msgid "Local user download bandwidth in KB/s. Zero means infinity."
+msgstr "پهناي باند دانلود براي كاربر محلي بر مبناي كيلو بايت بر ثانيه. صفر به معناي نامحدود است"
+
+#: services/models.py:1007
+msgid "Anonymous user upload bandwidth"
+msgstr "پهناي باند بارگزاري براي كاربر ناشناس"
+
+#: services/models.py:1008
+msgid "Anonymous user upload bandwidth in KB/s. Zero means infinity."
+msgstr "پهناي باند بارگزاري براي كاربر نا شناس بر مبناي كيلو بايت بر ثانيه. صفر به معناي نامحدود است"
+
+#: services/models.py:1012
+msgid "Anonymous user download bandwidth"
+msgstr "پهناي باند دانلود براي كاربر ناشناس"
+
+#: services/models.py:1013
+msgid "Anonymous user download bandwidth in KB/s. Zero means infinity."
+msgstr "پهناي باند دانلود براي كاربر ناشناس بر مبناي كيلو بايت بر ثانيه. صفر به معناي نامحدود است"
+
+#: services/models.py:1016
+msgid "Enable SSL/TLS"
+msgstr "را فعال نماييد SSL/TLS"
+
+#: services/models.py:1021
+msgid "These parameters are added to proftpd.conf."
+msgstr "اضافه شده اند proftpd.conf اين پارامترهاي به فايل "
+
+#: services/models.py:1025
+#: services/models.py:1026
+#: templates/services/index.html:53
+msgid "FTP"
+msgstr "FTP"
+
+#: services/models.py:1034
+msgid "Directory"
+msgstr "شاخه"
+
+# to pass along the directory = ?
+#: services/models.py:1035
+msgid "The directory containing the files you want to publish. The remote host does not need to pass along the directory as part of the transfer."
+msgstr "شاخه حاوي فايل هايي است كه شما مي خواهيد منتشر كنيد. ميزبان راه دور نيازي ندارد كه شاخه را به عنوان بخشي از انتقال، ارسال كند"
+
+#: services/models.py:1038
+msgid "Allow New Files"
+msgstr "مجوز فايل هاي جديد"
+
+#: services/models.py:1042
+msgid "The port to listen to. The default is to listen to the tftp port specified in /etc/services."
+msgstr "مشخص شده است  /etc/services اي است كه در  tftp پورت براي گوش دادن. پيش فرض گوش دادن به پورت "
+
+#: services/models.py:1048
+msgid "Specifies the username which the service will run as."
+msgstr " نام كاربري كه سرويس به عنوان او اجرا مي شود را مشخص مي نمايد "
+
+#: services/models.py:1052
+msgid "umask"
+msgstr "umask"
+
+#: services/models.py:1053
+msgid "Set the umask for newly created files to the specified value. The default is 022 (everyone can read, nobody can write)."
+msgstr "(را روي مقدار مشخصي تنظيم نماييد. مقدار پيش فرض 022 است( همه مي توانند بخوانند ولي كسي نمي تواند بنويسد umask براي فايل هايي كه به تازگي ايجاد شده اند، "
+
+#: services/models.py:1057
+#: services/models.py:1094
+#: system/models.py:540
+msgid "Extra options"
+msgstr "گزينه هاي بيشتر"
+
+#: services/models.py:1059
+msgid "Extra command line options (usually empty)."
+msgstr " گزينه هاي خط فرمان بيشتر، معمولا خالي است"
+
+#: services/models.py:1063
+#: services/models.py:1064
+#: templates/services/index.html:158
+msgid "TFTP"
+msgstr "TFTP"
+
+#: services/models.py:1072
+#: services/models.py:1285
+msgid "TCP Port"
+msgstr "TCP پورت"
+
+#: services/models.py:1074
+msgid "Alternate TCP port. Default is 22"
+msgstr "جايگزين. پيش فرض 22 است TCP پورت "
+
+#: services/models.py:1077
+msgid "Login as Root with password"
+msgstr "با كلمه عبور Root ورود به عنوان "
+
+#: services/models.py:1078
+msgid "Disabled: Root can only login via public key authentication; Enabled: Root login permitted with password"
+msgstr "با كلمه عبور اجازه داده شده است Root فقط مي تواند از طريق اعتبارسنجي كليد عمومي وارد شود. فعال شده است: ورود  Root غير فعال شده است: "
+
+#: services/models.py:1081
+msgid "Allow Password Authentication"
+msgstr "پذيرفتن اعتبارسنجي با كلمه عبور"
+
+#: services/models.py:1083
+msgid "Allow TCP Port Forwarding"
+msgstr "TCP مجوز ارسال به جلو پورت"
+
+#: services/models.py:1085
+msgid "Compress Connections"
+msgstr "اتصالات فشرده"
+
+#: services/models.py:1088
+msgid "Host Private Key"
+msgstr "كليد خصوصي ميزبان"
+
+#: services/models.py:1090
+msgid "Paste a RSA PRIVATE KEY in PEM format here."
+msgstr "انيجا وارد نماييد PEM به فرمت  RSA يك كليد خصوصي"
+
+#: services/models.py:1096
+msgid "Extra options to /etc/ssh/sshd_config (usually empty). Note, incorrect entered options prevent SSH service to be started."
+msgstr "مي شود SSH معمولا خالي است) توجه نماييد، گزينه ورودي ناصحيح مانع شروع سرويس ) /etc/ssh/sshd_config گزينه هاي بيشتر براي "
+
+#: services/models.py:1148
+#: services/models.py:1149
+#: templates/services/index.html:147
+msgid "SSH"
+msgstr "SSH"
+
+#: services/models.py:1158
+msgid "Domain Controller Name"
+msgstr "نام كنترل كننده دامنه"
+
+#: services/models.py:1159
+msgid "AD or PDC name."
+msgstr "AD يا  PDC نام "
+
+#: services/models.py:1163
+msgid "Domain Name (DNS/Realm-Name)"
+msgstr " (DNS/Realm-Name) نام دامنه"
+
+#: services/models.py:1164
+msgid "Domain Name, eg example.com"
+msgstr " example.com نام دامنه براي مثال "
+
+#: services/models.py:1168
+msgid "NetBIOS Name"
+msgstr "NetBIOS  نام "
+
+#: services/models.py:1169
+msgid "System hostname"
+msgstr "نام ميزباني سيستم"
+
+#: services/models.py:1173
+msgid "Workgroup Name"
+msgstr "نام گروه كاري"
+
+#: services/models.py:1174
+msgid "Workgroup or domain name in old format, eg WORKGROUP"
+msgstr "WORKGROUP نام دامنه يا گروه كاري در قالب قديمي مانند "
+
+#: services/models.py:1178
+msgid "Allow Trusted Domains"
+msgstr "پذيرفتن دامنه هاي قابل اطمينان"
+
+#: services/models.py:1182
+msgid "Administrator Name"
+msgstr "نام مدير سيستم"
+
+#: services/models.py:1183
+msgid "Domain Administrator account name"
+msgstr "نام حساب مدير دامنه"
+
+#: services/models.py:1187
+msgid "Administrator Password"
+msgstr "كلمه عبور مدير سيستم"
+
+#: services/models.py:1188
+msgid "Domain Administrator account password."
+msgstr "كلمه عبور حساب مدير دامنه"
+
+#: services/models.py:1192
+#: services/models.py:1193
+#: templates/services/index.html:18
+msgid "Active Directory"
+msgstr "Active Directory شاخه فعال يا "
+
+#: services/models.py:1204
+msgid "The name or IP address of the LDAP server"
+msgstr "LDAP براي سرويس دهنده  IP نام يا آدرس"
+
+#: services/models.py:1208
+msgid "Base DN"
+msgstr "پايه DN"
+
+#: services/models.py:1210
+msgid "The default base Distinguished Name (DN) to use for searches, eg dc=test,dc=org"
+msgstr "dc=test,dc=org يا نام متمايز پايه پيش فرض براي استفاده در جستجو ها مانند  Distinguished Name (DN)"
+
+# Allow Anonymous Binding =?
+#: services/models.py:1213
+msgid "Allow Anonymous Binding"
+msgstr "پذيرفتن اتصال ناشناس"
+
+# منظورش را نمي دانم?
+#: services/models.py:1216
+msgid "Root bind DN"
+msgstr "Root اجباري براي  DN نام متمايز يا "
+
+#: services/models.py:1218
+msgid "The distinguished name with which to bind to the directory server, e.g. cn=admin,dc=test,dc=org"
+msgstr "cn=admin,dc=test,dc=org مانند ،  directory  با نام متمايز براي مقيد نمودن سرويس دهنده "
+
+#: services/models.py:1222
+msgid "Root bind password"
+msgstr "Root كلمه عبور اجباري "
+
+# ؟
+#: services/models.py:1224
+msgid "The credentials with which to bind."
+msgstr "گواهينامه اي که با آن متصل است"
+
+#: services/models.py:1229
+msgid "Password Encryption"
+msgstr "رمز نمودن كلمه عبور"
+
+#: services/models.py:1230
+msgid "The password change protocol to use."
+msgstr "پروتكل تغيير كلمه عبور براي استفاده"
+
+#: services/models.py:1234
+msgid "User Suffix"
+msgstr "پسوند كاربر"
+
+#: services/models.py:1236
+msgid "This parameter specifies the suffix that is used for users when these are added to the LDAP directory, e.g. ou=Users"
+msgstr " ou=Users اضافه مي شوند براي آنها استفاده مي گردد مانند  LDAP  اين پارامتر پسوندي را مشخص مي نمايد كه هنگامي كه كاربران به شاخه  "
+
+#: services/models.py:1240
+msgid "Group Suffix"
+msgstr "پسوند گروه"
+
+#: services/models.py:1242
+msgid "This parameter specifies the suffix that is used for groups when these are added to the LDAP directory, e.g. ou=Groups"
+msgstr "ou=Groups استفاده مي شود ، مانند  LDAP اين پارامتر پسوندي را مشخص مي نمايد كه هنگام افزودن گروه ها به شاخه"
+
+#: services/models.py:1246
+msgid "Password Suffix"
+msgstr "پسوند كلمه عبور"
+
+#: services/models.py:1248
+msgid "This parameter specifies the suffix that is used for passwords when these are added to the LDAP directory, e.g. ou=Passwords"
+msgstr "ou=Passwords استفاده مي شود را، مشخص مي نمايد. مانند  LDAP اين پارامتر پسوندي را كه هنگام افزودن كلمات عبور به شاخه"
+
+#: services/models.py:1252
+msgid "Machine Suffix"
+msgstr "پسوند ماشين"
+
+#: services/models.py:1254
+msgid "This parameter specifies the suffix that is used for machines when these are added to the LDAP directory, e.g. ou=Computers"
+msgstr "ou=Computers استفاده مي شود را، مشخص مي نمايد. مانند  LDAP اين پارامتر پسوندي را كه هنگام افزودن ماشين ها به شاخه"
+
+#: services/models.py:1259
+msgid "Encryption Mode"
+msgstr "روش رمز كردن"
+
+#: services/models.py:1260
+msgid "This parameter specifies whether to use SSL/TLS, e.g. on/off/start_tls"
+msgstr "on/off/start_tls استفاده شود. مانند  SSL/TLS اين پارامتر مشخص مي نمايد كه آيا از "
+
+#: services/models.py:1263
+msgid "Self signed certificate"
+msgstr "گواهينامه امضاء شده شخصي"
+
+#: services/models.py:1265
+msgid "Place the contents of your self signed certificate file here."
+msgstr "محتويات فايل گواهينامه امضاء شده خود شما را اينجا وارد نماييد"
+
+#: services/models.py:1269
+#: sharing/models.py:81
+msgid "Auxiliary Parameters"
+msgstr "پارامترهاي كمكي"
+
+#: services/models.py:1271
+msgid "These parameters are added to ldap.conf."
+msgstr "اضافه شده اند ldap.conf اين پارامترها به "
+
+#: services/models.py:1275
+#: services/models.py:1276
+#: templates/services/index.html:77
+msgid "LDAP"
+msgstr "LDAP"
+
+#: services/models.py:1286
+msgid "Alternate TCP port. Default is 873"
+msgstr "جايگزين، پيش فرض 873 است TCP پورت"
+
+#: services/models.py:1291
+msgid "These parameters will be added to [global] settings in rsyncd.conf"
+msgstr "اضافه خواهد شد rsyncd.conf اين پارامترها به تنظيمات سراسري در "
+
+#: services/models.py:1295
+#: services/models.py:1296
+msgid "Configure Rsyncd"
+msgstr "را پيكربندي نماييد Rsyncd"
+
+#: services/models.py:1306
+msgid "Module name"
+msgstr "نام ماژول"
+
+#: services/models.py:1315
+msgid "Path to be shared"
+msgstr "مسيري كه بايد به اشتراك گذاشته شود"
+
+#: services/models.py:1321
+msgid "Access Mode"
+msgstr "سبك دسترسي"
+
+#: services/models.py:1322
+msgid "This controls the access a remote host has to this module"
+msgstr "اين مورد، دسترسي يك ميزبان راه دور را به اين ماژول ، كنترل مي نمايد "
+
+#: services/models.py:1326
+msgid "Maximum connections"
+msgstr "حداكثر اتصالات"
+
+#: services/models.py:1327
+msgid "Maximum number of simultaneous connections. Default is 0 (unlimited)"
+msgstr "(حداكثر تعداد اتصالات همزمان، پيش فرض 0 است (نا محدود"
+
+#: services/models.py:1333
+msgid "This option specifies the user name that file transfers to and from that module should take place. In combination with the 'Group' option this determines what file permissions are available. Leave this field empty to use default settings"
+msgstr "اين گزينه نام كاربري را كه انتقالات فايل از يا به آن ماژول بايد انجام بگيرد را مشخص مي نمايد. در تركيب با گزينه \"گروه\"، تعيين مي كند كه چه مجوزهاي فايلي وجود دارد. اين فيلد را خالي بگذاريد تا از تنظيمات پيش فرض استفاده نمايد "
+
+#: services/models.py:1340
+msgid "This option specifies the group name that file transfers to and from that module should take place. Leave this field empty to use default settings"
+msgstr "اين گزينه نام گروهي را كه انتقالات فايل از يا به آن ماژول انجام مي گيرد را مشخص مي نمايد. اين فيلد را خالي بگذاريد تا از تنظيمات پيش فرض استفاده نمايد"
+
+#: services/models.py:1344
+msgid "Hosts allow"
+msgstr "پذيرفتن ميزبان ها"
+
+#: services/models.py:1345
+msgid "This option is a comma, space, or tab delimited set of hosts which are permitted to access this module. You can specify the hosts by name or IP number. Leave this field empty to use default settings"
+msgstr "مشخص نماييد. اين فيلد را خالي بگذاريد تا از تنظيمات پيش فرض استفاده نمايد IP براي ميزبان ها است كه مجاز به دسترسي به اين ماژول هستند. شما مي توانيد ميزبان ها را با نام يا شماره  tab اين گزينه يك مجموعه محدود از كاما، فاصله يا"
+
+#: services/models.py:1349
+msgid "Hosts deny"
+msgstr "رد كردن ميزبان ها"
+
+# and then explicitly specify to the hosts allow parameter those hosts that should be permitted access = ?
+#: services/models.py:1350
+msgid "This option is a comma, space, or tab delimited set of host which are NOT permitted to access this module. Where the lists conflict, the allow list takes precedence. In the event that it is necessary to deny all by default, use the keyword ALL (or the netmask 0.0.0.0/0) and then explicitly specify to the hosts allow parameter those hosts that should be permitted access. Leave this field empty to use default settings"
+msgstr "يا  ماسك شبكه0.0.0.0/0  استفاده شود و سپس به صراحت مجوز مي دهد به پارامترهاي مجاز ميزبانها كه  آن ميزبان ها بايد براي دسترسي مجاز باشند. اين فيلد را خالي بگذاريد تا از تنظيمات پيش فرض استفاده نمايد    ALL از ميزباني است كه داراي مجوز دسترسي به اين ماژول نيست. جايي كه ليست ها ناسازگاري دارند، ليست مجاز اولويت دارد. در شرايطي كه لازم باشد تمام موارد بصورت پيش فرض رد شوند، از كلمه كليدي tab اين گزينه يك مجموعه حائل كاما، فاصله و يا "
+
+#: services/models.py:1355
+msgid "These parameters will be added to the module configuration in rsyncd.conf"
+msgstr "اضافه خواهد شد rsyncd.confاين پارامترها به پيكربندي ماژول در "
+
+#: services/models.py:1360
+msgid "Rsync Module"
+msgstr "Rsync  ماژول"
+
+#: services/models.py:1361
+msgid "Rsync Modules"
+msgstr "Rsync  ماژول هاي "
+
+#: services/models.py:1374
+msgid "Check interval"
+msgstr "فاصله چك كردن"
+
+#: services/models.py:1375
+msgid "Sets the interval between disk checks to N minutes. The default is 30 minutes"
+msgstr "دقيقه تنظيم كرده است، پيش فرض 30 دقيقه است N فاصله  بين چك كردن ديسك ها را روي "
+
+#: services/models.py:1381
+msgid "Power mode"
+msgstr "Power مد"
+
+#: services/models.py:1385
+msgid "Difference"
+msgstr "تفاضل"
+
+#: services/models.py:1386
+msgid "Report if the temperature had changed by at least N degrees Celsius since last report. 0 to disable"
+msgstr "درجه سلسيوس از آخرين گزارش تغيير داشته است، گزارش نمايد، 0 براي غير فعال نمودن است N اگر حرارت حداقل "
+
+#: services/models.py:1390
+msgid "Informal"
+msgstr "بي قاعده"
+
+#: services/models.py:1391
+#: services/models.py:1396
+msgid "Report if the temperature is greater or equal than N degrees Celsius. 0 to disable"
+msgstr "درجه سلسيوس شد، گزارش نمايد، 0 براي غير فعال نمودن است N اگر حرارت بيشتر يا مساوي  "
+
+#: services/models.py:1395
+msgid "Critical"
+msgstr "بحراني"
+
+#: services/models.py:1399
+msgid "Email to report"
+msgstr "آدرس نامه الكترونيكي براي گزارش دادن"
+
+#: services/models.py:1402
+msgid "Destination email address. Separate email addresses by semi-colon"
+msgstr "آدرس نامه الكترونيكي مقصد. آدرس ها را با ; جدا نماييد"
+
+#: services/models.py:1405
+#: services/models.py:1406
+#: templates/services/index.html:136
+msgid "S.M.A.R.T."
+msgstr "S.M.A.R.T."
+
+#: services/nav.py:14
+msgid "Control Services"
+msgstr "سرويس هاي كنترلي"
+
+#: services/nav.py:52
+#: templates/services/iscsi.html:32
+msgid "Device Extents"
+msgstr "اندازه هاي وسيله"
+
+#: services/nav.py:71
+msgid "Add Device Extent"
+msgstr "افزودن اندازه وسيله"
+
+#: services/nav.py:78
+msgid "View Device Extents"
+msgstr "مشاهده اندازه هاي وسيله"
+
+#: services/nav.py:91
+msgid "File Extents"
+msgstr "اندازه هاي فايل"
+
+#: services/nav.py:110
+#: templates/services/iscsi_extents.html:39
+#: templates/services/iscsi_extents.html:41
+msgid "Add File Extent"
+msgstr "افزودن اندازه فايل"
+
+#: services/nav.py:117
+msgid "View File Extents"
+msgstr "مشاهده اندازه هاي فايل"
+
+#: services/nav.py:130
+#: templates/services/index.html:64
+msgid "iSCSI"
+msgstr "iSCSI"
+
+#: services/nav.py:141
+#: templates/services/index.html:114
+msgid "Rsync"
+msgstr "Rsync"
+
+#: services/nav.py:148
+#: templates/services/rsyncmod.html:40
+#: templates/services/rsyncmod.html:42
+msgid "Add Rsync Module"
+msgstr "Rsync  افزودن ماژول "
+
+#: services/nav.py:158
+msgid "View Rsync Modules"
+msgstr "Rsync  مشاهده ماژول هاي "
+
+#: services/views.py:244
+msgid "The service could not be stopped."
+msgstr "سرويس نمي تواند متوقف شود"
+
+#: services/views.py:251
+msgid "The service could not be started."
+msgstr "سرويس نمي تواند شروع به كار نمايد"
+
+# share or shared or sharing = ?
+#: sharing/forms.py:81
+msgid "Confirm Share Password"
+msgstr "تاييد كلمه عبور مشترك"
+
+#: sharing/forms.py:123
+#, python-format
+msgid "The path %s does not exist"
+msgstr "وجود ندارد %s  مسير "
+
+#: sharing/forms.py:140
+msgid "The field is a not a valid IP address or network"
+msgstr "يا شبكه معتبر نيست IP اين فيلد يك آدرس"
+
+#: sharing/forms.py:146
+#, python-format
+msgid "The IP '%s' is not valid."
+msgstr "معتبر نيست  '%s' ،   IP آدرس "
+
+#: sharing/forms.py:157
+msgid "Maproot group requires Maproot user"
+msgstr "نياز دارد Maproot  به كاربر  Maproot گروه "
+
+#: sharing/forms.py:159
+msgid "Mapall group requires Mapall user"
+msgstr "نياز دارد Mapall  به كاربر Mapall  گروه "
+
+#: sharing/forms.py:162
+#: sharing/forms.py:165
+msgid "Maproot user/group disqualifies Mapall"
+msgstr "را صلب صلاحيت كرده است Mapall  ، Maproot  كاربر يا گروه"
+
+#: sharing/models.py:39
+#: sharing/models.py:113
+#: storage/models.py:44
+#: storage/models.py:309
+#: storage/views.py:226
+#: templates/network/interface.html:6
+#: templates/network/summary.html:5
+#: templates/plugins/index.html:13
+#: templates/services/rsyncmod.html:5
+#: templates/sharing/apple.html:12
+#: templates/sharing/windows.html:12
+msgid "Name"
+msgstr "نام"
+
+# ؟
+#: sharing/models.py:49
+msgid "Export Read Only"
+msgstr "صادر كردن فقط خواندني"
+
+#: sharing/models.py:51
+msgid "Browsable to Network Clients"
+msgstr "قابل جستجو براي سرويس گيرنده هاي شبكه"
+
+# ؟
+#: sharing/models.py:53
+msgid "Inherit Owner"
+msgstr "مالكيت به ارث برده شده"
+
+#: sharing/models.py:55
+msgid "Inherit Permissions"
+msgstr "مجوزهاي به ارث برده شده"
+
+#: sharing/models.py:57
+msgid "Export Recycle Bin"
+msgstr "صادر نمودن سطل زباله"
+
+#: sharing/models.py:59
+msgid "Show Hidden Files"
+msgstr "نمايش فايلهاي مخفي"
+
+#: sharing/models.py:61
+msgid "Allow Guest Access"
+msgstr "مجوز دسترسي مهمان"
+
+#: sharing/models.py:62
+msgid "If true then no password is required to connect to the share. Privileges will be those of the guest account."
+msgstr "باشد، كلمه عبور براي اتصال به بخش به اشتراك گذاشته شده، نياز ندارد. امتيازات همان هايي است كه حساب مهمان دارد true اگر"
+
+#: sharing/models.py:65
+msgid "Only Allow Guest Access"
+msgstr "فقط مجوز دسترسي مهمان"
+
+#: sharing/models.py:66
+msgid "If true then only guest connections to the share are permitted. This parameter will have no effect if Allow Guest Access is not set for the share."
+msgstr "باشد، فقط اتصالات مهمان به بخش اشتراك، مجاز است. اگر مجوز دسترسي مهمان براي اشتراك تنظيم نشده باشد، اين پارامتر اثري ندارد  true اگر"
+
+#: sharing/models.py:71
+msgid "Hosts Allow"
+msgstr "پذيرفتن ميزبان ها"
+
+#: sharing/models.py:72
+msgid "This option is a comma, space, or tab delimited set of hosts which are permitted to access this share. You can specify the hosts by name or IP number. Leave this field empty to use default settings."
+msgstr "مشخص نماييد. اين فيلد را خالي بگذاريد تا از تنظيمات پيش فرض استفاده نمايد IP براي ميزبان ها است كه مجاز به دسترسي به اين اشتراك هستند. شما مي توانيد ميزبان ها را با نام يا شماره  tab اين گزينه يك مجموعه محدود از كاما، فاصله يا"
+
+#: sharing/models.py:76
+msgid "Hosts Deny"
+msgstr "رد كردن ميزبان ها"
+
+#: sharing/models.py:77
+msgid "This option is a comma, space, or tab delimited set of host which are NOT permitted to access this share. Where the lists conflict, the allow list takes precedence. In the event that it is necessary to deny all by default, use the keyword ALL (or the netmask 0.0.0.0/0) and then explicitly specify to the hosts allow parameter those hosts that should be permitted access. Leave this field empty to use default settings."
+msgstr "يا  ماسك شبكه0.0.0.0/0  استفاده شود و سپس به صراحت مجوز مي دهد به پارامترهاي مجاز ميزبانها كه  آن ميزبان ها بايد براي دسترسي مجاز باشند. اين فيلد را خالي بگذاريد تا از تنظيمات پيش فرض استفاده نمايد    ALL از ميزباني است كه داراي مجوز دسترسي به اين بخش اشتراك نيست. جايي كه ليست ها ناسازگاري دارند، ليست مجاز اولويت دارد. در شرايطي كه لازم باشد تمام موارد بصورت پيش فرض رد شوند، از كلمه كليدي tab اين گزينه يك مجموعه حائل كاما، فاصله و يا "
+
+#: sharing/models.py:83
+msgid "These parameters are added to [Share] section of smb.conf"
+msgstr "افزوده خواهد شد smb.conf از  [Share] اين پارامترها به بخش"
+
+#: sharing/models.py:94
+msgid "Windows (CIFS) Share"
+msgstr "(CIFS)  اشتراك ويندوز"
+
+#: sharing/models.py:95
+msgid "Windows (CIFS) Shares"
+msgstr "(CIFS)  اشتراك هاي ويندوز"
+
+#: sharing/models.py:114
+msgid "The volume name is the name that appears in the Chooser of the 'connect to server' dialog on Macintoshes to represent the appropriate share. If volumename is unspecified, the last component of pathname is used. No two volumes may have the same name. The volume name cannot contain the ':' character. The volume name is mangled if it is very long. Mac codepage volume name is limited to 27 characters. UTF8-MAC volume name is limited to 'Volume Name Length' parameter in Services:Apple Share"
+msgstr "است Applie Share در سرويس 'Volume Name Length' محدود به پارامتر  UTF8-MAC volume مكينتاش محدود به 27 كاراكتر است. نام  codepage volume طولاني باشد، شكسته مي شود. نام  volume نبايد شامل كاراكتر \":\" شود. اگر نام volume اي نبايد نام يكسان داشته باشند. نام  volume مشخص نشده باشد،آخرين مؤلفه نام مسير  استفاده مي شود. هيچ دو volume نامي است كه در ديالوگ انتخاب كننده \"اتصال به سرويس دهنده\" روي مكينتاش، براي نشان دادن بخش اشتراك مناسب، ظاهر مي شود. اگر نام volume نام"
+
+#: sharing/models.py:118
+msgid "Share Comment"
+msgstr "توضيح بخش"
+
+#: sharing/models.py:125
+msgid "Share password"
+msgstr "كلمه عبور بخش"
+
+#: sharing/models.py:127
+msgid "This option allows you to set a volume password, which can be a maximum of 8 characters long (using ASCII strongly recommended at the time of this writing)."
+msgstr "پيشنهاد مي گردد  ASCII  تنظيم نماييد كه حداكثر 8 كاراكتر طول داشته باشد (شديداً هنگام نوشتن اين كلمه، استفاده از  volume  اين گزينه به شما اجازه مي دهد تا يك كلمه عبور  "
+
+#: sharing/models.py:131
+msgid "Share Character Set"
+msgstr "مجموعه كاراكتر بخش"
+
+#: sharing/models.py:133
+msgid "Specifies the share character set. For example UTF8, UTF8-MAC, ISO-8859-15, etc."
+msgstr "و غيره UTF8, UTF8-MAC, ISO-8859-15 مشخص نمودن مجموعه كاراكتر بخش. براي مثال "
+
+#: sharing/models.py:137
+msgid "Allow List"
+msgstr "ليست پذيرفتن"
+
+#: sharing/models.py:139
+msgid "This option allows the users and groups that access a share to be specified. Users and groups are specified, delimited by commas. Groups are designated by a @ prefix."
+msgstr " اين گزينه به كاربران و گروه ها اجازه دسترسي به يك بخش اشتراك مشخص شده را مي دهد. كاربران و گروه ها مشخص شده و با كاما هايي جدا شده ند. گروه ها با پيشوند@ مشخص شده اند "
+
+#: sharing/models.py:143
+msgid "Deny List"
+msgstr "ليست رد كردن"
+
+#: sharing/models.py:145
+msgid "The deny option specifies users and groups who are not allowed access to the share. It follows the same format as the allow option."
+msgstr "گزينه رد نمودن، كاربران و گروه هايي را كه مجوز دسترسي به بخش اشتراك را ندارند، مشخص مي نمايد. آن همان فرمتي را دارد كه گزينه پذيرفتن دارد"
+
+#: sharing/models.py:149
+msgid "Read-only Access"
+msgstr "دسترسي فقط خواندن"
+
+#: sharing/models.py:151
+msgid "Allows certain users and groups to have read-only access to a share. This follows the allow option format."
+msgstr " كاربران و گروه هاي معيني كه دسترسي فقط خواندن به بخش اشتراك دارند را مي پذيرد. اين گزينه از همان فرمت گزينه پذيرفتن پيروي مي نمايد"
+
+#: sharing/models.py:155
+msgid "Read-write Access"
+msgstr "دسترسي خواندن و نوشتن"
+
+#: sharing/models.py:157
+msgid "Allows certain users and groups to have read/write access to a share. This follows the allow option format."
+msgstr " كاربران و گروه هاي معيني كه دسترسي خواندن و نوشتن به بخش اشتراك دارند را مي پذيرد. اين گزينه از همان فرمت گزينه پذيرفتن پيروي مي نمايد"
+
+#: sharing/models.py:160
+msgid "Disk Discovery"
+msgstr "بازيابي ديسك"
+
+# a Time Machine backup volume = ?
+#: sharing/models.py:161
+msgid "Allow other systems to discover this share as a disk for data, as a Time Machine backup volume or not at all."
+msgstr " به سيستم هاي ديگر اجازه مي دهد تا اين بخش اشتراك را به عنوان يك ديسك براي داده ها، بازيابي نمايند، به عنوان توده پشتيبان گيري ماشين زمان يا هرگز"
+
+#: sharing/models.py:167
+msgid "Disk discovery mode"
+msgstr "روش بازيابي ديسك"
+
+# volume  = ?
+#: sharing/models.py:168
+msgid "Note! Selecting 'Time Machine' on multiple shares may cause unpredictable behavior in MacOS. Default mode exports the volume as a data volume for users."
+msgstr "داده براي كاربران ارسال مي نمايد volume را به عنوان يك  volume موجب شود. حالت پيش فرض   Mac توجه! انتخاب \"ماشين زمان\" روي چندين بخش اشتراك ممكن است رفتار پيش بيني نشده اي را روي سيستم عامل"
+
+#: sharing/models.py:172
+msgid "Database Path"
+msgstr "مسير پايگاه داده"
+
+#: sharing/models.py:174
+msgid "Sets the database information to be stored in path. You have to specify a writable location, even if the volume is read only."
+msgstr "فقط خواندني باشد volume تنظيم مي كند كه اطلاعات پايگاه داده درون مسير ذخيره شود. شما بايد يك مكان قابل نوشتن را مشخص نماييد، حتي اگر"
+
+#: sharing/models.py:177
+msgid "Cache CNID"
+msgstr "CNID كش"
+
+#: sharing/models.py:178
+msgid "If set afpd uses the ID information stored in AppleDouble V2 header files to reduce database load. Don't set this option if the volume is modified by non AFP clients (NFS/SMB/local)."
+msgstr " (NFS/SMB/local) تغيير نموده است، اين گزينه را تنظيم  نكنيد AFP توسط سرويس گيرنده هاي غير  volume را استفاده نمايد براي كاهش بار پايگاه داده. اگر   AppleDouble V2 شناسه ذخيره شده درون هدر فايل هاي اطلاعات afpd اگر مجموعه "
+
+#: sharing/models.py:181
+msgid "Translate CR/LF"
+msgstr "CR/LF انتقال"
+
+# ؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟؟
+#: sharing/models.py:182
+msgid "Enables crlf translation for TEXT files, automatically converting macintosh line breaks into Unix ones. Use of this option might be dangerous since some older programs store binary data files as type 'TEXT' when saving and switch the filetype in a second step. Afpd will potentially destroy such files when 'erroneously' changing bytes in order to do line break translation."
+msgstr "براي فايل هاي متني، بصورت اتوماتيك پرش هاي خطي مكينتاش را به يونيكس تبديل مي نمايد.استفاده از اين گزينه ممكن است خطرناك باشد هنگامي كه بعضي از برنامه هاي قديمي فايل هاي داده اي باينري را با عنوان   بصورت بالقوه اين فايل ها را از بين مي برد. Afpd بايت ها را براي ترجمه پرش هاي خطي، تغيير مي دهد،  'erroneously'   وقتيكه  \"متني\" ذخيره مي كنند و در مرحله دوم نوع فايل را عوض مي كنند.   crlf فعال سازي ترجمه"
+
+#: sharing/models.py:185
+msgid "Windows File Names"
+msgstr "نامهاي فايل ويندوز"
+
+#: sharing/models.py:186
+msgid "This forces filenames to be restricted to the character set used by Windows. This is not recommended for shares used principally by Mac computers."
+msgstr "استفاده مي شوند، پيشنهاد نمي شود  Mac اين گزينه اجبار مي كند كه نامهاي فايل بايد منحصر باشند به مجموعه كاراكتر استفاده شده توسط ويندوز. اين مسئله براي بخش هاي اشتراكي كه اصولا توسط كامپيوتر هاي "
+
+#: sharing/models.py:189
+msgid "Enable .AppleDouble"
+msgstr ".AppleDouble فعال سازي "
+
+#: sharing/models.py:190
+msgid "This will enable automatic creation of the .AppleDouble directories. This option should be used if files are accessed by Mac computers."
+msgstr "استفاده مي شوند، اين گزينه بايد استفاده شود  Mac را فعال مي نمايد.  اگر فايل ها توسط كامپيوتر هاي  .AppleDouble اين گزينه توليد اتوماتيك شاخه هاي "
+
+# Zero Device= ?
+#: sharing/models.py:196
+msgid "Zero Device Numbers"
+msgstr "Zero Device تعداد "
+
+#: sharing/models.py:197
+msgid "Always use 0 for device number, helps when the device number is not constant across a reboot, cluster, ..."
+msgstr "استفاده هميشگي 0 براي عدد دستگاه،  هنگامي كه عدد دستگاه در طي بارگزاري مجدد يا كلاستر كردن و غيره، ثابت نيست، كمك مي نمايد"
+
+#: sharing/models.py:200
+msgid "Disable File ID"
+msgstr "غير فعال نمودن شناسه فايل"
+
+#: sharing/models.py:201
+msgid "Don't advertise createfileid, resolveid, deleteid calls."
+msgstr "را تبليغ نكنيد createfileid, resolveid, deleteid فراخواني "
+
+#: sharing/models.py:204
+msgid "Disable :hex Names"
+msgstr ":hex غير فعال نمودن نام هاي"
+
+#: sharing/models.py:205
+msgid "Disable :hex translations for anything except dot files. This option makes the '/' character illegal."
+msgstr "  غير فعال نمايد. اين گزينه كاراكتر / را غير قانوني مي داند dot  را براي هر چيزي بجز فايل هاي  :hex  انتقالات "
+
+#: sharing/models.py:208
+msgid "ProDOS"
+msgstr "ProDOS"
+
+#: sharing/models.py:209
+msgid "Provide compatibility with Apple II clients."
+msgstr "را فراهم مي نمايد Apple II سازگاري با سرويس گيرنده هاي "
+
+# stat = ?
+#: sharing/models.py:212
+msgid "No Stat"
+msgstr "بدون آمار"
+
+# stat  =?
+# اين متن ترجمه نشده
+#: sharing/models.py:213
+msgid "Don't stat volume path when enumerating volumes list, useful for automounting or volumes created by a preexec script."
+msgstr ""
+
+#: sharing/models.py:216
+msgid "AFP3 Unix Privs"
+msgstr "AFP3 Unix Privs"
+
+#: sharing/models.py:217
+msgid "Use AFP3 unix privileges."
+msgstr "AFP3 unix استفاده از مجوزهاي "
+
+#: sharing/models.py:228
+msgid "Apple (AFP) Share"
+msgstr "(AFP) Apple بخش اشتراك "
+
+#: sharing/models.py:229
+msgid "Apple (AFP) Shares"
+msgstr "(AFP) Apple بخش هاي اشتراك "
+
+#: sharing/models.py:258
+msgid "Authorized network or IP addresses"
+msgstr "معتبر IP شبكه يا آدرس هاي "
+
+#: sharing/models.py:259
+msgid "Network that is authorized to access the NFS share or a list of IP addresses. Specify network numbers of the form 1.2.3.4/xx where xx is the number of bits of netmask or a list of IP addresses 1.2.3.4 1.2.3.5 1.2.3.6."
+msgstr "1.2.3.4 1.2.3.5 1.2.3.6. روبرو: IP تعداد بيت هاي ماسك شبكه باشد يا يك ليست از آدرس هاي xx مشخص نماييد كه  1.2.3.4/xx مجاز است.شماره هاي شبكه را بصورت ،IP يا يك ليست از آدرس هاي  NFS شبكه اي كه براي دسترسي به بخش اشتراك"
+
+#: sharing/models.py:263
+msgid "All Directories"
+msgstr "تمام شاخه ها"
+
+# ؟
+#: sharing/models.py:264
+msgid "Allow mounting of any subdirectory under this mount point if selected. Otherwise, only the top level directory can be mounted."
+msgstr "اگر انتخاب شد، اجازه نصب هر زير شاخه زير اين نقطه اوج وجود دارد. در غير اينصورت، فقط بالاترين شاخه مي تواند نصب شود"
+
+#: sharing/models.py:267
+msgid "Read Only"
+msgstr "فقط خواندني"
+
+#: sharing/models.py:268
+msgid "Export the share read only. Writes are not permitted."
+msgstr "بخش اشتراك را فقط خواندني ارسال كن. نوشتن مجاز نيست"
+
+#: sharing/models.py:271
+#: system/models.py:524
+msgid "Quiet"
+msgstr "آرام"
+
+#: sharing/models.py:272
+msgid "Inhibit syslog warnings if there are problems with exporting this share."
+msgstr "ممانعت شود syslog اگر با ارسال اين اشتراك مشكلي وجود دارد، از هشدار هاي    "
+
+#: sharing/models.py:275
+msgid "Maproot User"
+msgstr "Maproot  كاربر "
+
+#: sharing/models.py:279
+msgid "User to map root to"
+msgstr "را به آن نگاشت مي شود root كاربري كه "
+
+#: sharing/models.py:282
+msgid "Maproot Group"
+msgstr "گروه Maproot "
+
+#: sharing/models.py:286
+msgid "Group to map root to"
+msgstr "را به آن نگاشت مي شود root گروهي كه "
+
+#: sharing/models.py:289
+msgid "Mapall User"
+msgstr "Mapall  كاربر"
+
+#: sharing/models.py:293
+msgid "User to map all users to"
+msgstr "كاربري كه تمام كاربران به آن نگاشت مي شوند"
+
+#: sharing/models.py:296
+msgid "Mapall Group"
+msgstr "Mapall  گروه"
+
+#: sharing/models.py:300
+msgid "Group to map all users to"
+msgstr "گروهي كه تمام كاربران به آن نگاشت مي شوند"
+
+#: sharing/models.py:311
+msgid "Unix (NFS) Share"
+msgstr "(NFS)  Unix بخش اشتراك "
+
+#: sharing/models.py:312
+msgid "Unix (NFS) Shares"
+msgstr "(NFS)  Unix بخشهاي اشتراك "
+
+#: sharing/nav.py:4
+#: templates/menubar.html:23
+msgid "Sharing"
+msgstr "به اشتراك گزاردن"
+
+#: storage/forms.py:93
+msgid "Enter positive number (optionally suffixed by K, M, G, T), or, 0"
+msgstr "باشد ) يا 0  K, M, G, T عدد مثبت وارد نماييد (مي تواند داراي پسوند"
+
+#: storage/forms.py:106
+#, python-format
+msgid "%s is not a valid number"
+msgstr "يك عدد معتبر نيست %s"
+
+#: storage/forms.py:111
+#: storage/forms.py:351
+#: templates/storage/import.html:9
+#: templates/storage/wizard.html:17
+msgid "Volume name"
+msgstr "Volume نام "
+
+#: storage/forms.py:115
+#: templates/storage/wizard.html:65
+msgid "Force 4096 bytes sector size"
+msgstr "اجباري بودن سايز سكتور 4096 بايت"
+
+#: storage/forms.py:116
+#: templates/storage/wizard.html:138
+msgid "Specify custom path"
+msgstr "مسير مرسوم را مشخص نماييد"
+
+#: storage/forms.py:123
+#, fuzzy
+msgid "Volume add"
+msgstr "درایو ZFS"
+
+#: storage/forms.py:131
+msgid "Leaving this blank will give the volume a default path of /mnt/${VOLUME_NAME}"
+msgstr "را داده ايد، اين گزينه را خالي بگذاريد /mnt/${VOLUME_NAME} مسير پيش فرض volume در هنگامي كه به "
+
+#: storage/forms.py:186
+msgid "The volume name must start with letters and may include numbers, \"-\", \"_\" and \".\" ."
+msgstr " \"-\", \"_\" , \".\"  بايد با حروف شروع شود،ممكن است شامل اعداد و اين كاراكتر ها هم بشود  volume نام"
+
+#: storage/forms.py:188
+msgid "A volume with that name already exists."
+msgstr "با اين نام وجود دارد volume"
+
+#: storage/forms.py:202
+msgid "Path does not exist."
+msgstr "مسير وجود ندارد"
+
+#: storage/forms.py:205
+msgid "Path is not a directory."
+msgstr "مسير داده شده يك شاخه نيست"
+
+#: storage/forms.py:219
+msgid "You must select a filesystem"
+msgstr "شما بايد يك فايل سيستمي را انتخاب نماييد"
+
+#: storage/forms.py:230
+#: storage/forms.py:389
+#: storage/forms.py:488
+msgid "You already have a volume with same name"
+msgstr "با اين نام داريد volume شما در حال حاضر يك "
+
+#: storage/forms.py:236
+msgid "\"log\" is a reserved word and thus cannot be used"
+msgstr "يك كلمه رزرو است و نمي تواند استفاده شود \"log\""
+
+#: storage/forms.py:241
+msgid "The volume name may NOT start with c[0-9], mirror, raidz or spare"
+msgstr "و يا فضاي خالي شروع شود  mirror, raidz , c[0-9] نمي تواند با  volume نام"
+
+#: storage/forms.py:246
+msgid "UFS volume names cannot be higher than 9 characters"
+msgstr "نمي تواند بيشتر از 9 كاراكتر باشد UFS volume نام هاي "
+
+#: storage/forms.py:250
+msgid "UFS volume names can only contain alphanumeric characters"
+msgstr "فقط مي تواند شامل كاراكترهاي حرفي عددي باشد UFS volume نام هاي "
+
+#: storage/forms.py:352
+#: storage/forms.py:430
+#: storage/forms.py:838
+msgid "Member disk"
+msgstr "شماره ديسك"
+
+#: storage/forms.py:395
+#: storage/forms.py:504
+msgid "The selected disks were not verified for this import rules."
+msgstr "ديسك انتخاب شده براي اين قوانين واردات، تصديق نشده است"
+
+#: storage/forms.py:403
+msgid "An error occurred while labeling the disk."
+msgstr "هنگام برچسب گذاري ديسك، يك خطا به وقوع پيوسته است"
+
+#: storage/forms.py:483
+msgid "You must select a volume."
+msgstr "انتخاب نماييد volume شما بايد يك "
+
+#: storage/forms.py:545
+#, python-format
+msgid "The volume \"%s\" failed to import, for futher details check pool status"
+msgstr "را چك نماييد  pool status براي وارد نمودن، دچار مشكل شده است، براي جزئيات بيشتر volume  \"%s\""
+
+#: storage/forms.py:573
+msgid "Dataset Name"
+msgstr "نام مجموعه داده"
+
+#: storage/forms.py:574
+#: storage/forms.py:606
+#: storage/forms.py:635
+#: storage/forms.py:665
+msgid "Compression level"
+msgstr "سطح فشرده سازي"
+
+# atime = ?
+#: storage/forms.py:575
+#: storage/forms.py:607
+#: storage/forms.py:636
+msgid "Enable atime"
+msgstr "atime فعال سازي"
+
+#: storage/forms.py:576
+#: storage/forms.py:608
+msgid "Quota for this dataset"
+msgstr "سهميه اين مجموعه داده"
+
+#: storage/forms.py:576
+#: storage/forms.py:577
+#: storage/forms.py:608
+#: storage/forms.py:609
+#: storage/forms.py:637
+msgid "0=Unlimited; example: 1g"
+msgstr "1g  نا محدود= 0، مثال "
+
+#: storage/forms.py:577
+#: storage/forms.py:609
+msgid "Quota for this dataset and all children"
+msgstr "سهميه اين مجموعه داده و تمام فرزندانش"
+
+#: storage/forms.py:578
+#: storage/forms.py:610
+msgid "Reserved space for this dataset"
+msgstr "فضاي رزرو شده براي اين مجموعه داده"
+
+#: storage/forms.py:578
+#: storage/forms.py:579
+#: storage/forms.py:610
+#: storage/forms.py:611
+#: storage/forms.py:638
+msgid "0=None; example: 1g"
+msgstr "1g هيچ كدام = 0 ، مانند "
+
+#: storage/forms.py:579
+#: storage/forms.py:611
+msgid "Reserved space for this dataset and all children"
+msgstr "فضاي رزرو شده براي اين مجموعه داده و تمام بچه هايش "
+
+#: storage/forms.py:588
+msgid "Dataset names must begin with an alphanumeric character and may only contain \"-\", \"_\", \":\" and \".\"."
+msgstr "\"-\", \"_\", \":\", \".\"  نام هاي مجموعه داده بايد با يك كاراكتر حرفي عددي شروع شود و تنها ممكن است حاوي اين كاراكتر ها باشد"
+
+#: storage/forms.py:595
+#: storage/forms.py:678
+msgid "You already have a dataset with the same name"
+msgstr "شما در حال حاضر يك مجموعه داده با اين نام داريد"
+
+#: storage/forms.py:637
+msgid "Quota for this volume"
+msgstr "volume سهميه اين"
+
+#: storage/forms.py:638
+msgid "Reserved space for this volume"
+msgstr "volume فضاي رزرو شده براي اين "
+
+#: storage/forms.py:663
+msgid "ZFS Volume Name"
+msgstr "ZFS Volume  نام"
+
+#: storage/forms.py:664
+msgid "Size for this ZFS Volume"
+msgstr "ZFS Volume  اندازه اين "
+
+#: storage/forms.py:664
+msgid "Example: 1g"
+msgstr "1g مثال"
+
+#: storage/forms.py:672
+msgid "ZFS Volume names must begin with an alphanumeric character and may only contain (-), (_), (:) and (.)."
+msgstr "(-), (_), (:) , (.) بايد با يك كاراكتر حرفي عددي شروع شود و تنها مي تواند حاوي اين كاراكتر هاي باشد ZFS Volume  نام"
+
+#: storage/forms.py:693
+msgid "Owner (user)"
+msgstr "(مالك ( كاربر"
+
+#: storage/forms.py:694
+msgid "Owner (group)"
+msgstr "(مالك ( گروه"
+
+#: storage/forms.py:695
+#: templates/system/rsync.html:7
+msgid "Mode"
+msgstr "روش"
+
+#: storage/forms.py:696
+msgid "Type of ACL"
+msgstr "ACL نوع"
+
+#: storage/forms.py:702
+msgid "Set permission recursively"
+msgstr "مجوز را بصورت بازگشتي تنظيم كن"
+
+#: storage/forms.py:773
+msgid "At least one day must be chosen"
+msgstr "حداقل يك روز بايد انتخاب شود"
+
+#: storage/forms.py:778
+msgid "Recursive snapshot"
+msgstr "بازگشتي snapshot"
+
+#: storage/forms.py:779
+msgid "Snapshot Name"
+msgstr "snapshot نام "
+
+#: storage/forms.py:786
+msgid "Only [-a-zA-Z0-9_.] permitted as snapshot name"
+msgstr "مجاز هستند snapshot  به عنوان نام  [-a-zA-Z0-9_.]  فقط"
+
+#: storage/forms.py:798
+msgid "Invalid prefix"
+msgstr "پيشوند نا معتبر"
+
+#: storage/forms.py:802
+msgid "Snapshot"
+msgstr "Snapshot "
+
+#: storage/forms.py:803
+msgid "Clone Name (must be on same volume)"
+msgstr "(باشد volume بايد در همان  ) Clone  نام"
+
+#: storage/forms.py:818
+msgid "Only [-a-zA-Z0-9_./] permitted as clone name"
+msgstr "مجاز است clone براي نام   [- a-z A-Z 0-9 _ . / ] فقط استفاده از"
+
+#: storage/forms.py:824
+msgid "Clone must be within the same volume"
+msgstr "باشد volume بايد در همان  clone"
+
+#: storage/forms.py:903
+#: storage/models.py:600
+msgid "Remote hostname"
+msgstr "نام ميزبان راه دور"
+
+#: storage/forms.py:904
+#: storage/models.py:604
+msgid "Remote port"
+msgstr "پورت راه دور"
+
+#: storage/forms.py:905
+#: storage/models.py:608
+msgid "Remote hostkey"
+msgstr "راه دور hostkey"
+
+#: storage/forms.py:948
+msgid "Mark the disks as new (destroy data)"
+msgstr "( ديسك ها را به عنوان جديد علامت گذاري كن (داده خراب شده"
+
+#: storage/forms.py:957
+msgid "Delete all shares related to this volume"
+msgstr "را حذف كن volume تمام بخش هاي به اشتراك گذاشته شده مربوط به اين"
+
+#: storage/forms.py:967
+msgid "I'm aware this will destroy snapshots within this dataset"
+msgid_plural "I'm aware this will destroy all child datasets and snapshots within this dataset"
+msgstr[0] "ها ( و تمام مجموعه داده هاي فرزند) درون اين مجموعه داده را snapshot من مطلع هستم كه اين از بين خواهد برد"
+
+#: storage/forms.py:978
+#: system/forms.py:465
+#: system/forms.py:512
+msgid "minute"
+msgstr "دقيقه"
+
+#: storage/forms.py:979
+#: system/forms.py:384
+#: system/forms.py:466
+#: system/forms.py:513
+msgid "hour"
+msgstr "ساعت"
+
+#: storage/forms.py:980
+#: system/forms.py:385
+#: system/forms.py:467
+#: system/forms.py:514
+msgid "day of month"
+msgstr "روز ماه"
+
+#: storage/models.py:49
+msgid "File System Type"
+msgstr "نوع فايل سيستم"
+
+#: storage/models.py:58
+#: storage/models.py:184
+#: templates/storage/scrub.html:5
+#: templates/storage/volumes.html:58
+msgid "Volume"
+msgstr "Volume"
+
+#: storage/models.py:188
+#: templates/storage/scrub.html:6
+msgid "Threshold days"
+msgstr "روزهاي آستانه"
+
+#: storage/models.py:190
+msgid "Determine how many days shall be between scrubs"
+msgstr "مشخص نماييد كه چند روز بايد بين پاك سازي ها باشد"
+
+#: storage/models.py:200
+#: system/models.py:320
+#: system/models.py:468
+#: templates/storage/scrub.html:7
+#: templates/system/cronjob.html:5
+#: templates/system/rsync.html:9
+msgid "Minute"
+msgstr "دقيقه"
+
+#: storage/models.py:201
+#: system/models.py:321
+#: system/models.py:469
+msgid "Values 0-59 allowed."
+msgstr "مقادير بين 0 تا 59 مجاز هستند"
+
+#: storage/models.py:206
+#: system/models.py:326
+#: system/models.py:474
+#: system/models.py:643
+#: templates/storage/scrub.html:8
+#: templates/system/cronjob.html:6
+#: templates/system/rsync.html:10
+#: templates/system/smarttest.html:6
+msgid "Hour"
+msgstr "ساعت"
+
+#: storage/models.py:207
+#: system/models.py:327
+#: system/models.py:475
+#: system/models.py:644
+msgid "Values 0-23 allowed."
+msgstr "مقادير بين 0 تا 23 مجاز هستند"
+
+#: storage/models.py:212
+#: system/models.py:332
+#: system/models.py:480
+#: system/models.py:648
+#: templates/storage/scrub.html:9
+#: templates/system/cronjob.html:7
+#: templates/system/rsync.html:11
+#: templates/system/smarttest.html:7
+msgid "Day of month"
+msgstr "روز ماه"
+
+#: storage/models.py:213
+#: system/models.py:333
+#: system/models.py:481
+#: system/models.py:649
+msgid "Values 1-31 allowed."
+msgstr "مقادير بين 1 تا 31 مجاز هستند"
+
+#: storage/models.py:218
+#: system/models.py:338
+#: system/models.py:486
+#: system/models.py:654
+#: templates/storage/scrub.html:10
+#: templates/system/cronjob.html:8
+#: templates/system/rsync.html:12
+#: templates/system/smarttest.html:8
+msgid "Month"
+msgstr "ماه"
+
+#: storage/models.py:223
+#: system/models.py:343
+#: system/models.py:491
+#: system/models.py:659
+#: templates/storage/scrub.html:11
+#: templates/system/cronjob.html:9
+#: templates/system/rsync.html:13
+#: templates/system/smarttest.html:9
+msgid "Day of week"
+msgstr "روز هفته"
+
+#: storage/models.py:227
+#: system/models.py:347
+#: system/models.py:546
+#: system/models.py:745
+#: system/models.py:783
+#: templates/plugins/index.html:14
+msgid "Enabled"
+msgstr "فعال شده"
+
+#: storage/models.py:231
+msgid "ZFS Scrub"
+msgstr "ZFS پاك سازي "
+
+#: storage/models.py:232
+msgid "ZFS Scrubs"
+msgstr "ZFS پاك سازي هاي "
+
+#: storage/models.py:246
+#: system/models.py:367
+#: system/models.py:569
+msgid "Every minute"
+msgstr "هر دقيقه"
+
+#: storage/models.py:248
+#: system/models.py:369
+#: system/models.py:571
+#, python-format
+msgid "Every %s minute(s)"
+msgstr "(دقيقه (ها %s تمام"
+
+#: storage/models.py:254
+#: system/models.py:375
+#: system/models.py:577
+#: system/models.py:664
+msgid "Every hour"
+msgstr "هر ساعت"
+
+#: storage/models.py:256
+#: system/models.py:377
+#: system/models.py:579
+#: system/models.py:666
+#, python-format
+msgid "Every %s hour(s)"
+msgstr "(ساعت (ها %s تمام"
+
+#: storage/models.py:264
+#: system/models.py:385
+#: system/models.py:587
+#: system/models.py:674
+#, python-format
+msgid "Every %s days"
+msgstr "(روز (ها %s تمام"
+
+#: storage/models.py:271
+#: system/models.py:392
+#: system/models.py:594
+#: system/models.py:681
+msgid "Every month"
+msgstr "هر ماه"
+
+#: storage/models.py:289
+#: system/models.py:410
+#: system/models.py:608
+#: system/models.py:695
+msgid "Weekdays"
+msgstr "روزهاي هفته"
+
+#: storage/models.py:291
+#: system/models.py:412
+#: system/models.py:610
+#: system/models.py:697
+msgid "Weekends"
+msgstr "پايان هفته ها"
+
+# Multipath  =?
+#: storage/models.py:323
+msgid "Multipath name"
+msgstr "چندين نام"
+
+# Multipath  =؟
+#: storage/models.py:329
+msgid "Multipath member"
+msgstr "چندين عضو"
+
+#: storage/models.py:342
+#: storage/views.py:226
+msgid "Transfer Mode"
+msgstr "روش انتقال"
+
+#: storage/models.py:348
+#: storage/views.py:226
+msgid "HDD Standby"
+msgstr "آماده به كار HDD"
+
+#: storage/models.py:354
+#: storage/views.py:226
+msgid "Advanced Power Management"
+msgstr "مديريت قدرت پيشرفته"
+
+#: storage/models.py:360
+#: storage/views.py:226
+msgid "Acoustic Level"
+msgstr "سطح شنيداري"
+
+#: storage/models.py:364
+#: storage/views.py:226
+msgid "Enable S.M.A.R.T."
+msgstr "فعال S.M.A.R.T"
+
+#: storage/models.py:368
+msgid "S.M.A.R.T. extra options"
+msgstr "S.M.A.R.T گزينه هاي بيشتر "
+
+#: storage/models.py:425
+#, fuzzy
+msgid "Disks"
+msgstr "دیسک"
+
+# ؟
+#: storage/models.py:438
+msgid "Mount Point"
+msgstr "نقطه صعود"
+
+#: storage/models.py:439
+msgid "Path to mount point"
+msgstr "مسير به سمت نقطه صعود"
+
+#: storage/models.py:443
+msgid "Mount options"
+msgstr "نقاط صعود"
+
+#: storage/models.py:444
+msgid "Enter Mount Point options here"
+msgstr "گزينه هاي نقطه صعود را اينجا وارد نماييد"
+
+#: storage/models.py:612
+msgid "Remote Replication Host"
+msgstr "ميزبان رونوشت راه دور"
+
+#: storage/models.py:613
+msgid "Remote Replication Hosts"
+msgstr "ميزبان هاي رونوشت راه دور"
+
+#: storage/models.py:625
+#: storage/models.py:679
+#: templates/storage/replications.html:20
+#: templates/storage/tasks.html:21
+msgid "Filesystem/Volume"
+msgstr " فايل سيستم /  volume "
+
+#: storage/models.py:630
+msgid "Last snapshot sent to remote side (leave blank for full replication)"
+msgstr "( تصوري لحظه اي قبلي براي سمت راه دور ارسال شد (خالي بگذاريد براي جايگزيني كامل"
+
+#: storage/models.py:633
+#: system/models.py:433
+#: templates/storage/replications.html:22
+msgid "Remote Host"
+msgstr "ميزبان راه دور"
+
+#: storage/models.py:636
+msgid "Remote ZFS filesystem name"
+msgstr "راه دور ZFS نام فايل سيستم"
+
+#: storage/models.py:637
+msgid "This should be the name of the ZFS filesystem on remote side. eg: poolname/datasetname not the mountpoint or filesystem path"
+msgstr "نقطه صعود يا مسير فايل سيستم نيست  poolname/datasetname روي طرف راه دور باشد. به عنوان مثال   ZFS اين بايد نام فايل سيستم"
+
+#: storage/models.py:641
+msgid "Recursively replicate and remove stale snapshot on remote side"
+msgstr "جايگزيني بازگشتي و حذف تصوير لحظه اي قديمي روي طرف راه دور"
+
+#: storage/models.py:645
+msgid "Initialize remote side for once. (May cause data loss on remote side!)"
+msgstr "(آغاز سازي طرف راه دور براي يكبار. (ممكن است موجب از دست رفتن داده ها روي سمت راه دور شود"
+
+#: storage/models.py:649
+msgid "Limit (kB/s)"
+msgstr "(حد (كيلو بايت بر ثانيه"
+
+#: storage/models.py:650
+msgid "Limit the replication speed. Unit in kilobytes/seconds. 0 = unlimited."
+msgstr "محدود نمودن سرعت رونوشت. واحد كيلو بايت بر ثانيه. 0= نا محدود"
+
+#: storage/models.py:654
+msgid "Replication Task"
+msgstr "فعاليت رونوشت داده"
+
+#: storage/models.py:655
+msgid "Replication Tasks"
+msgstr "فعاليت هاي رونوشت داده"
+
+#: storage/models.py:683
+#: system/models.py:499
+#: templates/storage/tasks.html:22
+msgid "Recursive"
+msgstr "بلزگشتي"
+
+#: storage/models.py:687
+msgid "Snapshot lifetime value"
+msgstr "اندازه طول عمر تصوير لحظه اي"
+
+#: storage/models.py:693
+msgid "Snapshot lifetime unit"
+msgstr "واحد طول عمر تصوير لحظه اي"
+
+#: storage/models.py:697
+msgid "Begin"
+msgstr "شروع"
+
+# ؟
+#: storage/models.py:698
+msgid "Do not snapshot before"
+msgstr "عكس فوري گرفته نشود قبل از"
+
+#: storage/models.py:702
+msgid "End"
+msgstr "پايان"
+
+#: storage/models.py:703
+msgid "Do not snapshot after"
+msgstr "عكس فوري گرفته نشود بعد از"
+
+#: storage/models.py:709
+msgid "Interval"
+msgstr "وقفه"
+
+#: storage/models.py:710
+msgid "How many minutes passed before a new snapshot is made after the last one."
+msgstr "چه مدت بعد از آخرين تصوير لحظه اي، تصوير لحظه اي جديد گرفته شود"
+
+#: storage/models.py:716
+msgid "Occurrence"
+msgstr "رخداد"
+
+#: storage/models.py:717
+msgid "How the task is repeated"
+msgstr "چگونه این کار تکرار شده است"
+
+#: storage/models.py:722
+msgid "Weekday"
+msgstr "روز هفته"
+
+#: storage/models.py:741
+msgid "Periodic Snapshot Task"
+msgstr "فعاليت تهيه تصوير لحظه اي دوره اي"
+
+#: storage/models.py:742
+#: templates/storage/index.html:14
+msgid "Periodic Snapshot Tasks"
+msgstr "فعاليت هاي تهيه تصوير لحظه اي دوره اي"
+
+#: storage/nav.py:5
+#: templates/menubar.html:18
+msgid "Storage"
+msgstr "محل ذخيره سازي"
+
+#: storage/nav.py:24
+msgid "View Snapshots"
+msgstr "مشاهده تصوير هاي لحظه اي"
+
+#: storage/nav.py:34
+msgid "View ZFS Scrubs"
+msgstr "ZFS مشاهده پاك سازي هاي "
+
+#: storage/nav.py:41
+#: templates/storage/volumes.html:4
+#: templates/storage/volumes.html.py:6
+msgid "Volume Manager"
+msgstr "volume مدير "
+
+#: storage/nav.py:52
+#: templates/storage/autoimport.html:18
+#: templates/storage/import.html:43
+#: templates/storage/volumes.html:12
+#: templates/storage/volumes.html.py:14
+msgid "Import Volume"
+msgstr "volume وارد كردن "
+
+#: storage/nav.py:63
+#: templates/storage/volumes.html:28
+#: templates/storage/volumes.html.py:30
+msgid "View Disks"
+msgstr "مشاهده ديسك ها"
+
+#: storage/nav.py:74
+#: templates/storage/volumes.html:37
+#: templates/storage/volumes.html.py:39
+msgid "View Multipaths"
+msgstr "مشاهده مسيرها"
+
+#: storage/nav.py:85
+#: templates/storage/volumes.html:20
+#: templates/storage/volumes.html.py:22
+msgid "Auto Import Volume"
+msgstr "volume وارد كردن اتوماتيك "
+
+#: storage/nav.py:96
+#, fuzzy
+msgid "View Volumes"
+msgstr "درایو ZFS"
+
+#: storage/nav.py:108
+#: templates/storage/volumes.html:129
+#: templates/storage/volumes.html.py:133
+msgid "Create ZFS Volume"
+msgstr "ZFS Volume تهيه "
+
+#: storage/nav.py:119
+msgid "Add Periodic Snapshot"
+msgstr "افزودن تهيه تصوير لحظه اي دوره اي"
+
+#: storage/nav.py:130
+msgid "Volumes"
+msgstr "Volumes"
+
+#: storage/nav.py:160
+#: storage/nav.py:190
+#: templates/storage/volumes.html:120
+#: templates/storage/volumes.html.py:124
+#: templates/storage/volumes.html:209
+#: templates/storage/volumes.html.py:213
+msgid "Create ZFS Dataset"
+msgstr "ZFS تهيه مجموعه داده"
+
+#: storage/nav.py:173
+#: storage/nav.py:198
+#: templates/storage/volumes.html:139
+#: templates/storage/volumes.html.py:143
+#: templates/storage/volumes.html:218
+#: templates/storage/volumes.html.py:222
+msgid "Change Permissions"
+msgstr "تغيير مجوز ها"
+
+#: storage/views.py:159
+#: storage/views.py:187
+#: storage/views.py:209
+msgid "Volume successfully added."
+msgstr "با موفقيت اضافه شد Volume"
+
+#: storage/views.py:226
+#, fuzzy
+msgid "S.M.A.R.T. Extra Options"
+msgstr "تنظیمات .S.M.A.R.T"
+
+#: storage/views.py:317
+msgid "Dataset successfully added."
+msgstr "مجموعه داده با موفقيت اضافه شد"
+
+#: storage/views.py:351
+msgid "Dataset successfully edited."
+msgstr "مجموعه داده با موفقيت ويرايش شد"
+
+#: storage/views.py:353
+#: storage/views.py:428
+msgid "An error occurred when setting the options"
+msgstr "هنگام تنظيم گزينه ها، يك خطا روي داده است"
+
+#: storage/views.py:374
+msgid "ZFS Volume successfully added."
+msgstr "با موفقيت اضافه شد ZFS Volume"
+
+#: storage/views.py:389
+msgid "This is in use by the iscsi target, please remove it there first."
+msgstr "مقصد در حال استفاده است، لطفاً اول آن را غير فعال نماييد iscsi  اين، توسط "
+
+#: storage/views.py:392
+msgid "ZFS Volume successfully destroyed."
+msgstr "با موفقيت حذف شد ZFS Volume"
+
+#: storage/views.py:426
+msgid "Native dataset successfully edited."
+msgstr "مجموعه داده محلي با موفقت ويرايش شد"
+
+#: storage/views.py:440
+msgid "Mount Point permissions successfully updated."
+msgstr "مجوز هاي نقطه صعود با موفقيت بروز رساني شد"
+
+#: storage/views.py:457
+msgid "Dataset successfully destroyed."
+msgstr "مجموعه داده با موفقيت حذف شد"
+
+#: storage/views.py:474
+msgid "Snapshot successfully deleted."
+msgstr "تصوير لحظه اي با موفقيت حذف شد"
+
+#: storage/views.py:494
+msgid "Snapshots successfully deleted."
+msgstr "تصاوير لحظه اي با موفقيت حذف شدند"
+
+#: storage/views.py:505
+msgid "Rollback successful."
+msgstr "عقبگرد با موفقيت انجام شد"
+
+#: storage/views.py:522
+msgid "Snapshot successfully added."
+msgstr "تصوير لحظه اي با موفقيت اضافه شد"
+
+#: storage/views.py:535
+msgid "Snapshot successfully taken."
+msgstr "تصوير لحظه اي با موفقيت گرفته شد"
+
+# clone= ?
+#: storage/views.py:550
+msgid "Snapshot successfully cloned."
+msgstr "تصوير لحظه اي با موفقيت كلون شد"
+
+#: storage/views.py:567
+#: storage/views.py:696
+msgid "Disk replacement has been initiated."
+msgstr "جايگزيني ديسك آغاز شده است"
+
+#: storage/views.py:569
+#: storage/views.py:698
+msgid "An error occurred."
+msgstr "يك خطا رخ داده است"
+
+#: storage/views.py:584
+msgid "Disk detach has been successfully done."
+msgstr "جدا نمودن ديسك با موفقيت انجام گرفته است"
+
+# offline= ?
+#: storage/views.py:599
+msgid "Disk offline operation has been issued."
+msgstr "فرمان آفلاين ديسك صادر شده است"
+
+#: storage/views.py:614
+msgid "Disk has been removed."
+msgstr "ديسك حذف شده است"
+
+#: storage/views.py:633
+msgid "The volume has been successfully detached"
+msgstr "با موفقيت جدا شده است Volume"
+
+#: storage/views.py:653
+msgid "The scrub process has begun"
+msgstr "فرايند پاك سازي آغاز شده است"
+
+#: system/forms.py:161
+msgid "Language (Require UI reload)"
+msgstr "(نياز دارد UI زبان ( به بارگذاري "
+
+#: system/forms.py:171
+msgid "You must specify a number between 1 and 65535, inclusive."
+msgstr "شما بايد عددي بين 1 تا 65535 مشخص نماييد"
+
+#: system/forms.py:173
+msgid "Number is required."
+msgstr "عدد نياز دارد"
+
+#: system/forms.py:198
+msgid "Force"
+msgstr "اجبار"
+
+#: system/forms.py:217
+msgid "Max Poll should be higher than Min Poll"
+msgstr "بالاتر باشد Min Poll بايد از Max Poll"
+
+#: system/forms.py:222
+msgid "Server could not be reached. Check \"Force\" to continue regardless."
+msgstr "را بررسي نماييد تا صرفنظر از آن ادامه دهد \"Force\". سرويس دهنده قابل دستيابي نيست"
+
+#: system/forms.py:391
+msgid "Place to temporarily place firmware file"
+msgstr "مكان براي قرار دادن موقت فايل ميان افزار"
+
+#: system/forms.py:391
+msgid "The system will use this place to temporarily store the firmware file before it's being applied."
+msgstr "سيستم از اين مكان براي نگهداري موقت فايل ميان افزار قبل از بكارگيري آن، استفاده مي نمايد"
+
+#: system/forms.py:399
+msgid "New image to be installed"
+msgstr "تصوير جديدي كه بايد نصب شود"
+
+#: system/forms.py:400
+#: system/forms.py:431
+msgid "SHA256 sum for the image"
+msgstr "براي تصوير SHA256  جمع"
+
+#: system/forms.py:413
+msgid "Invalid firmware"
+msgstr "ميان افزار نامعتبر"
+
+#: system/forms.py:430
+msgid "Service Pack image to be installed"
+msgstr "تصوير دسته سرويس كه بايد نصب شود"
+
+#: system/forms.py:441
+msgid "Invalid service pack"
+msgstr "بسته سرويس نا معتبر"
+
+#: system/forms.py:458
+msgid "New config to be installed"
+msgstr "تنظيم جديد براي نصب"
+
+#: system/forms.py:582
+msgid "In order to use rsync over SSH you need a user<br />with a public key (DSA/ECDSA/RSA) set up in home dir."
+msgstr "تنظيم شده در شاخه اصلي، نياز داريد  (DSA/ECDSA/RSA) با يك كليد عمومي  <br /> شما يك كاربر SSH روي  rsync  براي استفاده از "
+
+#: system/forms.py:655
+#: system/forms.py:672
+msgid "Quotes are not allowed"
+msgstr "نقل قول ها داراي مجوز نيستند"
+
+#: system/models.py:47
+msgid "Protocol"
+msgstr "پروتكل"
+
+#: system/models.py:53
+msgid "WebGUI Address"
+msgstr "WebGUI  آدرس"
+
+#: system/models.py:59
+msgid "WebGUI Port"
+msgstr "WebGUI  پورت"
+
+#: system/models.py:65
+msgid "Language"
+msgstr "زبان"
+
+#: system/models.py:71
+msgid "Timezone"
+msgstr "منطقه زماني"
+
+#: system/models.py:77
+msgid "Syslog server"
+msgstr "Syslog سرويس دهنده "
+
+#: system/models.py:81
+#: system/nav.py:25
+#: templates/system/settings.html:2
+msgid "Settings"
+msgstr "تنظيمات"
+
+#: system/models.py:88
+#: templates/system/ntpserver.html:5
+msgid "Address"
+msgstr "آدرس"
+
+#: system/models.py:92
+#: templates/system/ntpserver.html:6
+msgid "Burst"
+msgstr "از هم پاشيدن"
+
+#: system/models.py:94
+msgid "When the server is reachable, send a burst of eight packets instead of the usual one. This is designed to improve timekeeping quality with the server command and s addresses."
+msgstr " با فرمان سرويس دهنده و آدرس ها، اين فرايند طراحي شده است timekeeping هنگامي كه سرويس دهنده قابل دستيابي نيست، بصورت پي در پي، هشت بسته بجاي يكي هميشگي، ارسال شود. برای بهبود كيفيت "
+
+#: system/models.py:97
+msgid "IBurst"
+msgstr "IBurst"
+
+#: system/models.py:99
+msgid "When the server is unreachable, send a burst of eight packets instead of the usual one. This is designed to speed the initial synchronization acquisition with the server command and s addresses."
+msgstr "هنگامي كه سرويس دهنده قابل دستيابي نيست، بصورت پي در پي، هشت بسته بجاي يكي هميشگي، ارسال شود. برای سرعت بخشیدن به دستیابی به هماهنگ سازی اولیه با فرمان سرويس دهنده و آدرس ها، اين فرايند طراحي شده است  "
+
+#: system/models.py:102
+#: templates/system/ntpserver.html:8
+#, fuzzy
+msgid "Prefer"
+msgstr "ترجیحی"
+
+#: system/models.py:104
+msgid "Marks the server as preferred. All other things being equal, this host will be chosen for synchronization among a set of correctly operating hosts."
+msgstr "سرويس دهنده را به عنوان مقدم، نشانه گذاري نماييد. تمام موارد ديگر مساوي هستند، اين ميزبان براي همزماني در بين يك مجموعه از ميزبان هاي عملياتي صحيح، انتخاب خواهد شد"
+
+# ؟
+#: system/models.py:107
+#: templates/system/ntpserver.html:9
+msgid "Min. Poll"
+msgstr "حداقل نمونه"
+
+# ؟
+#: system/models.py:110
+msgid "The minimum poll interval for NTP messages, as a power of 2 in seconds. Defaults to 6 (64 s), but can be decreased to a lower limit of 4 (16 s)"
+msgstr " به عنوان يك قدرت 2  در ثانيه. پيش فرض ها تا 6(64 ثانيه) است ولي مي تواند تا يك حد پايين تر از 4 (16 ثانيه)  كم شود  NTP حداقل بازه هاي نمونه گيري براي پيام هاي "
+
+# ؟
+#: system/models.py:113
+#: templates/system/ntpserver.html:10
+msgid "Max. Poll"
+msgstr "حداكثر نمونه"
+
+# ؟
+#: system/models.py:116
+msgid "The maximum poll interval for NTP messages, as a power of 2 in seconds. Defaults to 10 (1,024 s), but can be increased to an upper limit of 17 (36.4 h)"
+msgstr " به عنوان يك قدرت 2  در ثانيه. پيش فرض ها تا 10(1024 ثانيه) است ولي مي تواند تا يك حد بالا تر از 17 (36.4 ساعت)  اضافه شود  NTP حداكثر بازه هاي نمونه گيري براي پيام هاي "
+
+#: system/models.py:128
+msgid "NTP Server"
+msgstr "NTP سرويس دهنده"
+
+#: system/models.py:129
+msgid "NTP Servers"
+msgstr "NTP سرويس دهنده هاي"
+
+#: system/models.py:141
+msgid "Enable Console Menu"
+msgstr "فعال کردن منوی کنسول"
+
+#: system/models.py:143
+msgid "Use Serial Console"
+msgstr "استفاده از کنسول سریال"
+
+#: system/models.py:145
+msgid "Enable screen saver"
+msgstr "فعال کردن محافظ صفحه نمایش"
+
+#: system/models.py:147
+msgid "Automatically Check for New Firmware"
+msgstr "بصورت اتوماتيك وجود ميان افزار جديد بررسي شود"
+
+#: system/models.py:149
+msgid "Beep on boot"
+msgstr "بوق هنگام بارگزاري"
+
+#: system/models.py:151
+msgid "Enable Special System Tuning"
+msgstr "فعال کردن تنظيم سازي سیستم ویژه "
+
+#: system/models.py:153
+msgid "Enable powerd (Power Saving Daemon)"
+msgstr "(فعال کردن برق ( شبح صرفه جويي برق"
+
+#: system/models.py:155
+msgid "Enable Zeroconf/Bonjour"
+msgstr "Zeroconf/Bonjour فعال سازي "
+
+#: system/models.py:158
+msgid "Swap size on each drive in GiB, affects new disks only. Setting this to 0 disables swap creation completely (STRONGLY DISCOURAGED)."
+msgstr "فقط روي دیسک های جديد تاثير ميگذارد.تنظيم نمودن اين عدد روي 0 بصورت كامل فرايند مبادله سازي را غير فعال مي سازد (شدیدا کاهش یافته است)، Gib فرآیند مبادله اندازه بر روی هر درایو در"
+
+#: system/models.py:163
+msgid "Show console messages in the footer"
+msgstr "پيام هاي كنسول را در پاورقي نمايش دهيد"
+
+#: system/models.py:166
+msgid "Show tracebacks in case of fatal errors"
+msgstr "در حالت خطاهاي مهلك tracebacks نمايش"
+
+#: system/models.py:169
+msgid "Show advanced fields by default"
+msgstr " نمايش فيلدهاي پيشرفته بصورت پيش فرض"
+
+#: system/models.py:172
+msgid "Enable autotune"
+msgstr " autotune فعال سازي "
+
+#: system/models.py:180
+msgid "MOTD banner"
+msgstr "MOTD  علامت "
+
+#: system/models.py:184
+#: templates/system/settings.html:5
+msgid "Advanced"
+msgstr "پيشرفته"
+
+#: system/models.py:193
+msgid "From email"
+msgstr "از طریق ایمیل"
+
+# اصلا گويا نيست
+#: system/models.py:194
+msgid "An email address that the system will use for the sending address for mail it sends, eg: freenas@example.com"
+msgstr " freenas@example.com  یک آدرس ایمیل که سیستم برای ارسال آدرس براي پست آن استفاده مي نمايد مانند "
+
+#: system/models.py:199
+msgid "Outgoing mail server"
+msgstr "سرويس دهنده ارسال نامه به خارج"
+
+#: system/models.py:200
+msgid "A hostname or ip that will accept our mail, for instance mail.example.org, or 192.168.1.1"
+msgstr "192.168.1.1 يا  mail.example.org كه نامه ما را مي پذيرد براي مثال  IP يك نام ميزبان يا آدرس "
+
+#: system/models.py:206
+msgid "An integer from 1 - 65535, generally will be 25, 465, or 587"
+msgstr "يك عدد صحيح از 1 تا 65535 ، عموماً 25 يا 465 يا 587 است"
+
+#: system/models.py:207
+msgid "Port to connect to"
+msgstr "پورت براي اتصال به آن"
+
+#: system/models.py:213
+msgid "encryption of the connection"
+msgstr "رمز نمودن اتصال"
+
+#: system/models.py:214
+msgid "TLS/SSL"
+msgstr "TLS/SSL"
+
+#: system/models.py:217
+msgid "Use SMTP Authentication"
+msgstr "SMTP استفاده از اعتبار سنجي "
+
+#: system/models.py:225
+msgid "A username to authenticate to the remote server"
+msgstr "نام کاربری برای تأیید هویت سرويس دهنده  راه دور"
+
+#: system/models.py:232
+msgid "A password to authenticate to the remote server"
+msgstr "كلمه عبور برای تأیید هویت سرويس دهنده  راه دور"
+
+#: system/models.py:235
+#: templates/system/settings.html:7
+msgid "Email"
+msgstr "نامه الكترونيكي"
+
+#: system/models.py:245
+msgid "Organization"
+msgstr "سازمان"
+
+#: system/models.py:246
+msgid "Organization Name (eg, company)"
+msgstr "company نام سازمان مانند"
+
+#: system/models.py:252
+msgid "Organizational Unit"
+msgstr "واحد سازماني"
+
+#: system/models.py:253
+msgid "Organizational Unit Name (eg, section)"
+msgstr "section نام واحد سازماني مانند"
+
+#: system/models.py:259
+#: system/models.py:260
+msgid "Email Address"
+msgstr "آدرس نامه الكترونيكي"
+
+#: system/models.py:266
+msgid "Locality"
+msgstr "محل"
+
+#: system/models.py:267
+msgid "Locality Name (eg, city)"
+msgstr "City نام محل مانند "
+
+#: system/models.py:273
+msgid "State"
+msgstr "ايالت"
+
+#: system/models.py:274
+msgid "State or Province Name (full name)"
+msgstr "(نام استان (نام كامل"
+
+#: system/models.py:280
+msgid "Country"
+msgstr "كشور"
+
+#: system/models.py:281
+msgid "Country Name (2 letter code)"
+msgstr "(نام كشور ( كد 2 حرفي"
+
+#: system/models.py:287
+msgid "Common Name"
+msgstr "نام متعارف"
+
+#: system/models.py:288
+msgid "Common Name (eg, YOUR name)"
+msgstr "نام متعارف مانند نام شما"
+
+#: system/models.py:293
+msgid "SSL Certificate"
+msgstr "SSL گواهينامه"
+
+#: system/models.py:294
+msgid "Cut and paste the contents of your private and public certificate files here."
+msgstr "محتويات فايل هاي گواهينامه عمومي يا خصوصي خود را بريده و در اينجا وارد نماييد"
+
+#: system/models.py:307
+#: system/models.py:496
+msgid "The user to run the command"
+msgstr "كاربر براي اجراي فرمان"
+
+#: system/models.py:310
+#: templates/system/cronjob.html:11
+msgid "Command"
+msgstr "دستور"
+
+#: system/models.py:314
+#: system/models.py:462
+#: system/models.py:638
+#: templates/storage/scrub.html:12
+#: templates/system/rsync.html:15
+msgid "Short description"
+msgstr "شرح مختصر"
+
+#: system/models.py:350
+msgid "Cron Job"
+msgstr "cron برنامه "
+
+#: system/models.py:351
+msgid "Cron Jobs"
+msgstr "cron برنامه هاي "
+
+#: system/models.py:434
+msgid "IP Address or hostname"
+msgstr "يا نام ميزبان IP آدرس "
+
+#: system/models.py:443
+msgid "Remote Module Name"
+msgstr "نام ماژول راه دور"
+
+# daemon= ؟
+#: system/models.py:445
+msgid "Name of the module defined in the remote rsync daemon"
+msgstr "راه دور  rsync daemon نام ماژول تعريف شده در "
+
+#: system/models.py:449
+msgid "Remote Path"
+msgstr "مسير راه دور"
+
+#: system/models.py:451
+msgid "Path on remote host to rsync to, e.g. /mnt/tank"
+msgstr " /mnt/tank با آن، مانند rsync  مسير روي ميزبان راه دور براي"
+
+#: system/models.py:455
+#: templates/system/rsync.html:8
+msgid "Direction"
+msgstr "جهت"
+
+#: system/models.py:456
+msgid "Push - From local to remote machine. Pull - From remote to local machine."
+msgstr "هل دادن - از ماشين محلي به ماشين راه دور. برداشتن - از ماشين راه دور به ماشين محلي"
+
+# Recurse  = ?
+#: system/models.py:500
+msgid "Recurse into directories"
+msgstr "به سمت شاخه ها Recurse "
+
+#: system/models.py:504
+msgid "Times"
+msgstr "دفعه"
+
+#: system/models.py:505
+msgid "Preserve modification times"
+msgstr "نگهداري تعداد  تغييرات"
+
+#: system/models.py:509
+msgid "Compress"
+msgstr "فشرده"
+
+#: system/models.py:510
+msgid "Compress data during the transfer"
+msgstr "فشرده سازی داده ها در طول انتقال"
+
+#: system/models.py:514
+msgid "Archive"
+msgstr "بايگاني"
+
+#: system/models.py:515
+msgid "Archive mode"
+msgstr "روش بايگاني"
+
+#: system/models.py:519
+#: templates/freeadmin/generic_model_edit.html:89
+#: templates/network/interface.html:32
+#: templates/network/lagg.html:44
+#: templates/network/lagg_members.html:24
+#: templates/network/lagg_members.html:26
+#: templates/network/staticroute.html:24
+#: templates/network/vlan.html:25
+#: templates/plugins/index.html:41
+#: templates/services/iscsi_assoctargets.html:22
+#: templates/services/iscsi_assoctargets.html:24
+#: templates/services/iscsi_auth.html:24
+#: templates/services/iscsi_auth.html:26
+#: templates/services/iscsi_authini.html:26
+#: templates/services/iscsi_authini.html:28
+#: templates/services/iscsi_dextents.html:24
+#: templates/services/iscsi_dextents.html:26
+#: templates/services/iscsi_extents.html:24
+#: templates/services/iscsi_extents.html:26
+#: templates/services/iscsi_portals.html:30
+#: templates/services/iscsi_targets.html:24
+#: templates/services/iscsi_targets.html:26
+#: templates/services/plugins_edit.html:10
+#: templates/services/plugins_info.html:35
+#: templates/services/rsyncmod.html:24
+#: templates/services/rsyncmod.html:26
+#: templates/sharing/apple.html:33
+#: templates/sharing/unix.html:33
+#: templates/sharing/windows.html:37
+#: templates/storage/scrub.html:33
+#: templates/storage/scrub.html.py:35
+#: templates/storage/tasks.html:138
+#: templates/storage/tasks.html.py:140
+#: templates/system/cronjob.html:32
+#: templates/system/cronjob.html.py:34
+#: templates/system/ntpserver.html:29
+#: templates/system/ntpserver.html.py:31
+#: templates/system/rsync.html:39
+#: templates/system/rsync.html.py:41
+#: templates/system/smarttest.html:27
+#: templates/system/smarttest.html.py:29
+#: templates/system/sysctl.html:23
+#: templates/system/sysctl.html.py:25
+#: templates/system/tunable.html:23
+#: templates/system/tunable.html.py:25
+msgid "Delete"
+msgstr "حذف"
+
+#: system/models.py:520
+msgid "Delete files on the receiving side that don't exist on sender"
+msgstr "حذف فایل ها بر روی سمت دریافت كننده که در فرستنده وجود ندارد"
+
+#: system/models.py:525
+msgid "Suppress non-error messages"
+msgstr "متوقف نمودن پيام هايي كه مربوط به خطا نيستند"
+
+#: system/models.py:529
+msgid "Preserve permissions"
+msgstr "حفظ مجوزها"
+
+#: system/models.py:530
+msgid "This option causes the receiving rsync to set the destination permissions to be the same as the source permissions"
+msgstr "دريافت كننده، مجوز هاي مقصد را مانند آنچه در مبداء است، تنظيم نمايد rsync  اين گزينه موجب مي شود كه "
+
+#: system/models.py:534
+msgid "Preserve extended attributes"
+msgstr "حفظ ویژگی های توسعه یافته"
+
+#: system/models.py:535
+msgid "This option causes rsync to update the remote extended attributes to be the same as the local ones"
+msgstr "، ويژگي هاي توسعه يافته راه دور را مانند آنچه محلي است، بروز رساني نمايد rsync  اين گزينه موجب مي شود كه "
+
+#: system/models.py:541
+msgid "Extra options to rsync command line (usually empty)"
+msgstr "(معمولاً خالي است) rsync  گزينه هاي بيشتر براي خط فرمان"
+
+#: system/models.py:549
+msgid "Rsync Task"
+msgstr "Rsync فعاليت"
+
+#: system/models.py:550
+msgid "Rsync Tasks"
+msgstr "Rsync فعاليت هاي "
+
+#: system/models.py:715
+msgid "S.M.A.R.T. Test"
+msgstr "S.M.A.R.T. تست "
+
+#: system/models.py:716
+msgid "S.M.A.R.T. Tests"
+msgstr "S.M.A.R.T. تست هاي "
+
+#: system/models.py:732
+#: system/models.py:770
+#: templates/system/sysctl.html:5
+#: templates/system/tunable.html:5
+#, fuzzy
+msgid "Variable"
+msgstr "غیر فعال شده"
+
+#: system/models.py:736
+#: system/models.py:774
+#: templates/system/sysctl.html:6
+#: templates/system/tunable.html:6
+msgid "Value"
+msgstr "ارزش"
+
+#: system/models.py:756
+msgid "Sysctl"
+msgstr "Sysctl"
+
+#: system/models.py:757
+msgid "Sysctls"
+msgstr "Sysctls"
+
+#: system/models.py:794
+#, fuzzy
+msgid "Tunable"
+msgstr "غیر فعال شده"
+
+#: system/models.py:795
+#, fuzzy
+msgid "Tunables"
+msgstr "غیر فعال شده"
+
+#: system/nav.py:5
+#: templates/menubar.html:8
+msgid "System"
+msgstr "سيستم"
+
+#: system/nav.py:11
+#: templates/system/reporting.html:2
+msgid "Reporting"
+msgstr "گزارش دهي"
+
+#: system/nav.py:18
+msgid "System Information"
+msgstr "اطلاعات سيستم"
+
+#: system/nav.py:32
+msgid "View Cron Jobs"
+msgstr "cron مشاهده کارهای "
+
+#: system/nav.py:39
+msgid "View Rsync Tasks"
+msgstr "Rsync مشاهده كارهاي "
+
+#: system/nav.py:47
+msgid "View S.M.A.R.T. Tests"
+msgstr "S.M.A.R.T. مشاهده كارهاي "
+
+#: system/nav.py:54
+msgid "View Sysctls"
+msgstr "Sysctls مشاهده "
+
+#: system/nav.py:61
+msgid "View Tunables"
+msgstr "Tunables مشاهده "
+
+#: system/views.py:118
+msgid "The uploaded file is not valid."
+msgstr "فايل بارگذاري شده معتبر نيست"
+
+#: system/views.py:245
+msgid "Reboot is being issued"
+msgstr "راه اندازي مجدد آغاز شده است"
+
+#: system/views.py:267
+msgid "Shutdown is being issued"
+msgstr "خاموش شدن آغاز شده است"
+
+#: system/views.py:297
+#, python-format
+msgid "Test message from %s"
+msgstr "پیغام آزمون از s%"
+
+#: system/views.py:299
+#, python-format
+msgid "This is a message test from %s"
+msgstr "این یک پیغام آزمون از s% است"
+
+#: system/views.py:302
+#, python-format
+msgid "Your test email could not be sent: %s"
+msgstr "رایانامه‌ی آزمون شما قابل ارسال نیست: s%"
+
+#: system/views.py:304
+msgid "Your test email has been sent!"
+msgstr "!نامه الكترونيكي تستي شما ارسال شد"
+
+#: templates/404.html:7
+msgid "Page Not Found"
+msgstr "صفحه يافت نشد"
+
+#: templates/base.html:50
+msgid "expand all"
+msgstr "توسعه دادن همه"
+
+#: templates/base.html:51
+msgid "collapse all"
+msgstr "متلاشي شدن همه"
+
+#: templates/menubar.html:42
+msgid "Log Out"
+msgstr "خروج از سیستم"
+
+#: templates/menubar.html:48
+msgid "Help"
+msgstr "كمك"
+
+#: templates/menubar.html:60
+#: templates/registration/login.html:61
+msgid "Log In"
+msgstr "ورود به سيستم"
+
+#: templates/account/bsdgroups.html:4
+#: templates/account/bsdgroups.html:69
+#: templates/account/bsdusers.html:4
+#: templates/account/bsdusers.html.py:83
+msgid "ID"
+msgstr "شناسه"
+
+#: templates/account/bsdgroups.html:6
+#: templates/account/bsdgroups.html:21
+#: templates/account/bsdgroups.html:23
+#: templates/account/bsdgroups.html:71
+#: templates/account/bsdgroups.html:84
+#: templates/account/bsdgroups.html:86
+msgid "Members"
+msgstr "اعضاء"
+
+#: templates/account/bsdgroups.html:7
+#: templates/account/bsdusers.html:10
+#: templates/account/bsdusers.html.py:89
+#: templates/storage/tasks.html:132
+#: templates/storage/tasks.html.py:134
+msgid "Modify"
+msgstr "تغيير دادن"
+
+#: templates/account/bsdgroups.html:8
+#: templates/account/bsdusers.html:11
+msgid "Remove"
+msgstr "حذف نمودن"
+
+#: templates/account/bsdgroups.html:30
+#: templates/account/bsdgroups.html:32
+msgid "Modify Group"
+msgstr "اصلاح گروه"
+
+#: templates/account/bsdgroups.html:40
+#: templates/account/bsdgroups.html:42
+msgid "Delete Group"
+msgstr "حذف گروه"
+
+#: templates/account/bsdgroups.html:51
+msgid "There are no user defined groups."
+msgstr "هیچ کاربر گروه هاي تعريف شده وجود دارد"
+
+#: templates/account/bsdgroups.html:59
+#: templates/account/bsdgroups.html:61
+msgid "Add New Group"
+msgstr "اضافه نمودن گروه جديد"
+
+#: templates/account/bsdusers.html:7
+#: templates/account/bsdusers.html.py:86
+msgid "Home"
+msgstr "خانه"
+
+#: templates/account/bsdusers.html:41
+#: templates/account/bsdusers.html.py:43
+#: templates/account/bsdusers.html:120
+#: templates/account/bsdusers.html:122
+msgid "Modify User"
+msgstr "اصلاح كاربر"
+
+#: templates/account/bsdusers.html:47
+#: templates/account/bsdusers.html.py:49
+#: templates/account/bsdusers.html:126
+#: templates/account/bsdusers.html:128
+msgid "Auxiliary Groups"
+msgstr "گروه های کمکی"
+
+#: templates/account/bsdusers.html:56
+msgid "Remove User"
+msgstr "حذف كاربر"
+
+#: templates/account/bsdusers.html:58
+msgid "Delete User"
+msgstr "حذف كاربر"
+
+#: templates/account/bsdusers.html:66
+#: templates/account/bsdusers.html:143
+#: templates/services/iscsi_auth.html:33
+msgid "No users defined"
+msgstr "هيچ كاربري تعريف نشده است"
+
+#: templates/account/bsdusers.html:73
+#: templates/account/bsdusers.html.py:75
+msgid "Add New User"
+msgstr "افزودن كاربر جديد"
+
+#: templates/account/bsdusers.html:134
+#: templates/account/bsdusers.html:136
+msgid "Change E-mail"
+msgstr "تغيير پست الكترونيكي"
+
+#: templates/account/passform.html:2
+msgid "Change Admin Password"
+msgstr "تغيير كلمه عبور مدير"
+
+#: templates/freeadmin/advanced_btn.html:25
+msgid "Basic Mode"
+msgstr "حالت پایه"
+
+#: templates/freeadmin/advanced_btn.html:27
+msgid "Advanced Mode"
+msgstr "حالت پيشرفته"
+
+#: templates/freeadmin/alert_status.html:6
+#: templates/freeadmin/generic_form.html:13
+#: templates/freeadmin/generic_model_add.html:50
+#: templates/freeadmin/generic_model_edit.html:59
+#: templates/plugins/jailpbi.html:17
+#: templates/plugins/pbiwizard.html:14
+#: templates/plugins/plugin_edit.html:2
+#: templates/plugins/plugin_info.html:37
+#: templates/services/plugins_info.html:24
+#: templates/storage/scrub_confirm.html:14
+msgid "OK"
+msgstr "تصويب"
+
+#: templates/freeadmin/alert_status.html:10
+msgid "WARNING"
+msgstr "هشدار"
+
+#: templates/freeadmin/alert_status.html:13
+msgid "CRITICAL"
+msgstr "بحرانی"
+
+#: templates/freeadmin/directory_browser.html:3
+#: templates/freeadmin/directory_browser.html:8
+msgid "Browse"
+msgstr "مشاهده و جستجو"
+
+#: templates/freeadmin/directory_browser.html:6
+#: templates/freeadmin/directory_browser.html:11
+msgid "Close"
+msgstr "بستن"
+
+#: templates/freeadmin/generic_form.html:17
+#: templates/freeadmin/generic_model_add.html:53
+#: templates/freeadmin/generic_model_delete.html:23
+#: templates/freeadmin/generic_model_edit.html:64
+#: templates/plugins/plugin_confirm_delete.html:16
+#: templates/storage/disk_detach.html:16
+#: templates/storage/disk_remove.html:16
+#: templates/storage/geom_disk_replace.html:18
+#: templates/storage/import.html:46
+#: templates/storage/snapshot_confirm_rollback.html:17
+#: templates/storage/volume_detach.html:30
+#: templates/storage/wizard.html:160
+#: templates/storage/zvol_confirm_delete.html:16
+#: templates/system/reboot_dialog.html:11
+#: templates/system/shutdown_dialog.html:11
+msgid "Cancel"
+msgstr "لغو"
+
+#: templates/freeadmin/generic_model_delete.html:13
+#: templates/plugins/plugin_confirm_delete.html:10
+#: templates/storage/snapshot_confirm_delete.html:3
+#: templates/storage/snapshot_confirm_delete_bulk.html:5
+#: templates/storage/zvol_confirm_delete.html:7
+msgid "Are you sure you want to delete?"
+msgstr "آيا مطمئن هستيد كه مي خواهيد حذف كنيد؟"
+
+#: templates/freeadmin/generic_model_delete.html:19
+#: templates/plugins/plugin_confirm_delete.html:14
+#: templates/services/enable.html:7
+#: templates/storage/dataset_confirm_delete.html:17
+#: templates/storage/disk_detach.html:11
+#: templates/storage/disk_offline.html:5
+#: templates/storage/disk_remove.html:11
+#: templates/storage/snapshot_confirm_delete.html:5
+#: templates/storage/snapshot_confirm_delete_bulk.html:7
+#: templates/storage/snapshot_confirm_rollback.html:11
+#: templates/storage/tasks.html:35
+#: templates/storage/volume_detach.html:24
+#: templates/storage/zvol_confirm_delete.html:11
+#: templates/system/config_restore.html:5
+msgid "Yes"
+msgstr "بله"
+
+#: templates/freeadmin/generic_model_edit.html:13
+msgid "Your changes have been successfully updated!"
+msgstr "!تغییرات شما با موفقیت بروز رساني شدند"
+
+#: templates/freeadmin/generic_model_edit.html:57
+msgid "Save"
+msgstr "ذخیره"
+
+#: templates/freeadmin/index.html:35
+msgid "Running Processes"
+msgstr "پروسه های درحال اجرا"
+
+#: templates/freeadmin/index.html:40
+#: templates/freeadmin/index.html.py:46
+#: templates/freeadmin/index.html:51
+msgid "Loading..."
+msgstr "...بارگذاري"
+
+#: templates/freeadmin/index.html:55
+msgid "Help & Support"
+msgstr "كمك و پشتيباني"
+
+#: templates/freeadmin/index.html:59
+msgid "Forum"
+msgstr "انجمن"
+
+#: templates/freeadmin/index.html:61
+msgid "Community Forum"
+msgstr "انجمن عمومي"
+
+#: templates/freeadmin/index.html:66
+msgid "IRC (Chat)"
+msgstr "IRC (گفتگو)"
+
+#: templates/freeadmin/index.html:68
+msgid "#freenas on freenode"
+msgstr "#freenas on freenode"
+
+#: templates/freeadmin/index.html:72
+msgid "Mailing Lists"
+msgstr "لیست های پستی"
+
+#: templates/freeadmin/index.html:74
+msgid "FreeNAS Announce"
+msgstr "FreeNAS آگهي "
+
+#: templates/freeadmin/index.html:75
+msgid "FreeNAS Commit"
+msgstr "FreeNAS  تعهد"
+
+#: templates/freeadmin/index.html:76
+msgid "FreeNAS Devel"
+msgstr "FreeNAS توسعه"
+
+#: templates/freeadmin/index.html:77
+msgid "FreeNAS Testing"
+msgstr "FreeNAS  تست"
+
+#: templates/freeadmin/index.html:78
+msgid "FreeNAS Docs"
+msgstr "FreeNAS اسناد"
+
+#: templates/freeadmin/index.html:79
+msgid "FreeNAS Translations"
+msgstr "FreeNAS ترجمه هاي"
+
+#: templates/freeadmin/index.html:84
+msgid "Support Issues"
+msgstr "مسائل پشتیبانی"
+
+#: templates/freeadmin/index.html:86
+msgid "Bug Tracker"
+msgstr "رديابي مشكل"
+
+#: templates/freeadmin/index.html:91
+msgid "Documentation"
+msgstr "مستندات"
+
+#: templates/freeadmin/index.html:93
+msgid "FreeNAS Documentation"
+msgstr "FreeNAS مستندات"
+
+#: templates/network/interface.html:9
+msgid "IPv6 Auto"
+msgstr "نگارش 6 اتوماتيك IP"
+
+#: templates/network/interface.html:12
+#: templates/plugins/index.html:15
+#: templates/services/rsyncmod.html:8
+#: templates/sharing/apple.html:14
+#: templates/sharing/windows.html:15
+#: templates/storage/replications.html:24
+#: templates/storage/scrub.html:13
+#: templates/storage/tasks.html:25
+#: templates/storage/volumes.html:64
+#: templates/system/cronjob.html:12
+#: templates/system/ntpserver.html:11
+#: templates/system/rsync.html:16
+#: templates/system/smarttest.html:10
+#: templates/system/sysctl.html:8
+#: templates/system/tunable.html:8
+msgid "Available actions"
+msgstr "فعاليت هاي موجود"
+
+#: templates/network/interface.html:26
+#: templates/network/lagg_members.html:18
+#: templates/network/lagg_members.html:20
+#: templates/network/staticroute.html:18
+#: templates/network/vlan.html:19
+#: templates/plugins/index.html:35
+#: templates/services/iscsi_assoctargets.html:16
+#: templates/services/iscsi_assoctargets.html:18
+#: templates/services/iscsi_auth.html:18
+#: templates/services/iscsi_auth.html:20
+#: templates/services/iscsi_authini.html:20
+#: templates/services/iscsi_authini.html:22
+#: templates/services/iscsi_dextents.html:18
+#: templates/services/iscsi_dextents.html:20
+#: templates/services/iscsi_extents.html:18
+#: templates/services/iscsi_extents.html:20
+#: templates/services/iscsi_portals.html:24
+#: templates/services/iscsi_targets.html:18
+#: templates/services/iscsi_targets.html:20
+#: templates/services/rsyncmod.html:18
+#: templates/services/rsyncmod.html:20
+#: templates/sharing/apple.html:27
+#: templates/sharing/unix.html:27
+#: templates/sharing/windows.html:31
+#: templates/storage/scrub.html:27
+#: templates/storage/scrub.html.py:29
+#: templates/system/cronjob.html:26
+#: templates/system/cronjob.html.py:28
+#: templates/system/ntpserver.html:23
+#: templates/system/ntpserver.html.py:25
+#: templates/system/rsync.html:33
+#: templates/system/rsync.html.py:35
+#: templates/system/smarttest.html:21
+#: templates/system/smarttest.html.py:23
+#: templates/system/sysctl.html:17
+#: templates/system/sysctl.html.py:19
+#: templates/system/tunable.html:17
+#: templates/system/tunable.html.py:19
+msgid "Edit"
+msgstr "ويرايش"
+
+#: templates/network/interface.html:28
+#: templates/network/lagg.html:14
+#: templates/network/lagg.html.py:16
+msgid "Edit Interface"
+msgstr "ويرايش واسط "
+
+#: templates/network/interface.html:34
+#: templates/network/lagg.html:46
+msgid "Delete Interface"
+msgstr "حذف واسط"
+
+#: templates/network/interface.html:41
+#: templates/network/summary.html:16
+msgid "No interfaces defined"
+msgstr "هيچ واسط  هايي تعريف نشده"
+
+#: templates/network/interface.html:47
+#: templates/network/interface.html:49
+msgid "Add Interface"
+msgstr "افزودن واسط"
+
+#: templates/network/lagg.html:6
+#: templates/network/staticroute.html:8
+msgid "Actions"
+msgstr "فعاليت ها"
+
+#: templates/network/lagg.html:20
+msgid "Edit Members"
+msgstr "ويرايش اعضاء"
+
+#: templates/network/lagg.html:26
+#: templates/network/lagg.html.py:33
+msgid "LAGG Members"
+msgstr "LAGG اعضاء"
+
+#: templates/network/lagg.html:53
+#: templates/network/lagg_members.html:33
+msgid "No LAGG interface defined"
+msgstr "تعريف نشده است LAGG هيچ واسط "
+
+#: templates/network/lagg.html:60
+msgid "Add LAGG Interface "
+msgstr "LAGG افزودن واسط "
+
+#: templates/network/lagg.html:62
+msgid "Add LAGG"
+msgstr "LAGG افزودن "
+
+#: templates/network/lagg_members.html:6
+msgid "Ordering Priority"
+msgstr "مرتب سازی بر اساس اولویت"
+
+#: templates/network/lagg_members.html:7
+msgid "Startup option"
+msgstr "گزینه راه اندازی"
+
+#: templates/network/lagg_members.html:8
+#: templates/sharing/unix.html:14
+msgid "Action"
+msgstr "فعاليت"
+
+#: templates/network/lagg_members.html:39
+#: templates/network/lagg_members.html:41
+msgid "Add LAGG Member"
+msgstr "LAGG افزودن اعضاء"
+
+#: templates/network/staticroute.html:5
+msgid "Destination"
+msgstr "مقصد"
+
+#: templates/network/staticroute.html:20
+msgid "Edit Static Route"
+msgstr "ويرايش مسير استاتيك"
+
+#: templates/network/staticroute.html:26
+msgid "Delete Static Route"
+msgstr "حذف مسير استاتيك"
+
+#: templates/network/staticroute.html:33
+msgid "No static route defined"
+msgstr "هيچ مسير استاتيكي تعريف نشده است"
+
+#: templates/network/staticroute.html:39
+#: templates/network/staticroute.html:41
+msgid "Add Static Route"
+msgstr "افزودن مسير استاتيك"
+
+#: templates/network/summary.html:22
+msgid "Nameserver"
+msgstr "سرويس دهنده نام"
+
+#: templates/network/summary.html:31
+msgid "No nameserver defined"
+msgstr "هيچ سرويس دهنده نامي تعريف نشده است"
+
+#: templates/network/summary.html:37
+msgid "Default route"
+msgstr "مسير پيش فرض"
+
+#: templates/network/summary.html:46
+msgid "No default route defined"
+msgstr "هيچ مسير پيش فرضي تعريف نشده است"
+
+#: templates/network/vlan.html:21
+msgid "Edit VLAN"
+msgstr "VLAN ويرايش"
+
+#: templates/network/vlan.html:27
+msgid "Delete VLAN"
+msgstr "VLAN حذف "
+
+#: templates/network/vlan.html:34
+msgid "No VLAN defined"
+msgstr "اي تعريف نشده استVLAN هيچ"
+
+#: templates/network/vlan.html:40
+#: templates/network/vlan.html.py:42
+msgid "Add VLAN Interface"
+msgstr "VLAN افزودن واسط"
+
+#: templates/plugins/done.html:13
+msgid "Installed..."
+msgstr "...نصب شده"
+
+# plugin=?
+#: templates/plugins/index.html:5
+#: templates/plugins/index.html.py:7
+msgid "Install Plugin"
+msgstr "نصب اتصال"
+
+#: templates/plugins/index.html:29
+msgid "Info"
+msgstr "اطلاعات"
+
+#: templates/plugins/index.html:31
+msgid "Plugin info"
+msgstr "اطلاعات اتصال"
+
+#: templates/plugins/index.html:37
+msgid "Edit Plugin"
+msgstr "ويرايش اتصال"
+
+#: templates/plugins/index.html:43
+msgid "Delete plugin"
+msgstr "حذف اتصال"
+
+#: templates/plugins/index.html:50
+msgid "No plugins installed"
+msgstr "هيچ اتصالي نصب نشده است"
+
+#: templates/plugins/jailpbi.html:2
+#: templates/plugins/pbiwizard.html:2
+#: templates/system/wizard.html:3
+#, python-format
+msgid "Step %(step)s of %(step_count)s"
+msgstr "%(step_count)s  از %(step)s  مرحله "
+
+#: templates/plugins/jailpbi.html:19
+msgid "Upload Jail PBI"
+msgstr "Jail PBI بارگذاري "
+
+#: templates/plugins/jailpbi.html:23
+#: templates/plugins/pbiwizard.html:19
+#: templates/plugins/plugin_info.html:39
+#: templates/services/plugins_info.html:26
+#: templates/storage/disk_detach.html:13
+#: templates/storage/disk_remove.html:13
+#: templates/storage/snapshot_confirm_rollback.html:13
+#: templates/storage/volume_detach.html:26
+#: templates/storage/zvol_confirm_delete.html:13
+#: templates/system/wizard.html:16
+msgid "Please wait..."
+msgstr "لطفاً صبر كنيد"
+
+#: templates/plugins/pbiwizard.html:16
+msgid "Upload Plugin"
+msgstr "بارگذاري اتصال"
+
+#: templates/registration/login.html:42
+msgid "Your username and password didn't match. Please try again."
+msgstr ".نام كاربري و كلمه عبور شما با هم هماهنگ نبود. لطفاً دوباره سعي كنيد"
+
+#: templates/registration/login.html:46
+#, python-format
+msgid "Welcome, %(username)s. Thanks for logging in."
+msgstr "خوش آمديد. از ورود شما سپاسگزاريم %(username)s"
+
+#: templates/registration/login.html:48
+#, python-format
+msgid "Welcome to %(sw_name)s&trade; %(sw_login_version)s"
+msgstr "%(sw_login_version)s; خوش آمديد %(sw_name)s&trade  به"
+
+#: templates/registration/login.html:49
+msgid "Please log in."
+msgstr "لطفاً وارد شويد"
+
+#: templates/registration/logout.html:4
+msgid "Logged Out"
+msgstr "خروج انجام شد"
+
+#: templates/registration/logout.html:24
+msgid "You are now logged out."
+msgstr "در حال حاضر شما از سيستم خارج شده ايد"
+
+#: templates/registration/logout.html:24
+msgid "Log back in"
+msgstr "دوباره وارد شويد"
+
+#: templates/services/enable.html:4
+msgid "Would you like to enable this service?"
+msgstr "آيا تمايل داريد اين سرويس را فعال نماييد"
+
+#: templates/services/enable.html:18
+#: templates/storage/tasks.html:37
+msgid "No"
+msgstr "خير"
+
+#: templates/services/index.html:13
+msgid "AFP Settings"
+msgstr "AFP تنظيمات"
+
+#: templates/services/index.html:24
+msgid "Active Directory Settings"
+msgstr "Active Directory تنظيمات"
+
+#: templates/services/index.html:35
+msgid "CIFS Settings"
+msgstr "CIFS تنظيمات"
+
+#: templates/services/index.html:48
+msgid "Dynamic DNS Settings"
+msgstr " Dynamic DNS تنظيمات"
+
+#: templates/services/index.html:59
+msgid "FTP Settings"
+msgstr "FTP تنظيمات"
+
+#: templates/services/index.html:72
+msgid "ISCSI Settings"
+msgstr "ISCSI تنظيمات"
+
+#: templates/services/index.html:83
+msgid "LDAP Settings"
+msgstr "LDAP تنظيمات"
+
+#: templates/services/index.html:94
+msgid "NFS Settings"
+msgstr "NFS تنظيمات"
+
+#: templates/services/index.html:106
+#: templates/services/index.html.py:108
+msgid "Plugins Settings"
+msgstr "تنظيمات اتصالات"
+
+#: templates/services/index.html:108
+msgid "Install Jail PBI"
+msgstr "Jail PBI نصب"
+
+#: templates/services/index.html:120
+msgid "Rsync Settings"
+msgstr "Rsync تنظيمات"
+
+#: templates/services/index.html:131
+msgid "SNMP Settings"
+msgstr "SNMP تنظيمات"
+
+#: templates/services/index.html:142
+msgid "S.M.A.R.T. Settings"
+msgstr "تنظیمات .S.M.A.R.T"
+
+#: templates/services/index.html:153
+msgid "SSH Settings"
+msgstr "SSH تنظيمات"
+
+#: templates/services/index.html:164
+msgid "TFTP Settings"
+msgstr "TFTP تنظيمات"
+
+#: templates/services/index.html:175
+msgid "UPS Settings"
+msgstr "UPS تنظيمات"
+
+#: templates/services/iscsi.html:1
+msgid "iSCSI Management"
+msgstr "iSCSI مديريت "
+
+#: templates/services/iscsi.html:8
+msgid "Portals"
+msgstr "دروازه ها"
+
+#: templates/services/iscsi.html:14
+msgid "Authorized Initiators"
+msgstr "شروع كننده مجاز"
+
+#: templates/services/iscsi.html:20
+msgid "Authentication"
+msgstr "اعتبارسنجي"
+
+#: templates/services/iscsi.html:26
+msgid "Targets"
+msgstr "اهداف"
+
+#: templates/services/iscsi.html:38
+msgid "Extents"
+msgstr "دامنه ها"
+
+#: templates/services/iscsi.html:44
+msgid "Associated Targets"
+msgstr "اهداف مرتبط"
+
+#: templates/services/iscsi_assoctargets.html:31
+#: templates/services/iscsi_authini.html:35
+#: templates/services/iscsi_dextents.html:33
+#: templates/services/iscsi_extents.html:33
+#: templates/services/iscsi_portals.html:39
+#: templates/services/iscsi_targets.html:34
+msgid "No targets defined"
+msgstr "هيچ هدفي تعريف نشده است"
+
+#: templates/services/iscsi_assoctargets.html:37
+msgid "Add Extent to Target"
+msgstr "افزودن اندازه به هدف"
+
+#: templates/services/iscsi_assoctargets.html:39
+msgid "Add Extent To Target"
+msgstr "افزودن اندازه به هدف"
+
+#: templates/services/iscsi_auth.html:7
+msgid "Peer"
+msgstr "جفت"
+
+#: templates/services/iscsi_auth.html:40
+#: templates/services/iscsi_auth.html:42
+msgid "Add iSCSI User"
+msgstr "iSCSI افزودن كاربر"
+
+#: templates/services/iscsi_authini.html:7
+msgid "Authorized Network"
+msgstr "شبكه مجاز"
+
+#: templates/services/iscsi_authini.html:42
+#: templates/services/iscsi_authini.html:44
+msgid "Add Authorized Initiator"
+msgstr "افزودن آغاز كننده مجاز"
+
+#: templates/services/iscsi_dextents.html:39
+#: templates/services/iscsi_dextents.html:41
+msgid "Add Extent"
+msgstr "افزودن اندازه"
+
+#: templates/services/iscsi_extents.html:5
+msgid "File Extent"
+msgstr "اندازه فايل"
+
+#: templates/services/iscsi_portals.html:5
+msgid "Listen"
+msgstr "گوش دادن"
+
+#: templates/services/iscsi_portals.html:18
+msgid "No IP defined for this Portal"
+msgstr "تعريف نشده است IP براي اين دروازه هيچ آدرس"
+
+#: templates/services/iscsi_portals.html:26
+msgid "Edit Portal"
+msgstr "ويرايش دروازه"
+
+#: templates/services/iscsi_portals.html:32
+msgid "Delete Portal"
+msgstr "حذف دروازه"
+
+#: templates/services/iscsi_portals.html:46
+#: templates/services/iscsi_portals.html:48
+msgid "Add Portal"
+msgstr "افزودن دروازه"
+
+#: templates/services/iscsi_targets.html:40
+#: templates/services/iscsi_targets.html:42
+msgid "Add Target"
+msgstr "افزودن هدف"
+
+#: templates/services/plugins_delete.html:4
+msgid "All the files within the plugins jail will be permanently deleted."
+msgstr "تمام فایل های درون محدوده اتصالات براي هميشه حذف خواهد شد "
+
+#: templates/services/plugins_edit.html:8
+#: templates/services/plugins_info.html:33
+msgid "Delete Plugins Jail"
+msgstr " Plugins Jail حذف"
+
+#: templates/services/plugins_info.html:5
+msgid "Jail path"
+msgstr "Jail مسير"
+
+#: templates/services/plugins_info.html:13
+msgid "Jail IP"
+msgstr "Jail براي IP آدرس"
+
+#: templates/services/plugins_info.html:17
+msgid "Plugins path"
+msgstr "مسير اتصالات"
+
+#: templates/services/rsyncmod.html:34
+msgid "No rsync modules defined"
+msgstr " تعريف نشده است rsync هيچ ماژول"
+
+# share=?
+#: templates/sharing/apple.html:5
+#: templates/sharing/unix.html:5
+#: templates/sharing/windows.html:5
+msgid "Active Shares"
+msgstr "مشتركات فعال"
+
+#: templates/sharing/apple.html:7
+msgid "There are no active Apple (AFP) shares."
+msgstr "فعالي وجود ندارد (AFP) Apple هيچ بخش اشتراك "
+
+#: templates/sharing/apple.html:29
+msgid "Edit Apple (AFP) Share"
+msgstr "(AFP) Apple ويرايش بخش اشتراك "
+
+#: templates/sharing/apple.html:35
+msgid "Delete Apple (AFP) Share"
+msgstr "(AFP) Apple حذف بخش اشتراك "
+
+#: templates/sharing/apple.html:42
+#: templates/sharing/unix.html:42
+#: templates/sharing/windows.html:46
+msgid "No shares defined"
+msgstr "هيچ بخش اشتراكي تعريف نشده است"
+
+#: templates/sharing/apple.html:49
+msgid "Add Apple (CIFS) Share"
+msgstr "(CIFS) Apple افزودن بخش اشتراك"
+
+#: templates/sharing/apple.html:51
+msgid "Add Apple (AFP) Share"
+msgstr "(CIFS) Apple افزودن بخش اشتراك"
+
+#: templates/sharing/index.html:2
+msgid "Apple (AFP)"
+msgstr "Apple (AFP)"
+
+#: templates/sharing/index.html:7
+msgid "UNIX (NFS)"
+msgstr "UNIX (NFS)"
+
+#: templates/sharing/index.html:12
+msgid "Windows (CIFS)"
+msgstr "Windows (CIFS)"
+
+#: templates/sharing/unix.html:7
+msgid "There are no active UNIX (NFS) shares."
+msgstr "فعالي وجود ندارد (NFS) UNIX هيچ بخش اشتراك "
+
+#: templates/sharing/unix.html:12
+msgid "Mountpoint"
+msgstr "نقطه اوج"
+
+#: templates/sharing/unix.html:29
+msgid "Edit UNIX (NFS) Share"
+msgstr "(NFS) UNIX ويرايش بخش اشتراك "
+
+#: templates/sharing/unix.html:35
+msgid "Delete UNIX (NFS) Share"
+msgstr "(NFS) UNIX حذف  بخش اشتراك "
+
+#: templates/sharing/unix.html:49
+#: templates/sharing/unix.html.py:51
+msgid "Add UNIX (NFS) Share"
+msgstr "(NFS) UNIX افزودن بخش اشتراك "
+
+#: templates/sharing/windows.html:7
+msgid "There are no active Windows (CIFS) shares."
+msgstr "فعالي وجود ندارد (CIFS) Windows هيچ بخش اشتراك "
+
+#: templates/sharing/windows.html:33
+msgid "Edit Windows (CIFS) Share"
+msgstr "(CIFS) Windows ويرايش بخش اشتراك "
+
+#: templates/sharing/windows.html:39
+msgid "Delete Windows (CIFS) Share"
+msgstr "(CIFS) Windows حذف بخش اشتراك "
+
+#: templates/sharing/windows.html:53
+#: templates/sharing/windows.html.py:55
+msgid "Add Windows (CIFS) Share"
+msgstr "(CIFS) Windows افزودن بخش اشتراك "
+
+#: templates/storage/clonesnap.html:2
+#: templates/storage/snapshots.html:16
+msgid "Clone Snapshot"
+msgstr "Clone تصوير لحظه اي"
+
+#: templates/storage/dataset_confirm_delete.html:5
+#, python-format
+msgid "Are you sure you want to destroy \"%(name)s\"?"
+msgstr "را از بين ببريد؟ \"%(name)s\" آيا مطمئن هستيد كه مي خواهيد"
+
+#: templates/storage/dataset_confirm_delete.html:8
+msgid ""
+"\n"
+"        This will delete all files within the dataset.\n"
+"        "
+msgid_plural ""
+"\n"
+"        This will delete all files within the dataset and child datasets.\n"
+"        "
+msgstr[0] ""
+"\n"
+" اين كار تمام فايل هاي درون مجموعه داده  (و فرزندان درون مجموعه هاي داده) را حذف خوهد كرد \n"
+
+#: templates/storage/dataset_edit.html:2
+msgid "Edit Dataset"
+msgstr "ويرايش مجموعه داده"
+
+#: templates/storage/datasets.html:3
+#, python-format
+msgid "Create ZFS dataset in %(fs)s"
+msgstr "%(fs)s در ZFS ساخت مجموعه داده"
+
+#: templates/storage/datasets.html:6
+msgid "Add Dataset"
+msgstr "افزودن مجموعه داده"
+
+#: templates/storage/disk_detach.html:7
+#: templates/storage/volume_detach.html:20
+msgid "Are you sure you want to detach?"
+msgstr "آیا مطمئن هستید که می خواهید جدا کنید؟"
+
+#: templates/storage/disk_offline.html:3
+msgid "Are you sure you want to offline?"
+msgstr "آیا مطمئن هستید که شما آفلاین می خواهید؟"
+
+#: templates/storage/disk_remove.html:7
+msgid "Are you sure you want to remove?"
+msgstr "آیا مطمئن هستید که می خواهید حذف كنيد؟"
+
+#: templates/storage/geom_disk_replace.html:9
+#: templates/storage/zpool_disk_replace.html:6
+msgid "Replacing disk"
+msgstr "دیسک جایگزین "
+
+#: templates/storage/geom_disk_replace.html:15
+msgid "Replace disk"
+msgstr "جايگزيني ديسك"
+
+#: templates/storage/import.html:32
+#: templates/storage/wizard.html:54
+msgid "Filesystem type"
+msgstr "نوع فايل سيستم"
+
+#: templates/storage/index.html:2
+msgid "Active Volumes"
+msgstr "هاي فعالVolume"
+
+#: templates/storage/index.html:8
+msgid "ZFS Snapshots"
+msgstr "ZFS تصوير هاي لحظه اي"
+
+#: templates/storage/index.html:20
+msgid "ZFS Replication"
+msgstr "ZFS رونوشت"
+
+#: templates/storage/manualsnap.html:2
+msgid "Manually Create Snapshot"
+msgstr "ساخت تصوير لحظه اي بصورت دستي"
+
+#: templates/storage/periodicsnap.html:2
+#: templates/storage/volumes.html:149
+#: templates/storage/volumes.html.py:153
+#: templates/storage/volumes.html:227
+#: templates/storage/volumes.html.py:231
+msgid "Create Snapshot"
+msgstr "ساخت تصوير لحظه اي"
+
+#: templates/storage/permission.html:2
+msgid "Change"
+msgstr "تغيير"
+
+#: templates/storage/permission.html:4
+msgid "Change permission"
+msgstr "مجوز تغيير"
+
+#: templates/storage/permission.html:5
+#, python-format
+msgid "Change permission on %(path)s to"
+msgstr "به %(path)s مجوز تغيير روي"
+
+#: templates/storage/replications.html:4
+#: templates/storage/replications.html:6
+msgid "Add Replication"
+msgstr "افزودن رونوشت"
+
+#: templates/storage/replications.html:10
+#: templates/storage/replications.html:12
+msgid "View Public Key"
+msgstr "مشاهده كليد عمومي"
+
+#: templates/storage/replications.html:16
+msgid "ATTENTION: A periodic snapshot of a given ZFS filesystem/volume is required to create a replication task"
+msgstr "داده شده، براي ساخت يك ديسك جايگزيني، مورد نياز است  ZFS filesystem/volume توجه: يك فرايند تهيه تصوير لحظه اي دوره اي از "
+
+#: templates/storage/replications.html:21
+msgid "Last snapshot"
+msgstr "آخرين تصوير لحظه اي"
+
+#: templates/storage/replications.html:23
+msgid "Remote ZFS filesystem"
+msgstr "راه دور ZFS فايل سيستم"
+
+#: templates/storage/replications.html:37
+#: templates/storage/replications.html:41
+msgid "Delete Replication"
+msgstr "حذف رونوشت"
+
+#: templates/storage/replications.html:46
+#: templates/storage/replications.html:50
+msgid "Edit Replication"
+msgstr "ويرايش رونوشت"
+
+#: templates/storage/replications.html:56
+msgid "No ZFS replication available"
+msgstr "در دسترس نيست ZFS هيچ رونوشتي براي"
+
+#: templates/storage/scrub.html:42
+msgid "No scrub tasks defined."
+msgstr "هيچ فرايند پاك سازي تعريف نشده است"
+
+#: templates/storage/scrub.html:48
+msgid "Add ZFS Scrub Task"
+msgstr "ZFS افزودن فرايند پاك سازي"
+
+#: templates/storage/scrub.html:50
+msgid "Add ZFS Scrub"
+msgstr "ZFS افزودن پاك سازي"
+
+#: templates/storage/scrub_confirm.html:6
+msgid "Scrub is currently running! Are you sure you want to STOP the scrub process?"
+msgstr "پاك سازي در حال اجرا است! آيا مي خواهيد فرايند آن را متوقف كنيد؟"
+
+#: templates/storage/scrub_confirm.html:8
+msgid "Are you sure you want to scrub?"
+msgstr "آيا مطمئن هستيد كه مي خواهيد پاك سازي نماييد؟"
+
+#: templates/storage/scrub_confirm.html:8
+msgid "This will increase system overhead while in progress"
+msgstr "اين كار سر بار سيستم را در حين اجرا بالا مي برد"
+
+#: templates/storage/snapshot_confirm_rollback.html:7
+msgid "Are you sure you want to rollback dataset to this snapshot state?"
+msgstr "آيا مطمئن هستيد كه مي خواهيد مجموعه داده را به حالت اين تصوير لحظه اي بر گردانيد؟"
+
+# clone= ?
+#: templates/storage/snapshots.html:21
+msgid "Clone snapshot"
+msgstr "كلون كردن تصوير لحظه اي"
+
+#: templates/storage/snapshots.html:32
+msgid "Destroy Snapshot"
+msgstr "از بين بردن تصوير لحظه اي"
+
+#: templates/storage/snapshots.html:37
+msgid "Destroy this snapshot"
+msgstr "از بين بردن اين تصوير لحظه اي"
+
+#: templates/storage/snapshots.html:48
+msgid "Rollback Snapshot"
+msgstr "بازگرداندن تصوير لحظه اي"
+
+#: templates/storage/snapshots.html:53
+msgid "Rollback to this snapshot"
+msgstr "عقبگرد به اين تصوير لحظه اي"
+
+#: templates/storage/snapshots.html:126
+msgid "Destroy"
+msgstr "نابود ساختن"
+
+#: templates/storage/snapshots.html:136
+msgid "Delete snapshots"
+msgstr "حذف تصاوير لحظه اي"
+
+#: templates/storage/tasks.html:8
+msgid "Periodic Snapshots"
+msgstr "تصاوير لحظه اي دوره اي"
+
+#: templates/storage/tasks.html:13
+msgid "Periodic Snapshot Schedule"
+msgstr "زمانبندي براي تصاوير لحظه اي دوره اي"
+
+#: templates/storage/tasks.html:16
+msgid "There are no scheduled snapshots."
+msgstr "هيچ زمانبندي براي تصاوير لحظه اي وجود ندارد"
+
+#: templates/storage/tasks.html:23
+msgid "How"
+msgstr "چگونه"
+
+#: templates/storage/tasks.html:24
+msgid "Keep snapshot for"
+msgstr "نگهداري تصوير لحظه اي براي"
+
+#: templates/storage/tasks.html:41
+msgid "From"
+msgstr "از"
+
+#: templates/storage/tasks.html:43
+msgid "through"
+msgstr "از ميان"
+
+#: templates/storage/tasks.html:45
+msgid ", every"
+msgstr "، هر"
+
+#: templates/storage/tasks.html:48
+msgid "everyday"
+msgstr "هر روز"
+
+#: templates/storage/tasks.html:51
+msgid "on every"
+msgstr "در هر"
+
+#: templates/storage/tasks.html:147
+msgid "There are no periodic snapshots scheduled."
+msgstr "هيچ زمانبندي براي تصاوير لحظه اي دوره اي وجود ندارد"
+
+#: templates/storage/volume_detach.html:8
+#, python-format
+msgid "You have %(used)s of used space within this volume"
+msgstr "هستيد volume از فضاي استفاده شده در اين %(used)s  شما داراي "
+
+#: templates/storage/volume_edit.html:3
+msgid "Edit ZFS Volume"
+msgstr "ZFS Volume ويرايش "
+
+#: templates/storage/volumes.html:60
+msgid "Used"
+msgstr "استفاده شده"
+
+#: templates/storage/volumes.html:62
+msgid "Size"
+msgstr "اندازه"
+
+#: templates/storage/volumes.html:63
+msgid "Status"
+msgstr "وضعيت"
+
+#: templates/storage/volumes.html:92
+#: templates/storage/volumes.html.py:96
+#, fuzzy
+msgid "Detach Volume"
+msgstr "درایو ZFS"
+
+#: templates/storage/volumes.html:102
+#: templates/storage/volumes.html.py:106
+msgid "Scrub Volume"
+msgstr "Volume پاك سازي"
+
+#: templates/storage/volumes.html:111
+#: templates/storage/volumes.html.py:115
+#: templates/storage/volumes.html:200
+#: templates/storage/volumes.html.py:204
+msgid "Edit ZFS Options"
+msgstr "ZFS ويرايش گزينه هاي "
+
+#: templates/storage/volumes.html:159
+#: templates/storage/volumes.html.py:163
+msgid "Volume Status"
+msgstr "Volume وضعيت"
+
+#: templates/storage/volumes.html:191
+#: templates/storage/volumes.html.py:195
+msgid "Destroy Dataset"
+msgstr "نابودسازي مجموعه داده"
+
+#: templates/storage/volumes.html:248
+#: templates/storage/volumes.html.py:252
+msgid "Destroy ZFS Volume"
+msgstr "ZFS Volume ازبين بردن"
+
+#: templates/storage/volumes.html:259
+msgid "No volumes defined"
+msgstr "اي تعريف نشده استvolume هيچ"
+
+#: templates/storage/wizard.html:27
+msgid "Volume to extend"
+msgstr "Volume گسترش دادن"
+
+#: templates/storage/wizard.html:37
+msgid "Member disks"
+msgstr "ديسك هاي اعضاء"
+
+#: templates/storage/wizard.html:73
+msgid "Group type"
+msgstr "نوع گروه"
+
+# ؟
+#: templates/storage/wizard.html:105
+msgid "ZFS Extra"
+msgstr "اضافي ZFS"
+
+#: templates/storage/wizard.html:109
+msgid "The use of only 1 log disk is highly discouraged"
+msgstr "استفاده از فقط 1 گزارش ديسك به شدت نا اميد كننده است"
+
+#: templates/storage/wizard.html:116
+msgid "Log"
+msgstr "گزارش"
+
+#: templates/storage/wizard.html:117
+msgid "Cache"
+msgstr "مخزن"
+
+# ؟
+#: templates/storage/wizard.html:118
+msgid "Spare"
+msgstr "يدكي"
+
+#: templates/storage/wizard.html:156
+msgid "Add Volume"
+msgstr "Volume افزودن"
+
+#: templates/storage/wizard.html:157
+msgid "Existing data will be cleared"
+msgstr "داده هاي موجود پاك خواهند شد"
+
+#: templates/storage/zpool_disk_replace.html:2
+msgid "Replace Disk"
+msgstr "ديسك جايگزين"
+
+#: templates/storage/zvols.html:3
+#, python-format
+msgid "Create ZFS volume on %(name)s"
+msgstr "%(name)s روي ZFS volume درست نمودن "
+
+#: templates/storage/zvols.html:6
+msgid "Add ZFS Volume"
+msgstr "ZFS Volume اضافه نمودن"
+
+#: templates/system/advanced_edit.html:5
+msgid "Rebuild LDAP/AD Cache"
+msgstr "LDAP/AD بازسازي مخزن"
+
+#: templates/system/advanced_edit.html:18
+msgid "The cache is being rebuilt."
+msgstr "مخزن در حال بازسازي است"
+
+#: templates/system/advanced_edit.html:20
+msgid "The cache could not be rebuilt"
+msgstr "مخزن نمي تواند بازسازي شود"
+
+#: templates/system/advanced_edit.html:27
+#: templates/system/advanced_edit.html:29
+msgid "Save Debug"
+msgstr "ذخیره اشکال زدایی"
+
+#: templates/system/advanced_edit.html:33
+#: templates/system/advanced_edit.html:35
+msgid "Firmware Update"
+msgstr "به‌روز رسانی ميان افزار"
+
+#: templates/system/advanced_edit.html:39
+#: templates/system/advanced_edit.html:41
+msgid "Apply Service Pack"
+msgstr "بكارگرفتن مجموعه سرويس"
+
+#: templates/system/config_ok.html:13
+#: templates/system/config_ok2.html:6
+msgid "Restarting..."
+msgstr "شروع مجدد"
+
+#: templates/system/config_restore.html:3
+msgid "Are you sure you want to restore to factory config?"
+msgstr "آيا مطمئن هستيد كه مي خواهيد به تنظيمات كارخانه برگرديد؟"
+
+#: templates/system/config_upload.html:2
+msgid "Update"
+msgstr "بروز رساني"
+
+#: templates/system/cronjob.html:41
+msgid "No cron jobs defined."
+msgstr "اي تعريف نشده است cron هيچ فعاليت "
+
+#: templates/system/cronjob.html:47
+msgid "Add a cron job"
+msgstr "cron افزودن يك كار"
+
+#: templates/system/cronjob.html:49
+msgid "Add cron job"
+msgstr "cron افزودن كار"
+
+#: templates/system/done.html:13
+msgid "Rebooting..."
+msgstr "راه‌اندازی مجدد..."
+
+#: templates/system/email_edit.html:13
+msgid "Send Test Mail"
+msgstr "ارسال نامه تست"
+
+#: templates/system/email_edit.html:20
+msgid "HINT: Test e-mails are sent to root user. To configure it use Users -> root -> Change E-mail"
+msgstr "(كاربران -» ريشه -» تغيير آدرس نامه الكترونيكي) Users -> root -> Change E-mail ارسال شدند. براي پيكربندي آن از اين مسير استفاده نماييد: root تذكر: نامه هاي الكترونيكي تستي براي كاربر"
+
+#: templates/system/ntpserver.html:7
+msgid "iBurst"
+msgstr "iBurst"
+
+#: templates/system/ntpserver.html:38
+msgid "No NTP servers defined."
+msgstr "نشده است NTP هيچ سرويس دهنده"
+
+#: templates/system/ntpserver.html:44
+msgid "Add NTP server"
+msgstr "NTP اضافه نمودن سرويس دهنده"
+
+#: templates/system/ntpserver.html:46
+msgid "Add NTP Server"
+msgstr "NTP اضافه نمودن سرويس دهنده"
+
+#: templates/system/reboot_dialog.html:3
+#: templates/system/shutdown_dialog.html:3
+msgid "Warning!"
+msgstr "!اخطار"
+
+#: templates/system/reboot_dialog.html:4
+msgid "You are about to <strong>REBOOT</strong> the system, what would you like to do?"
+msgstr "سيستم هستيد، تمایل دارید چه کاری انجام دهید؟  <strong>REBOOT</strong> شما در شرف "
+
+#: templates/system/reporting.html:4
+msgid "Hourly"
+msgstr "هر ساعت"
+
+#: templates/system/reporting.html:5
+msgid "Hourly Graphs"
+msgstr "نمودارها به ساعت"
+
+#: templates/system/reporting.html:16
+msgid "Daily"
+msgstr "روزانه"
+
+#: templates/system/reporting.html:17
+msgid "Daily Graphs"
+msgstr "نمودارهای روزانه"
+
+#: templates/system/reporting.html:28
+msgid "Weekly"
+msgstr "هفتگی"
+
+#: templates/system/reporting.html:29
+msgid "Weekly Graphs"
+msgstr "نمودارهای هفتگی"
+
+#: templates/system/reporting.html:40
+msgid "Monthly"
+msgstr "ماهانه"
+
+#: templates/system/reporting.html:41
+msgid "Monthly Graphs"
+msgstr "نمودارهای ماهانه"
+
+#: templates/system/reporting.html:52
+msgid "Yearly"
+msgstr "سالانه"
+
+#: templates/system/reporting.html:53
+msgid "Yearly Graphs"
+msgstr "نمودارهای سالانه"
+
+#: templates/system/rsync.html:5
+#, fuzzy
+msgid "Local Path"
+msgstr "کاربر محلی"
+
+#: templates/system/rsync.html:6
+msgid "Remote"
+msgstr "راه دور"
+
+#: templates/system/rsync.html:48
+msgid "No rsync tasks defined."
+msgstr "اي تعريف نشده است rsync هيچ فعاليت "
+
+#: templates/system/rsync.html:54
+msgid "Add rsync task"
+msgstr "rsync  اضافه نمودن فعاليت"
+
+#: templates/system/rsync.html:56
+msgid "Add Rsync"
+msgstr "Rsync اضافه نمودن"
+
+#: templates/system/settings.html:3
+msgid "General"
+msgstr "عمومی"
+
+#: templates/system/settings_edit.html:5
+msgid "Factory Restore"
+msgstr "بازگرداندن تنظيمات كارخانه"
+
+#: templates/system/settings_edit.html:7
+msgid "Restore Config"
+msgstr "بازگرداندن تنظيمات"
+
+#: templates/system/settings_edit.html:11
+msgid "Save Config"
+msgstr "ذخيره نمودن تنظيمات"
+
+#: templates/system/settings_edit.html:17
+#: templates/system/settings_edit.html:19
+msgid "Upload Config"
+msgstr "بارگذاري تنظيمات"
+
+#: templates/system/shutdown_dialog.html:4
+msgid "You are about to <strong>SHUTDOWN</strong> the system, what would you like to do?"
+msgstr "سيستم هستيد، متمايل هستيد كه چه كاري انجام دهيد؟ <strong>SHUTDOWN</strong> شما در شرف"
+
+#: templates/system/smarttest.html:14
+msgid "Unknown"
+msgstr "نا شناخته"
+
+#: templates/system/smarttest.html:36
+msgid "No S.M.A.R.T. tests defined"
+msgstr "تعريف نشده است S.M.A.R.T. هيچ تست"
+
+#: templates/system/smarttest.html:42
+msgid "Add S.M.A.R.T. Test"
+msgstr "S.M.A.R.T. اضافه نمودن تست"
+
+#: templates/system/smarttest.html:44
+msgid "Add S.M.A.R.T. test"
+msgstr "S.M.A.R.T. اضافه نمودن تست"
+
+#: templates/system/sysctl.html:32
+msgid "No sysctl defined."
+msgstr "اي تعريف نشده است sysctl  هيچ"
+
+#: templates/system/sysctl.html:38
+msgid "Add sysctl"
+msgstr "sysctl اضافه نمودن"
+
+#: templates/system/sysctl.html:40
+msgid "Add Sysctl"
+msgstr "sysctl اضافه نمودن"
+
+#: templates/system/system_info.html:9
+msgid "Build"
+msgstr "ساخت"
+
+#: templates/system/system_info.html:13
+msgid "Platform"
+msgstr "بستر کاری )سکو)"
+
+#: templates/system/system_info.html:17
+msgid "Memory"
+msgstr "حافظه"
+
+#: templates/system/system_info.html:21
+msgid "System Time"
+msgstr "زمان سامانه"
+
+# Uptime =?
+#: templates/system/system_info.html:25
+msgid "Uptime"
+msgstr "Uptime"
+
+#: templates/system/system_info.html:29
+msgid "Load Average"
+msgstr "ميانگين بار"
+
+#: templates/system/system_info.html:34
+msgid "Connected through"
+msgstr "متصل شده از طریق"
+
+#: templates/system/tunable.html:32
+msgid "No tunable setting defined."
+msgstr "تعريف نشده است tunable هيچ تنظيم "
+
+#: templates/system/tunable.html:38
+msgid "Add Tunable"
+msgstr "Tunable اضافه نمودن"
+
+#: templates/system/tunable.html:40
+msgid "Add Loader"
+msgstr "Loader اضافه نمودن"
+
+#: templates/system/wizard.html:14
+msgid "Apply Update"
+msgstr "بكارگيري بروز رساني"
+
+#: tools/alert.py:100
+#, python-format
+msgid "The volume %s status is HEALTHY"
+msgstr "است (HEALTHY) سالم %s volume وضعيت"
+
+#: tools/alert.py:103
+#, python-format
+msgid "The volume %s status is DEGRADED"
+msgstr "است (DEGRADED) ضعيف %s volume وضعيت"
+
+#: tools/alert.py:107
+#, python-format
+msgid "The volume %(volume)s status is %(status)s: %(message)s"
+msgstr "%(message)s : است %(status)s ،  %(volume)s volume وضعيت"
+
+#: tools/alert.py:111
+#, python-format
+msgid "The volume %(volume)s status is %(status)s"
+msgstr "است %(status)s ،  %(volume)s volume وضعيت"
+
+#: tools/alert.py:117
+msgid "You have to change the password for the admin user (currently no password is required to login)"
+msgstr "(شما بايد كلمه عبور مدير سيستم را تغيير دهيد(در حال حاضر براي ورود كلمه عبور نياز نيست"
+
+#: tools/alert.py:129
+#, python-format
+msgid "The WebGUI Address could not be bind to %s; using wildcard"
+msgstr "wildcard متصل شود؛ استفاده از %s نمي تواند به  WebGUI  آدرس"
+
+#: tools/alert.py:139
+#, python-format
+msgid "The following IPs are bind to iSCSI Portal but were not found in the system: %s"
+msgstr "%s :مربوط هستند ولي در سيستم پيدا نشدند iSCSI زير به دروازه IP آدرس هاي"
+
+#: tools/alert.py:169
+msgid "Critical Alerts"
+msgstr "هشدارهاي بحراني"
+
+msgid "DVD"
+msgstr "دی‌وی‌دی"
+
+msgid "Tape"
+msgstr "نوار"
+
+msgid "Pass"
+msgstr "قبول شدن"
+
+msgid "Disable password"
+msgstr "كلمه غبور غیر فعال شده"
+
+msgid "Time in milliseconds"
+msgstr "زمان به میلی‌ثانیه"
+

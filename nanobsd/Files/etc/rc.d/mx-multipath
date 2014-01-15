@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-multipath
+# REQUIRE: FILESYSTEMS mx-syncdisks
+
+. /etc/rc.subr
+
+multipath_sync()
+{
+	/usr/local/bin/python \
+		/usr/local/www/metanasUI/middleware/notifier.py \
+		multipath_sync \
+		>/dev/null
+}
+
+name="mx-multipath"
+start_cmd='multipath_sync'
+stop_cmd=''
+
+load_rc_config $name
+run_rc_command "$1"

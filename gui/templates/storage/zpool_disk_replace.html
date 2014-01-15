@@ -1,0 +1,10 @@
+{% extends "freeadmin/generic_form.html" %}
+{% block oklabel %}{% trans "Replace Disk" %}{% endblock %}
+{% block form %}
+    <tr>
+    <td colspan="2">
+    {% trans "Replacing disk" %} <strong>{{ disk }}</strong>
+    </td>
+    </tr>
+    {{ block.super }}
+{% endblock %}

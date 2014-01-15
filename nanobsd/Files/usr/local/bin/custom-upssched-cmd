@@ -1,0 +1,50 @@
+#! /bin/sh
+#
+# This script should be called by upssched via the CMDSCRIPT directive.
+#
+# Here is a quick example to show how to handle a bunch of possible
+# timer names with the help of the case structure.
+#
+# This script may be replaced with another program without harm.
+#
+# The first argument passed to your CMDSCRIPT is the name of the timer
+# from your AT lines.
+
+. /etc/rc.metanas
+
+IFS=\|
+
+f="ups_emailnotify ups_toemail ups_subject ups_shutdown"
+sf=$(echo $f | sed -e 's/ /, /g')
+${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+"SELECT $sf FROM services_ups ORDER BY -id LIMIT 1" | \
+while eval read $f; do
+
+case $1 in
+	"ONBATT"|"LOWBATT")
+		if [ "${ups_shutdown}" = "lowbatt" -a "$1" = "LOWBATT" ] || [ "${ups_shutdown}" = "batt" -a "$1" = "ONBATT" ]; then
+			logger -t upssched-cmd "issuing shutdown"
+			/usr/local/sbin/upsmon -c fsd
+		fi
+		;;
+	"SHUTDOWN"|"FSD")
+		if [ "${ups_emailnotify}" -eq 1 ]; then
+			echo "$1" | mail -s "$(echo "${ups_subject}"|sed "s/%d/$(date)/"|sed "s/%h/$(hostname)/")" "${ups_toemail}"
+		fi
+		;;
+	"EMAIL"|"ONLINE"|"REPLBATT"|"COMMBAD"|"COMMOK")
+		if [ "${ups_emailnotify}" -eq 1 ]; then
+			if [ "$1" = "ONLINE" ]; then
+				msg="ONLINE"
+			else
+				msg="$NOTIFYTYPE"
+			fi
+			echo "${msg}" | mail -s "$(echo "${ups_subject}"|sed "s/%d/$(date)/"|sed "s/%h/$(hostname)/")" "${ups_toemail}"
+		fi
+		;;
+	*)
+		logger -t upssched-cmd "Unrecognized command: $1"
+		;;
+esac
+
+done

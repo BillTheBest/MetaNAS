@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ sw_version }}</title>
+    {% include "dojango/include.html" %}
+    <script type="text/javascript" src="{{ DOJANGO.DOJO_URL }}/metanasdojo.js"></script>
+<link rel="icon" type="image/png" href="/static/images/ui/login/favicon.png" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/login.css" type="text/css" media="all" />
+<script type="text/javascript">
+
+require([
+    "dojo",
+    "dojo/ready",
+    "dojo/_base/xhr",
+    "dojo/_base/html",
+    "dijit/MenuItem",
+    "dijit/PopupMenuItem",
+    "dijit/form/Button",
+    "dijit/layout/ContentPane",
+    "dijit/layout/BorderContainer",
+    ], function(dojo, ready) {
+
+    ready(function() {
+
+        checkRunning = function() {
+
+            dojo.xhrGet({
+                url: '/',
+                sync: true,
+                failOk: true,
+                handle: function(a1,ioArgs) {
+                    if(ioArgs.xhr.status == 200 || ioArgs.xhr.status == 302) {
+                        window.location = '/';
+                    } else {
+                        setTimeout('checkRunning()', 3000);
+                    }
+                },
+                });
+
+        }
+
+        setTimeout(function() {
+            dojo.xhrGet({
+                url: '/system/shutdown/run/',
+                sync: true,
+                failOk: true,
+                handle: function(a1,a2) {
+                    setTimeout('checkRunning()', 10000);
+                    setTimeout(function () {
+                        window.location = '/';
+                    }, 90000);
+                },
+            });
+        }, 1000);
+
+    });
+
+});
+
+</script>
+</head>
+<body>
+
+<div class="logout">
+
+<p class="thanks">MetaNAS is going to shutdown.</p>
+
+</div>
+
+<div class="o-footer"><p class="copyright">Copyright 2012 MetaComplex Corporation All Right Reserved.</p></div>
+</body>
+</html>

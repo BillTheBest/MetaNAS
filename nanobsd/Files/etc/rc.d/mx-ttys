@@ -1,0 +1,169 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-ttys
+# REQUIRE: root
+# BEFORE: LOGIN
+
+. /etc/rc.subr
+
+netcli_enable()
+{
+	local tmp
+
+	tmp=$(mktemp /tmp/tmp.XXXXXX)
+	awk '
+	/^ttyv0/ { sub("Pc", "metanas"); print $0; }
+	!/^ttyv0/ {print $0; }
+	' /etc/ttys > "${tmp}"
+
+	if [ -s "${tmp}" ]; then
+		mv "${tmp}" /etc/ttys
+	else
+		rm -f "$tmp"
+	fi
+}
+
+netcli_disable()
+{
+	local tmp
+
+	tmp=$(mktemp /tmp/tmp.XXXXXX)
+	awk '
+	/^ttyv0/ { sub("metanas", "Pc"); print $0; }
+	!/^ttyv0/ {print $0; }
+	' /etc/ttys > "${tmp}"
+
+	if [ -s "${tmp}" ]; then
+		mv "${tmp}" /etc/ttys
+	else
+		rm -f "$tmp"
+	fi
+}
+
+netcli_serial_enable()
+{
+	local tmp
+
+	tmp=$(mktemp /tmp/tmp.XXXXXX)
+	awk '
+	/^ttyu0/ {
+		sub("std.9600", "metanas_serial");
+		print $0;
+	} 
+	!/^ttyu0/ {print $0; }
+	' /etc/ttys > "${tmp}"
+
+	if [ -s "${tmp}" ]; then
+		mv "${tmp}" /etc/ttys
+	else
+		rm -f "$tmp"
+	fi
+}
+
+netcli_serial_disable()
+{
+	local tmp
+
+	tmp=$(mktemp /tmp/tmp.XXXXXX)
+	awk '
+	/^ttyu0/ {
+		sub("metanas_serial", "std.9600");
+		print $0;
+	} 
+	!/^ttyu0/ {print $0; }
+	' /etc/ttys > "${tmp}"
+
+	if [ -s "${tmp}" ]; then
+		mv "${tmp}" /etc/ttys
+	else
+		rm -f "$tmp"
+	fi
+}
+
+serial_enable()
+{
+	local tmp
+
+	tmp=$(mktemp /tmp/tmp.XXXXXX)
+
+	awk '
+	/^ttyu0/ {
+		sub("off", "on");
+		sub("dialup", "vt100");
+		print $0;
+	} 
+	!/^ttyu0/ {print $0; }
+	' /etc/ttys > "${tmp}"
+
+	if [ -s "${tmp}" ]; then
+		mv "${tmp}" /etc/ttys
+	else
+		rm -f "$tmp"
+	fi
+}
+
+serial_disable()
+{
+	local tmp
+
+	tmp=$(mktemp /tmp/tmp.XXXXXX)
+
+	awk '
+	/^ttyu0/ {
+		sub("on", "off");
+		sub("vt100", "dialup");
+		print $0;
+	} 
+	!/^ttyu0/ {print $0; }
+	' /etc/ttys > "${tmp}"
+
+	if [ -s "${tmp}" ]; then
+		mv "${tmp}" /etc/ttys
+	else
+		rm -f "$tmp"
+	fi
+}
+
+update_ttys()
+{
+	local IFS="|"
+	local f="adv_consolemenu adv_serialconsole"
+	eval local $f
+	local sf=$(var_to_sf $f)
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		$sf
+
+	FROM
+		system_advanced
+	
+	ORDER BY
+		-id
+	LIMIT 1
+	" | \
+	while eval read $f
+	do
+		case "${adv_serialconsole}" in 
+			0) serial_disable ;;
+			1) serial_enable ;;
+		esac
+
+		case "${adv_consolemenu}" in
+			0) netcli_disable; netcli_serial_disable ;;
+			1) netcli_enable; netcli_serial_enable ;;
+		esac
+		kill -HUP 1
+		break
+	done
+}
+
+name="mx-ttys"
+start_cmd='update_ttys'
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

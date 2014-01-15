@@ -1,0 +1,227 @@
+#!/bin/sh
+#+
+# Copyright 2011 MetaComplex, Corp.
+# All rights reserved
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted providing that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+# DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS 	 
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+# IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+# $FreeBSD$
+#####################################################################
+
+# This isn't needed when executed standalone on the CLI; this is needed when
+# executed from webserver/restricted context.
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
+
+: ${METANAS_DEBUG_MODULEDIR="$(realpath $(dirname "$0"))/../libexec/metanas-debug"}
+
+. "$METANAS_DEBUG_MODULEDIR/include.sh"
+
+readonly email_opt="e"
+
+usage()
+{
+	local opts="${1}"
+
+	if [ -z "${opts}" ]
+	then
+		echo "Usage: $0 <options>"
+		return 0
+	fi
+
+	cat<<-__EOF__
+	usage: $0 <options>
+	Where options is:
+    -$email_opt		A list of comma delimited list of email
+		addresses to email the debug log to.
+__EOF__
+
+	local i=1
+	local len=${#opts}
+	while [ "${i}" -le "${len}" ]
+	do
+		local opt=$(echo "${opts}" | cut -b ${i})
+		local var=\$$(echo "module_help_${opt}")
+		local help=$(eval "echo ${var}")
+
+		echo -e "    -${opt}\t\t$(eval ${help})"
+		i=$((${i} + 1))
+	done
+
+	return 0
+}
+
+send_email()
+{
+	local email="${1}"
+	local body="${2}"
+
+	if [ -n "${email}" -a -n "${body}" -a -f "${METANAS_DEBUG_FILE}" ]
+	then
+		mfile=/var/tmp/.mail.txt
+		afile=$(basename ${METANAS_DEBUG_FILE})
+		boundary="@@@_beer_@@@"
+
+		cat<<-EOF>"${mfile}"
+		Content-Transfer-Encoding: 7bit
+		Content-Type: multipart/mixed; boundary="${boundary}"
+		MIME-Version: 1.0
+		To: ${email}
+		Date: $(date)
+		Subject: MetaNAS Debug
+
+		--${boundary}
+		Content-Type: text/plain
+		Content-Disposition: inline
+
+		${body}
+
+		--${boundary}
+		Content-Type: text/plain
+		Content-Disposition: attachment; filename=${afile};
+		Content-Description: output of $(basename $0)
+
+		$(cat ${METANAS_DEBUG_FILE})
+
+		--${boundary}--
+EOF
+		sendmail -t < "${mfile}"
+		rm "${mfile}"
+	fi
+}
+
+load_modules()
+{
+	for f in $(ls "${METANAS_DEBUG_MODULEDIR}")
+	do
+		if ! is_loaded "${f}"
+		then
+			load_module "${f}"
+		fi
+	done
+}
+
+get_module_options()
+{
+	local l="abcdefghijklmnopqrstuvwxyz"
+	local u="ABCDEFGHIJKLMNOPQRZTUVWXYZ"
+	local n="0123456789"
+	local all="${l}${u}${n}"
+	local opts=""
+
+	unset VAL
+	for m in ${METANAS_DEBUG_MODULES}
+	do
+		local opt=$(eval "${m}_opt" 2>/dev/null)
+
+		if echo "${opts}"|grep -q "${opt}"
+		then
+			local i=1
+			local len=${#all}
+
+			opt=""
+			while [ "${i}" -le "${len}" ]
+			do
+				nopt=$(echo "${all}"|cut -b "${i}")
+				if ! echo "${opts}"|grep -q "${nopt}"
+				then
+					opt="${nopt}"
+					break
+				fi
+
+				i=$((${i} + 1))
+			done
+		fi
+
+		export "$(echo module_func_${opt})=${m}_func"
+		export "$(echo module_help_${opt})=${m}_help"
+		opts="${opts}${opt}"
+	done
+
+	#local i=1
+	#local len=${#opts}
+	#local tmp=""
+
+	#while [ "${i}" -le "${len}" ]
+	#do
+		#local opt=$(echo "${opts}"|cut -b "${i}")
+		#tmp="${tmp} ${opt}"
+	#done
+
+	VAL="${opts}"
+	export VAL
+}
+
+main()
+{
+	local has_debug_command=false
+	local email=""
+	local cmd="$0 $*"
+	local func
+	local var
+
+	load_modules
+	get_module_options
+	opts="${VAL}"
+
+	aopts="${opts}${email_opt}:"
+	while getopts "${aopts}" opt
+	do
+		case "${opt}" in
+		$email_opt)
+			email="${OPTARG}"
+			;;
+		*)
+			has_debug_command=true
+			;;
+		:|\?)
+			usage "${opts}"
+			return 2
+			;;
+		esac
+	done
+
+	if ! $has_debug_command; then
+		usage "${opts}"
+		return 2
+	fi
+
+	OPTIND=1
+	: > ${METANAS_DEBUG_FILE}
+	metanas_header 2>&1|tee -a "${METANAS_DEBUG_FILE}"
+	while getopts "${aopts}" opt
+	do
+		if [ "${opt}" != "${email_opt}" ]; then
+			var=\$$(echo "module_func_${opt}")
+			func=$(eval "echo ${var}")
+
+			eval "${func}" 2>&1|tee -a "${METANAS_DEBUG_FILE}"
+		fi
+	done
+
+	if [ -n "$email" ]; then
+		send_email "${email}" \
+		    "The following output was generated with: '${cmd}'"
+	fi
+	return 0
+}
+
+main $*

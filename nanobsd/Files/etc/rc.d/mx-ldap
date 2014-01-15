@@ -1,0 +1,291 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-ldap
+# REQUIRE: root
+# BEFORE: NETWORK
+
+. /etc/rc.metanas
+    
+: ${NSS_LDAP_CONF:="/usr/local/etc/nss_ldap.conf"}
+: ${NSS_LDAP_SECRET:="/usr/local/etc/nss_ldap.secret"}
+: ${LDAP_CONF:="/usr/local/etc/openldap/ldap.conf"}
+: ${CERT_FILE:="/usr/local/etc/certs/cacert.crt"}
+
+save_certificate()
+{
+	local ldap_id="${1}"
+
+	mkdir -p "$(dirname ${CERT_FILE})"
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		ldap_tls_cacertfile
+
+	FROM
+		services_ldap
+
+	WHERE
+		id = ${ldap_id}
+
+	" > "${CERT_FILE}"
+}
+
+generate_ldapconf()
+{
+	local IFS=\|
+	local nssconf="${NSS_LDAP_CONF}"
+	local ldapconf="${LDAP_CONF}"
+	local secret="${NSS_LDAP_SECRET}"
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		services_ldap.id as ldap_id,
+		ldap_hostname, 	 
+		ldap_basedn, 	 
+		ldap_anonbind, 	 
+		ldap_rootbasedn, 	 
+		ldap_rootbindpw, 	 
+		ldap_pwencryption, 	 
+		ldap_usersuffix, 	 
+		ldap_groupsuffix, 	 
+		ldap_passwordsuffix, 	 
+		ldap_machinesuffix, 	 
+		ldap_ssl,
+		trim(
+			rtrim(
+				replace(
+					replace(
+						replace(ldap_options, '\n', '|'),
+					x'0A', '|'),
+				x'0D', ''),
+			'|')
+		) as ldap_options
+
+	FROM
+		services_services,
+		services_ldap
+
+	WHERE (
+		srv_service = 'ldap' and
+		srv_enable = 1
+	)
+
+	ORDER BY
+		-services_ldap.id
+
+	LIMIT 1
+	" | \
+	while eval read ldap_id ldap_hostname ldap_basedn ldap_anonbind ldap_rootbasedn \
+		ldap_rootbindpw ldap_pwencryption ldap_usersuffix ldap_groupsuffix \
+		ldap_passwordsuffix ldap_machinesuffix ldap_ssl ldap_options;
+	do
+		[ -z "${ldap_hostname}" -o -z "${ldap_basedn}" ] && return 1
+
+		cat >"${nssconf}" <<-EOF
+		host ${ldap_hostname}
+		base ${ldap_basedn}
+		rootbinddn ${ldap_rootbasedn}
+		pam_password ${ldap_pwencryption}
+		nss_override_attribute_value loginShell /bin/sh
+EOF
+		if [ -z "${ldap_usersuffix}" ]; then
+			cat >>"${nssconf}" <<-EOF
+			nss_base_passwd ${ldap_basedn}
+EOF
+		else
+			cat >>"${nssconf}" <<-EOF
+			nss_base_passwd ${ldap_usersuffix},${ldap_basedn}
+EOF
+		fi
+		if [ -z "${ldap_groupsuffix}" ]; then
+			cat >>"${nssconf}" <<-EOF
+			nss_base_group ${ldap_basedn}
+EOF
+		else
+			cat >>"${nssconf}" <<-EOF
+			nss_base_group ${ldap_groupsuffix},${ldap_basedn}
+EOF
+		fi
+	
+		if [ "${ldap_ssl}" = "start_tls" ]; then
+			save_certificate "${ldap_id}"
+
+			cat >>"${nssconf}" <<-EOF
+			ssl ${ldap_ssl}
+			tls_cacertfile ${CERT_FILE}
+EOF
+		elif [ "${ldap_ssl}" = "on" ]; then
+			save_certificate "${ldap_id}"
+
+			cat >>"${nssconf}" <<-EOF
+			uri ldaps://${ldap_hostname}
+			ssl ${ldap_ssl}
+			tls_cacertfile ${CERT_FILE}
+EOF
+		fi
+
+		for opt in ${ldap_options}; do
+			echo ${opt} >> "${nssconf}"
+		done
+
+		if [ "$ldap_anonbind" != 1 ]; then
+			echo "${ldap_rootbindpw}" > "${secret}"
+			chmod 600 "${secret}"
+		fi
+
+		ln -sf ${nssconf} "$(dirname ${nssconf})/ldap.conf"
+		if [ "$ldap_anonbind" != 1 ]; then
+			ln -sf ${secret} "$(dirname ${secret})/ldap.secret"
+		fi
+
+		echo "HOST ${ldap_hostname}" > "${ldapconf}"
+		echo "BASE ${ldap_basedn}" >> "${ldapconf}"
+		case "$ldap_ssl" in
+		start_tls)
+			cat >> "${ldapconf}" <<-EOF
+			TLS_CACERT ${CERT_FILE}
+			TLS_REQCERT allow
+EOF
+			;;
+		on)
+			cat >> "${ldapconf}" <<-EOF
+			URI ldaps://${ldap_hostname}
+			TLS_CACERT ${CERT_FILE}
+			TLS_REQCERT allow
+EOF
+			;;
+		esac
+	done
+
+	return 0
+}
+
+
+get_cifs_homedir()
+{
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		cifs_srv_homedir
+
+	FROM
+		services_cifs
+
+	ORDER BY
+		-services_cifs.id
+
+	LIMIT 1;
+	"
+}
+
+setup_homedirs()
+{
+	local cifs_home="$(get_cifs_homedir)"
+
+	if [ -n "${cifs_home}" ]
+	then
+		ln -sfh "$cifs_home" "/var/home" 2>/dev/null
+
+	elif [ ! -d "/var/home" ]
+	then
+		mkdir /var/home
+	fi
+}
+
+ldap_status()
+{
+	local IFS=\|
+	local ret=0
+	local fail="/tmp/.ldap_fail"
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		ldap_anonbind, 	 
+		ldap_rootbasedn, 	 
+		ldap_rootbindpw, 	 
+		ldap_ssl
+	FROM
+		services_ldap
+
+	ORDER BY
+		-services_ldap.id
+
+	LIMIT 1
+	" | \
+	while eval read ldap_anonbind ldap_rootbasedn ldap_rootbindpw ldap_ssl
+	do
+		local res=1
+		local ldapwhoami=/usr/local/bin/ldapwhoami
+		local options=
+
+		if [ "${ldap_ssl}" = "start_tls" ]
+		then
+			options="-Z"
+		fi
+
+		if [ "${ldap_anonbind}" = "0" ]
+		then
+			local temp=$(mktemp /tmp/tmp.XXXXXX)
+		
+			chmod 400 "${temp}"
+			echo -n "${ldap_rootbindpw}" > "${temp}"
+
+			local out=$(${ldapwhoami} ${options} -D "${ldap_rootbasedn}" -y "${temp}")
+			res=$?
+
+			rm -f "${temp}"
+			local dn=$(echo "${out}"|cut -f2 -d:)
+
+			if [ "${dn}" != "${ldap_rootbasedn}" ]
+			then
+				res=1
+			fi
+		else		
+			local out=$(${ldapwhoami} -D '' ${options})
+			res=$?
+
+			local dn=$(echo "${out}"|cut -f2 -d:)
+			if [ "${dn}" != "anonymous" ]
+			then
+				res=1
+			fi
+		fi
+
+		if [ "${res}" = "1" ]
+		then
+			touch "${fail}"
+		fi
+	done
+
+	if [ -f "${fail}" ]
+	then
+		rm -f "${fail}"
+		ret=1
+	fi
+
+	return ${ret}
+}
+
+generate_ldap_config()
+{
+	if srv_enabled ldap; then
+		generate_ldapconf &&
+		setup_homedirs &&
+		create_cache_filesystem
+	fi
+}
+
+expire_cache()
+{
+        /usr/local/www/metanasUI/tools/cachetool.py expire
+}
+
+name="mx-ldap"
+start_cmd='generate_ldap_config'
+status_cmd='ldap_status'
+stop_cmd='expire_cache'
+            
+load_rc_config $name
+run_rc_command "$1"

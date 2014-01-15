@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-cache
+# REQUIRE: LOGIN
+
+. /etc/rc.metanas
+
+populate_cache()
+{
+	if srv_enabled ldap
+	then
+		/usr/local/www/metanasUI/tools/cachetool.py fill
+
+	elif srv_enabled activedirectory
+	then
+		/usr/local/www/metanasUI/tools/cachetool.py fill
+	fi
+}
+
+expire_cache()
+{
+        /usr/local/www/metanasUI/tools/cachetool.py expire
+}
+
+name="mx-cache"
+start_cmd='populate_cache'
+stop_cmd='expire_cache'
+            
+load_rc_config $name
+run_rc_command "$1"

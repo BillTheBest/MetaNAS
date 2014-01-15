@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+#
+
+# PROVIDE: mx-localtime
+# REQUIRE: FILESYSTEMS
+# BEFORE: NETWORKING
+
+. /etc/rc.subr
+
+#
+# Set up timezone
+#
+install_timezone()
+{
+	local IFS="|"
+	local f="stg_timezone"
+	eval local $f
+	local sf=$(var_to_sf $f)
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "SELECT $sf FROM system_settings ORDER BY -id LIMIT 1" | \
+	while eval read $f; do
+		timezone=$(echo ${stg_timezone} | sed -es=asia-tehran=Asia/Tehran=)
+		if [ -z "${stg_timezone}" ]; then
+			stg_timezone=Asia/Tehran
+		fi
+		cp /usr/share/zoneinfo/${stg_timezone} /etc/localtime
+		echo ${stg_timezone} > /var/db/zoneinfo
+	done
+}
+
+name="mx-localtime"
+start_cmd='install_timezone'
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

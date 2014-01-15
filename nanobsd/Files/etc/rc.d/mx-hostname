@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-hostname
+# BEFORE: hostname
+
+. /etc/rc.subr
+
+generate_hostname()
+{
+    local IFS="|"
+    local f="gc_hostname gc_domain"
+    eval local $f
+    local sf=$(var_to_sf $f)
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+	"SELECT $sf FROM network_globalconfiguration ORDER BY -id LIMIT 1" | \
+	while eval read $f; do
+        cp /conf/base/etc/hosts /etc/hosts
+        echo -e "127.0.0.1\t${gc_hostname} ${gc_hostname}.${gc_domain}" >> /etc/hosts
+    done
+}
+
+name="mx-hostname"
+start_cmd='generate_hostname'
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

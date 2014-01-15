@@ -1,0 +1,752 @@
+#!/bin/sh
+#-
+# Copyright (c) 2012-2011 MetaComplex, Corp., All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL MetaComplex, Corp. OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# This file is heavily derived from both Sam Leffler's Avilia config,
+# as well as the BSDRP project's config file.  Neither of these have
+# an explicit copyright/license statement, but are implicitly BSDL.
+#
+
+#
+# MetaNAS specific bits of the common stuff.
+#
+
+# Override the defaults in nanobsd.sh from a common script.
+. "$AVATAR_ROOT/build/nano_env"
+# Helpful functions.
+. "$AVATAR_ROOT/build/functions.sh"
+
+# DEBUG=1, etc.
+for feature in $SW_FEATURES; do
+	eval "$(echo "$feature")=1"
+done
+
+NANO_BOOT0CFG="-o packet -s 1 -m 3 -t 18"
+
+# /var -> ~150MB (look through rc.initdiskless for the formula of how this
+# number is calculated out).
+# This is needed for samba as it drops a lot of files in /var/db/samba for
+# locking purposes when transferring large collections of data (~100MB for
+# ~4 TB in-flight data). I added overhead just in case, because when space
+# can't be obtained for /var/db/samba, smbd and nmbd have a nasty habit of
+# SIGABRTing and crashing, and this causes other applications to get unhappy
+# (vi and friends ;(..).
+#
+# Set to a lower default for lower footprints with home usecases in MetaNAS.
+NANO_RAM_TMPVARSIZE=327680
+
+NANO_IMAGES=2
+# Remove .orig and .rej too
+# Removing X11 needs more work, it blows rdd + fonts
+NANO_IGNORE_FILES_EXPR=$(echo "$NANO_IGNORE_FILES_EXPR" | sed -e 's/)/|\.orig$|\.rej$)/')
+FlashDevice generic 2g
+
+if [ "$DEBUG" = 1 ]; then
+	DEBUG_BUILD="
+DEBUG_FLAGS=		-g
+"
+else
+	DEBUG_INSTALL="
+INSTALL_NODEBUG=	t
+"
+fi
+
+# NB: leave c++ enabled so devd can be built
+CONF_BUILD="
+#WITHOUT_ACPI=true
+WITHOUT_ATM=true
+WITHOUT_AUDIT=true
+WITHOUT_BIND_DNSSEC=true
+WITHOUT_BIND_ETC=true
+WITHOUT_BIND_LIBS_LWRES=true
+WITHOUT_BIND_NAMED=true
+WITHOUT_BLUETOOTH=true
+WITHOUT_CALENDAR=true
+WITHOUT_CTM=true
+WITHOUT_CVS=true
+WITHOUT_DICT=true
+WITHOUT_EXAMPLES=true
+WITHOUT_FORTRAN=true
+WITHOUT_FREEBSD_UPDATE=yes
+WITHOUT_GAMES=true
+WITHOUT_GCOV=true
+WITHOUT_GPIB=true
+WITHOUT_HTML=true
+WITHOUT_I4B=true
+WITHOUT_IPFILTER=true
+WITHOUT_IPX=true
+WITHOUT_LIB32=true
+WITHOUT_LIBKSE=true
+WITHOUT_LOCALES=true
+WITHOUT_LPR=true
+WITHOUT_MAN=true
+WITHOUT_NDIS=true
+WITHOUT_NIS=true
+WITHOUT_NLS=true
+WITHOUT_NS_CACHING=true
+WITHOUT_OBJC=true
+WITHOUT_PORTSNAP=true
+WITHOUT_PPP=true
+WITHOUT_PROFILE=true
+WITHOUT_RCMDS=true
+WITHOUT_SENDMAIL=true
+# Knob needs to be fixed on systems that don't have the docs stuff
+# preinstalled, e.g. 9.x bsdinstall images.
+#WITHOUT_SHAREDOCS=true
+WITHOUT_SSP=true
+WITHOUT_SYSCONS=true
+WITHOUT_SYSINSTALL=true
+# Telnet's a useful tool to have on the remote box.
+#WITHOUT_TELNET=true
+WITHOUT_WIRELESS=true
+WITHOUT_WPA_SUPPLICANT_EAPOL=true
+PYTHON_DEFAULT_VERSION=python2.7
+
+
+LOCAL_DIRS=${NANO_LOCAL_DIRS}
+
+${DEBUG_BUILD}
+"
+CONF_INSTALL="$CONF_BUILD
+NOPORTDOCS=t
+NO_INSTALL_MANPAGES=t
+# devel/apr sucks.
+WITH_BDB_VER=46
+
+${DEBUG_INSTALL}
+"
+# The following would help...
+# WITHOUT_TOOLCHAIN=true		can't build ports
+# WITHOUT_INSTALLLIB=true		libgcc.a
+#
+# from the build
+# WITHOUT_INFO=true			makeinfo
+# WITHOUT_RCS=true
+PKG_ONLY_MAKE_CONF="
+WITHOUT_TOOLCHAIN=true
+WITHOUT_INSTALLLIB=true
+WITHOUT_INFO=true
+WITHOUT_RCS=true
+WITHOUT_SHAREDOCS=true
+"
+
+# Pull in common definitions.
+. ${NANO_CFG_BASE}/common
+
+add_port archivers/lzo2
+add_port security/openvpn
+add_port converters/libiconv
+#+editors/nano || converters/iconv
+add_port lang/perl5.12
+#-editors/nano || converters/iconv
+add_port converters/iconv
+add_port devel/gettext
+add_port devel/pkg-config
+add_port devel/libpthread-stubs WITHOUT_X11=y
+add_port devel/cdialog
+add_port dns/inadyn			# -mt?
+add_port editors/nano
+add_port ftp/proftpd
+add_port net-mgmt/bsnmp-ucd
+add_port net-mgmt/bsnmptools
+add_port net-mgmt/clog
+add_port net-mgmt/sipcalc
+add_port net/istgt
+add_port security/libgcrypt
+add_port security/libgpg-error
+add_port databases/db46
+#+net/nss_ldap
+add_port security/cyrus-sasl2
+add_port net/openldap24-sasl-client
+#-net/nss_ldap
+add_port net/nss_ldap
+add_port net/rsync WITHOUT_POPT_PORT=true WITH_SSH=true WITHOUT_ATIMES=true \
+	WITH_ACL=true WITHOUT_ICONV=true WITHOUT_TIMELIMIT=true
+add_port lang/python27 WITH_HUGE_STACK_SIZE=y
+add_port dns/py-dnspython
+#+net/samba
+add_port devel/talloc MAKE_JOBS_UNSAFE=y MAKE_JOBS_NUMBER=1
+add_port devel/libexecinfo
+add_port devel/popt
+add_port databases/tdb MAKE_JOBS_UNSAFE=y MAKE_JOBS_NUMBER=1
+add_port sysutils/libsunacl
+#-net/samba
+add_port net/samba36	WITHOUT_CUPS=y WITH_LDAP=y WITH_ADS=y WITH_WINBIND=y \
+			WITH_ACL_SUPPORT=y WITH_PAM_SMBPASS=y \
+			WITH_AIO_SUPPORT=y WITH_EXP_MODULES=y
+add_port security/pam_ldap
+add_port security/pam_mkhomedir
+add_port shells/bash WITHOUT_NLS=y
+add_port shells/scponly
+add_port sysutils/e2fsprogs
+#+sysutils/fusefs-ntfs
+add_port sysutils/fusefs-kmod
+add_port sysutils/fusefs-libs
+add_port devel/libublio
+#-sysutils/fusefs-ntfs
+add_port sysutils/fusefs-ntfs
+add_port sysutils/ntfsprogs
+add_port sysutils/smartmontools
+#+emulators/open-vm-tools-nox11 || www/nginx || ...
+add_port devel/pcre
+#-emulators/open-vm-tools-nox11 || www/nginx || ...
+#+emulators/open-vm-tools-nox11
+add_port devel/glib20
+add_port net/libdnet
+#-emulators/open-vm-tools-nox11
+add_port emulators/open-vm-tools-nox11 WITHOUT_ICU=y
+add_port databases/sqlite3
+add_port databases/py-sqlite3
+add_port databases/py-bsddb3
+add_port www/py-django WITHOUT_MYSQL=y
+add_port www/py-dojango
+#+databases/py-south || devel/py-daemon || ...
+add_port devel/py-setuptools
+#-databases/py-south || devel/py-daemon || ...
+add_port databases/py-south
+add_port devel/py-asn1
+add_port devel/py-asn1-modules
+add_port www/nginx WITH_IPV6=true WITH_HTTP_MODULE=true \
+	WITH_HTTP_CACHE_MODULE=true WITH_HTTP_DAV_MODULE=true \
+	WITH_HTTP_REWRITE_MODULE=true WITH_HTTP_SSL_MODULE=true \
+	WITH_HTTP_STATUS_MODULE=true WITH_WWW=true \
+	WITH_HTTP_UPLOAD_MODULE=true WITH_DEBUGLOG=true \
+	WITH_HTTP_UPLOAD_PROGRESS=true
+#+add_port www/py-flup
+#-add_port www/py-flup
+add_port www/py-flup
+#+add_port sysutils/nut
+#-add_port sysutils/nut
+add_port net-mgmt/net-snmp
+add_port sysutils/nut WITHOUT_NEON=y
+
+add_port textproc/libxml2 WITHOUT_X11=y
+add_port textproc/py-libxml2 WITHOUT_X11=y
+
+add_port textproc/expat2 WITHOUT_X11=y
+add_port devel/gamin WITHOUT_X11=y
+add_port devel/gio-fam-backend WITHOUT_X11=y
+add_port devel/m4 WITHOUT_X11=y
+add_port devel/bison WITHOUT_X11=y
+add_port devel/libffi WITHOUT_X11=y
+add_port devel/gobject-introspection
+
+add_port www/py-httplib2
+add_port net/py-oauth2
+
+if [ "${REPORTING}" = 1 ]; then
+add_port graphics/png WITHOUT_X11=y
+fi
+
+if [ "${REPORTING}" = 1 ]; then
+#+add_port net-mgmt/collectd
+add_port devel/libstatgrab WITHOUT_X11=y
+add_port devel/libltdl WITHOUT_X11=y
+add_port print/freetype2 WITHOUT_X11=y
+add_port x11/kbproto
+add_port x11/xproto WITHOUT_X11=y
+add_port x11/libXdmcp WITHOUT_X11=y
+add_port x11/libXau WITHOUT_X11=y
+add_port x11/libxcb WITHOUT_X11=y
+add_port x11/libX11
+add_port x11-fonts/fontconfig WITHOUT_X11=y
+add_port x11-fonts/libfontenc WITHOUT_X11=y
+add_port x11-fonts/mkfontscale WITHOUT_X11=y
+add_port x11-fonts/mkfontdir WITHOUT_X11=y
+add_port x11-fonts/font-bh-ttf WITHOUT_X11=y
+add_port x11-fonts/font-misc-meltho WITHOUT_X11=y
+add_port x11-fonts/font-misc-ethiopic WITHOUT_X11=y
+add_port x11-fonts/bitstream-vera WITHOUT_X11=y
+add_port x11-fonts/font-util WITHOUT_X11=y
+add_port x11-fonts/encodings WITHOUT_X11=y
+add_port x11-fonts/xorg-fonts-truetype WITHOUT_X11=y
+add_port x11/xcb-util WITHOUT_X11=y
+add_port x11/libXrender
+add_port x11/renderproto
+add_port x11/xcb-proto WITHOUT_X11=y
+add_port x11/pixman WITHOUT_X11=y
+add_port graphics/png WITHOUT_X11=y
+add_port graphics/cairo WITHOUT_X11=y
+add_port x11-toolkits/pango WITHOUT_X11=y
+add_port databases/rrdtool	WITHOUT_X11=y WITHOUT_PERL_MODULE=y \
+				WITH_PYTHON_MODULE=y
+add_port net/liboping WITHOUT_X11=y
+#-add_port net-mgmt/collectd
+add_port net-mgmt/collectd WITHOUT_BIND=y WITHOUT_SNMP=y WITHOUT_X11=y
+fi
+add_port devel/py-ipaddr
+add_port converters/base64
+add_port emulators/mtools WITHOUT_X11=y
+add_port sysutils/arcconf
+add_port sysutils/tw_cli
+add_port sysutils/megacli
+add_port net/py-ldap2 WITH_SASL=y
+add_port sysutils/ataidle
+#+add_port devel/dbus*
+add_port sysutils/gnome_subr
+#-add_port devel/dbus*
+add_port devel/dbus WITHOUT_X11=y
+add_port devel/dbus-glib WITHOUT_X11=y
+add_port devel/libdaemon
+add_port databases/gdbm
+add_port net/avahi-app
+add_port net/avahi-libdns
+add_port textproc/py-xml
+add_port sysutils/throttle
+add_port sysutils/dmidecode
+# XXX: doesn't fetch (for some odd reason)
+#add_port sysutils/graid5
+add_port devel/libevent
+add_port sysutils/tmux
+add_port net/netatalk WITH_PAM=y WITHOUT_APPLETALK=y
+#+add_port ftp/wget
+add_port dns/libidn
+#-add_port ftp/wget
+add_port ftp/wget
+add_port benchmarks/iozone
+add_port benchmarks/iperf
+add_port benchmarks/netperf
+add_port benchmarks/xdd
+#add_port security/nmap
+add_port sysutils/ipmitool
+add_port www/py-django-json-rpc
+add_port devel/py-daemon
+add_port devel/py-polib
+# NOTE: in reality these aren't DEBUG apps, but this ensures that they aren't
+# counted against the release image's size because they aren't used in
+# production yet.
+if [ "${DEBUG}" = 1 ]; then
+add_port devel/py-zope.interface
+add_port devel/py-twistedCore
+add_port devel/py-ujson
+add_port devel/py-lockfile
+add_port devel/pyrex
+fi
+
+if [ "${DEBUG}" = 1 ]; then
+	#+add_port devel/git || net-p2p/transmission-daemon
+	add_port security/ca_root_nss WITH_ETCSYMLINK=y
+	add_port ftp/curl
+	#-add_port devel/git || net-p2p/transmission-daemon
+fi
+
+if [ "${DEBUG}" = 1 ]; then 
+	add_port devel/apr1
+	add_port devel/py-logilab-common
+	add_port devel/py-astng
+	add_port devel/pylint
+	add_port www/neon29
+	add_port devel/subversion
+	add_port editors/vim-lite
+	add_port misc/py-pexpect
+	add_port devel/zmq
+	add_port devel/py-pyzmq
+	add_port devel/ipython WITHOUT_X11=y
+	add_port devel/p5-Term-ReadKey
+	add_port devel/p5-subversion
+	add_port mail/p5-Net-SMTP-SSL
+	add_port lang/p5-Error
+	add_port devel/git WITH_SVN=y WITHOUT_CVS=y WITHOUT_P4=y
+	add_port devel/ctags
+fi
+
+if [ "${NANO_PACKAGE_ONLY}" -eq 1 ]; then
+ 	CONF_INSTALL="${CONF_INSTALL}
+${PKG_ONLY_MAKE_CONF}
+"
+	echo "Automatically building a thin image with packages"
+else
+	echo "Automatically building a * * F A T * * image so we can build ports"
+fi
+
+VARS="MASTER_SITE_BACKUP MASTER_SITE_OVERRIDE PACKAGEROOT PACKAGESITE"
+
+for var in $VARS; do
+	val=$(eval echo "\$$var")
+	if [ -n "$val" ]; then
+		CONF_INSTALL="${CONF_INSTALL}
+$var=$val"
+	fi
+done
+
+if [ "$PACKAGE_PREP_BUILD" = 1 ]; then
+	echo "Skipping post-package customize steps"
+	do_image=false
+else
+hack_nsswitch_conf ( )
+{
+	# Remove all references to NIS in the nsswitch.conf file
+	# Not sure this is still needed, but MetaNAS has it...
+	sed -i.bak -es/nis/files/g ${NANO_WORLDDIR}/etc/nsswitch.conf
+	rm -f ${NANO_WORLDDIR}/etc/nsswitch.conf.bak
+}
+customize_cmd hack_nsswitch_conf
+
+add_gui()
+{
+    local gui dst dstCR
+    gui=${AVATAR_ROOT}/gui
+    dstCR=/usr/local/www/metanasUI
+    dst=${NANO_WORLDDIR}${dstCR}
+    if [ -d ${gui} ]; then
+	pprint 2 "Adding metanas web gui"
+	mkdir ${dst}
+	( cd ${gui}
+	  find . | egrep -v "${NANO_IGNORE_FILES_EXPR}" | cpio -R root:wheel -dumpv ${dst} )
+	pprint 2 "Making metanas initial database"
+	mkdir ${NANO_WORLDDIR}/data
+	CR "(cd ${dstCR}; python manage.py syncdb --noinput --migrate)"
+	CR "(cd ${dstCR}; python manage.py createadmin --email root@metanas.local)"
+	CR "(cd ${dstCR}; python tools/compilemsgs.py)"
+	CR "(cd /data; cp metanas-v1.db factory-v1.db)"
+	CR "ln -sf /etc/local_settings.py ${dstCR}/local_settings.py"
+	CR "chown -R www:www ${dstCR} data"
+    else
+        pprint 2 "GUI OMITTED from image"
+    fi
+}
+customize_cmd add_gui
+
+add_autotune()
+{
+    local autotune autotune_src
+
+    # See mx-loader for more details.
+    autotune_src=$AVATAR_ROOT/src/autotune/files/autotune.py
+    autotune=$NANO_WORLDDIR/usr/local/bin/autotune
+    install -m 0755 $autotune_src $autotune
+}
+customize_cmd add_autotune
+
+# Move the $world/data to the /data partion
+move_data()
+{
+	db=${NANO_WORLDDIR}/data
+	rm -rf ${NANO_DATADIR}
+	mkdir -p ${NANO_DATADIR}
+	( cd ${db} ; find . | cpio -R root:wheel -dumpv ${NANO_DATADIR} )
+	rm -rf ${db}
+}
+customize_cmd move_data
+
+add_data_to_fstab ( )
+{
+	(
+	cd ${NANO_WORLDDIR}
+	echo "/dev/${NANO_DRIVE}s4 /data ufs rw,noatime 2 2" >> etc/fstab
+	mkdir -p data
+	)
+	
+}
+customize_cmd add_data_to_fstab
+
+afpd_conf_symlink ( )
+{
+	ln -sfh /etc/afpd.conf ${NANO_WORLDDIR}/usr/local/etc/afpd.conf
+}
+customize_cmd afpd_conf_symlink
+
+select_httpd ( )
+{
+	echo 'nginx_enable="YES"' >> ${NANO_WORLDDIR}/etc/rc.conf
+}
+customize_cmd select_httpd
+
+remove_patch_divots ( )
+{
+	find ${NANO_WORLDDIR} -name \*.orig -or -name \*.rej -delete
+}
+customize_cmd remove_patch_divots
+
+configure_mnt_md ( )
+{
+	mkdir -p ${NANO_WORLDDIR}/conf/base/mnt
+	echo 2048 > ${NANO_WORLDDIR}/conf/base/mnt/md_size
+}
+customize_cmd configure_mnt_md
+
+shrink_md_fbsize()
+{
+	# We have a lot of little files on our memory disks. Let's decrease
+	# the block and frag size to fit more little files on them (this
+	# halves our space requirement by ~50% on /etc and /var on 1.x --
+	# and gives us more back on 9.x as the default block and frag size
+	# are 4 times larger).
+	sed -i '' -e 's,-S -i 4096,-S -i 4096 -b 4096 -f 512,' \
+	    ${NANO_WORLDDIR}/etc/rc.initdiskless
+}
+customize_cmd shrink_md_fbsize
+
+save_build ( )
+{
+	VERSION_FILE=${NANO_WORLDDIR}/etc/version
+	if [ "${SVNREVISION}" = "${REVISION}" ]; then
+		echo "${NANO_NAME}" > "${VERSION_FILE}"
+	else
+		echo "${NANO_NAME} (${SVNREVISION})" > "${VERSION_FILE}"
+	fi
+}
+customize_cmd save_build
+
+configure_pbi_manager()
+{
+	local sbin links l
+	sbin=${NANO_WORLDDIR}/usr/local/sbin/
+	links="pbi_add pbi_addrepo pbi_browser pbi_autobuild \
+		pbi_delete pbi_deleterepo pbi_icon pbi_info pbi_indextool \
+		pbi_listrepo pbi_makepatch pbi_makeport pbi_makerepo \
+		pbi_metatool pbi_patch pbi_update pbi_update_hashdir \
+		pbid pbi-crashhandler"
+
+	mkdir -p ${sbin}
+	cd ${sbin}
+	cp pbi-manager pbi_create
+	for l in ${links}
+	do
+		ln -f pbi_create ${l}
+	done	
+	rm pbi-manager
+}
+customize_cmd configure_pbi_manager
+
+if [ "${DEBUG}" = 1 ]; then
+
+unmute_console_logging()
+{
+	# /var is small. Don't fill it up with messages from console.log
+	# because it's a chatty log.
+	sed -i '' -e 's/#console.info/console.info/' \
+		     "${NANO_WORLDDIR}/etc/syslog.conf"
+}
+customize_cmd unmute_console_logging
+
+else
+
+remove_perl()
+{
+	# Perl seems to be needed for build, but nothing after the
+	# build.  cope with bad dependencies (or misunderstood) and
+	# blow it away (saves 45MB)
+	CR "/usr/sbin/pkg_delete -f /var/db/pkg/perl* || :"
+}
+customize_cmd remove_perl
+
+fi
+
+remove_var_db_pkg()
+{
+	# Eats up ~7 MB on the install image.
+	rm -Rf ${NANO_WORLDDIR}/var/db/pkg
+}
+customize_cmd remove_var_db_pkg
+
+fix_fuse_module_location()
+{
+	local bad_modules_dir
+
+	# fuse.ko, et all gets installed into the wrong spot.
+	bad_modules_dir=${NANO_WORLDDIR}/usr/local/modules
+
+	tar -cf - -C "$bad_modules_dir" . | \
+	    tar -xpvf - -C ${NANO_WORLDDIR}/boot/kernel/.
+	rm -Rf "$bad_modules_dir"
+}
+customize_cmd fix_fuse_module_location
+
+fix_easy_install_pth()
+{
+	local site_packages
+
+	site_packages="$NANO_WORLDDIR/usr/local/lib/$PYTHON_DEFAULT_VERSION/site-packages"
+
+	env PYTHONPATH=$site_packages \
+	    python ${AVATAR_ROOT}/tools/sanitize_pth.py -f \
+	    $site_packages
+}
+customize_cmd fix_easy_install_pth
+
+create_var_home_symlink()
+{
+	# Create a link to a non-persistent location that mx-activedirectory
+	# and mx-ldap can use as a pointer to a home directory on persistent
+	# storage (/mnt/tank/homes, etc).
+	rm -f $NANO_WORLDDIR/home || :
+	rm -Rf $NANO_WORLDDIR/home
+	ln -sfh /var/home $NANO_WORLDDIR/home
+}
+customize_cmd create_var_home_symlink
+
+metanas_custom()
+{
+	compress_ko()
+	{
+		if [ -f ${NANO_WORLDDIR}/boot/kernel/$1 ]; then
+			gzip -v9 ${NANO_WORLDDIR}/boot/kernel/$1
+		fi
+	}
+
+	# Compress the kernel and preloaded modules
+	compress_ko kernel
+	compress_ko fuse.ko
+	compress_ko geom_mirror.ko
+	compress_ko geom_stripe.ko
+	compress_ko geom_raid3.ko
+	compress_ko geom_gate.ko
+
+	# nuke .pyc files (saves ~25MB on a fresh install)
+	find ${NANO_WORLDDIR}/usr/local -name '*.pyc' | xargs rm -f
+
+	# kill includes (saves 14MB)
+	find ${NANO_WORLDDIR}/usr/local/include \! -name 'pyconfig.h' -type f | xargs rm -f
+
+	# kill docs (saves 22MB)
+	rm -rf ${NANO_WORLDDIR}/usr/local/share/doc
+
+	# and info (2MB)
+	rm -rf ${NANO_WORLDDIR}/usr/local/info
+
+	# and man pages (4.4MB)
+	rm -rf ${NANO_WORLDDIR}/usr/local/man
+
+	# and examples (1.7M)
+	rm -rf ${NANO_WORLDDIR}/usr/local/share/examples
+
+	# and groff_fonts junk (3MB)
+	rm -rf ${NANO_WORLDDIR}/usr/share/groff_font
+	rm -rf ${NANO_WORLDDIR}/usr/share/tmac
+	rm -rf ${NANO_WORLDDIR}/usr/share/me
+
+	# Kill all .a's that are installed (15MB)
+	find ${NANO_WORLDDIR} -name \*.a -delete
+
+	# magic.mgc is just a speed optimization.  Kill it for 1.7MB
+	rm -f ${NANO_WORLDDIR}/usr/share/misc/magic.mgc
+
+	# strip binaries (saves spaces on non-debug images).
+	if [ "${DEBUG}" != 1 ]; then
+		pprint 4 "Stripping binaries and libraries"
+		for dir in $(find ${NANO_WORLDDIR}/usr/local -name '*bin' -or -name 'libexec' -maxdepth 3); do
+			for f in $(find $dir -type f); do
+				strip 2>/dev/null $f || :
+			done
+		done
+		# .so's are the only thing that need to be stripped. The rest
+		# should remain untouched.
+		for f in $(find ${NANO_WORLDDIR}/usr/local/lib -name '*.so' -or -name '*.so.*' -maxdepth 3); do
+			strip 2>/dev/null $f || :
+		done
+	fi
+
+	# Last second tweaks
+	chown -R root:wheel ${NANO_WORLDDIR}/root
+	chmod 0755 ${NANO_WORLDDIR}/root/*
+	chmod 0755 ${NANO_WORLDDIR}/*
+	chown -R root:wheel ${NANO_WORLDDIR}/etc
+	chown -R root:wheel ${NANO_WORLDDIR}/boot
+	chown root:wheel ${NANO_WORLDDIR}/
+	chown root:wheel ${NANO_WORLDDIR}/usr
+        find ${NANO_WORLDDIR} -type f -name "*~" -delete
+        find ${NANO_WORLDDIR}/usr/local -type f -name "*.po" -delete
+	mkdir ${NANO_WORLDDIR}/data/zfs
+        ln -s /usr/local/bin/bash ${NANO_WORLDDIR}/bin/bash
+	ln -s /data/zfs/zpool.cache ${NANO_WORLDDIR}/boot/zfs/zpool.cache
+	mv ${NANO_WORLDDIR}/sbin/mount_ntfs ${NANO_WORLDDIR}/sbin/mount_ntfs-kern
+	ln -s /usr/sbin/mount_ntfs-fuse ${NANO_WORLDDIR}/sbin/mount_ntfs
+	AVAHI_SERVICES_DIR=/usr/local/etc/avahi/services
+	mkdir -m 0755 -p ${NANO_WORLDDIR}/$AVAHI_SERVICES_DIR
+}
+late_customize_cmd metanas_custom
+
+fi # [ $PACKAGE_PREP_BUILD = 1 ]
+
+if $do_image; then
+last_orders() {
+	local cd_image_log
+	local full_image full_image_log
+	local firmware_img gui_upgrade_bname gui_upgrade_image_log
+
+	cd_image_log="${MAKEOBJDIRPREFIX}/_.cd_iso"
+	full_image_log="${MAKEOBJDIRPREFIX}/_.full_image"
+	gui_image_log="${MAKEOBJDIRPREFIX}/_.gui_image"
+
+	firmware_img="$NANO_DISKIMGDIR/firmware.img"
+	full_image="$NANO_DISKIMGDIR/$NANO_IMGNAME.img"
+	gui_upgrade_bname="$NANO_DISKIMGDIR/$NANO_IMGNAME.GUI_Upgrade"
+
+	if $do_copyout_partition; then
+
+		pprint 2 "Compressing GUI upgrade image"
+		pprint 3 "log: ${gui_image_log}"
+
+		(
+		set -x
+
+		# NOTE: keep in synch with create_*_diskimage.
+		mv "$NANO_DISKIMGDIR/_.disk.image" "$firmware_img"
+
+		xz --keep --verbose -9 < "$firmware_img" > \
+		    "$gui_upgrade_bname.xz"
+
+		tar --options=xz:compression-level=9 -cJpvf \
+		    "$gui_upgrade_bname.txz" \
+			-C "$NANO_WORLDDIR" \
+				etc/avatar.conf \
+			-C "$AVATAR_ROOT/nanobsd/Installer" \
+				. \
+			-C "$AVATAR_ROOT/nanobsd/GUI_Upgrade" \
+				. \
+			-C "$NANO_DISKIMGDIR" \
+				${firmware_img##*/}
+
+		) > "${gui_image_log}" 2>&1
+
+	fi
+
+	pprint 2 "Compressing full disk image"
+	pprint 3 "log: ${full_image_log}"
+
+	(
+	set -x
+
+	# NOTE: keep in synch with create_iso.sh.
+	# NOTE: this is still needed after the .txz payload has been
+	# added because pc-sysinstall doesn't support raw images
+	# (-.-).
+	mv "$NANO_DISKIMGDIR/$NANO_IMGNAME" "$full_image"
+	xz --verbose -9 -f "$full_image"
+
+	) > "${full_image_log}" 2>&1
+
+	pprint 2 "Creating ISO image"
+	pprint 3 "log: ${cd_image_log}"
+
+	(
+	set -x
+
+	sh "$AVATAR_ROOT/build/create_iso.sh"
+
+	) > "${cd_image_log}" 2>&1
+
+}
+fi # $do_image

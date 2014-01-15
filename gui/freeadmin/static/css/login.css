@@ -1,0 +1,193 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+a:link, a:visited {
+    color: #161616;
+    text-decoration: none;
+
+}
+
+a:hover {
+  color: red;
+  text-decoration: none;
+
+}
+
+body {
+    background: url("/static/images/ui/login/header.png") repeat-x scroll center top #d5d5d5;
+    font-family: DejaVu Sans,Tahoma;
+    font-size: 9pt;
+    margin: 0;
+}
+
+.metaco {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.login {
+    background: url("/static/images/ui/login/login-bg.png") no-repeat scroll center center;
+    margin: 0 auto;
+    position: relative;
+    top: 130px;
+    width: 665px;
+    height: 315px;
+}
+
+.metanas {
+    position: relative;
+    top: 35px;
+    left: 10px;
+}
+
+.logodiv {
+    float: left;
+
+}
+
+.logindev {
+    float: right;
+
+}
+
+.clear {
+    clear: both;
+}
+
+.form {
+    position: relative;
+    left: 20px;
+    top:55px;
+}
+
+.errorlogin {
+    background: url("/static/images/invalid-alarm.png") no-repeat scroll 60px 120px;
+    position: relative;
+    top: 50px;
+    left: 35px;
+    color: #B70000;
+    font-weight: bold;
+}
+
+.field {
+    width: 200px;
+    height: 15px;
+    margin: 5px 10px 5px 10px;
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.submit {
+    position: relative;
+    top: 0px;
+    width: 68px;
+    height: 30px;
+    margin: 5px 10px 5px 10px;
+
+}
+
+.footer {
+    background: url("/static/images/ui/login/powered.png") no-repeat scroll center center;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+    width: 690px;
+    height: 100px;
+}
+
+.copyright {
+    text-align: center;
+    color: #262626;
+    position: relative;
+    top: 100px;
+}
+
+.logout {
+    background: url("/static/images/ui/login/logout.png") no-repeat scroll center center;
+    margin: 0 auto;
+    position: relative;
+    top: 130px;
+    width: 423px;
+    height: 135px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.thanks {
+    position: relative;
+    top: 100px;
+}
+
+.o-footer {
+    background: url("/static/images/ui/login/powered.png") no-repeat scroll center center;
+    margin: 0 auto;
+    position: relative;
+    top: 300px;
+    width: 690px;
+    height: 100px;
+}
+
+.error {
+    background: url("/static/images/ui/login/error.png") no-repeat scroll center center;
+    margin: 0 auto;
+    position: relative;
+    top: 130px;
+    width: 500px;
+    height: 170px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.error-msg {
+    position: relative;
+    top: 100px;
+    margin: 5px 30px 0px 30px;
+    line-height: 20px;
+}
+
+.browser {
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+    width: 400px;
+    height: 170px;
+    text-align: center;
+    color: #161616;
+}
+
+.fx {
+     float: left;
+     background: url("/static/images/ui/login/fx.png") no-repeat scroll center center;
+     width: 200px;
+     height: 79px;
+}
+
+.fx p {
+     position: relative;
+     top: 85px;
+}
+
+.cr {
+     float: right;
+     background: url("/static/images/ui/login/cr.png") no-repeat scroll center center;
+     width: 200px;
+     height: 79px;
+}
+
+.cr p {
+     position: relative;
+     top: 85px;
+}
+
+.footer-fallback {
+    background: url("/static/images/ui/login/powered-fallback.png") no-repeat scroll center center;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+    width: 690px;
+    height: 100px;
+}

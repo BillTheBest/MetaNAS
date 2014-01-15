@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-ataidle
+# REQUIRE: LOGIN
+# KEYWORD: nojail shutdown
+
+. /etc/rc.subr
+
+ataidle_start()
+{
+	local IFS="|"
+	local f="disk_name disk_hddstandby disk_advpowermgmt disk_acousticlevel"
+	eval local $f
+	local sf=$(var_to_sf $f)
+	local cmd
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+		"SELECT $sf FROM storage_disk WHERE disk_enabled = 1" | \
+	while eval read -r $f; do
+		case "$disk_name" in
+		ad*)
+			;;
+		*)
+			continue
+			;;
+		esac
+		if [ -z "`ataidle /dev/ada1 | grep -E "APM.*yes"`" ]; then
+			ataidle_args=""
+		elif [ "${disk_advpowermgmt}" != "Disabled" ]; then
+			ataidle_args="-P ${disk_advpowermgmt} "
+		else
+			ataidle_args="-P 0 "
+		fi
+		if [ "${disk_acousticlevel}" != "Disabled" ]; then
+			if [ "${disk_acousticlevel}" = "Minimum" ]; then
+				disk_acousticlevel=1
+			elif [ "${disk_acousticlevel}" = "Medium" ]; then
+				disk_acousticlevel=64
+			elif [ "${disk_acousticlevel}" = "Maximum" ]; then
+				disk_acousticlevel=127
+			fi
+		else
+			disk_acousticlevel=0
+		fi
+		if [ -n "`ataidle /dev/ada1 | grep -E "AAM.*yes"`" ]; then
+			ataidle_args="${ataidle_args}-A ${disk_acousticlevel}"
+		fi
+		if [ -n "${ataidle_args}" ]; then
+			echo ${ataidle_args} ${disk_name} | xargs /usr/local/sbin/ataidle
+		fi
+		if [ "${disk_hddstandby}" != "Always On" ]; then
+			(sleep 60; /usr/local/sbin/ataidle -I ${disk_hddstandby} ${disk_name}) > /dev/null 2>&1 &
+		fi
+	done
+}
+
+name="mx-ataidle"
+rcvar="ataidle_enable"
+start_cmd="ataidle_start"
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

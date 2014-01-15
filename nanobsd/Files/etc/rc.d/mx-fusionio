@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-fusionio
+# BEFORE: mx-zfs
+
+. /etc/rc.subr
+
+load_fusionio()
+{
+	if [ -f /boot/modules/iomemory-vsl.ko ]; then
+		kldload /boot/modules/iomemory-vsl.ko
+	fi
+}
+
+name="mx-fusionio"
+start_cmd='load_fusionio'
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

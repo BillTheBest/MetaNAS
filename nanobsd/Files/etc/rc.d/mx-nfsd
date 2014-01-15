@@ -1,0 +1,112 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-nfsd
+# REQUIRE: mx-activedirectory
+
+. /etc/rc.subr
+
+hasspace()
+{
+	res=1
+	if echo "${1}" | grep -qE ' +' 2>/dev/null; then
+		res=$?
+	fi
+
+	return ${res}
+}
+
+setuser()
+{
+	local user="${1}"
+	if hasspace "${user}"; then
+		user=$(getent passwd "${user}"|cut -f3 -d:)
+	fi
+
+	echo "${user}"
+}
+
+setgroup()
+{
+	local group="${1}"
+	if hasspace "${group}"; then
+		group=$(getent group "${group}"|cut -f3 -d:)
+	fi
+
+	echo "${group}"
+}
+
+set_sysctl()
+{
+	local IFS="|"
+	local f="nfs_srv_async"
+	eval local $f
+	local sf=$(var_to_sf $f)
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "SELECT $sf FROM services_nfs ORDER BY id DESC LIMIT 1" | \
+	while eval read $f; do
+		/sbin/sysctl vfs.nfsrv.async=${nfs_srv_async} > /dev/null
+	done
+}
+
+#
+# TODO: For now we overwrite /etc/exports, it's desirable to teach mountd about another
+# place so user can write their own entry.
+#
+generate_exports()
+{
+	local IFS="|"
+	local f="nfs_path nfs_network nfs_alldirs nfs_ro nfs_quiet nfs_maproot_user nfs_maproot_group nfs_mapall_user nfs_mapall_group"
+	eval local $f
+	local sf=$(var_to_sf $f)
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "SELECT $sf FROM sharing_nfs_share AS us ORDER BY us.id DESC" | \
+	while eval read -r $f; do
+		if [ -d "${nfs_path}" ]; then
+			echo -n ${nfs_path}
+			if [ "${nfs_alldirs}" = "1" ]; then
+				echo -n " -alldirs"
+			fi
+			if [ "${nfs_ro}" = "1" ]; then
+				echo -n " -ro"
+			fi
+			if [ "${nfs_quiet}" = "1" ]; then
+				echo -n " -quiet"
+			fi
+                        if [ -n "${nfs_mapall_user}" -o -n "${nfs_mapall_group}" ]; then
+				mapall_user=$(setuser "${nfs_mapall_user}")
+				mapall_group=$(setgroup "${nfs_mapall_group}")
+				echo -n " -mapall=${nfs_mapall_user}:${nfs_mapall_group}"
+                        else
+                                if [ -n "${nfs_maproot_user}" -o -n "${nfs_maproot_group}" ]; then
+					maproot_user=$(setuser "${nfs_maproot_user}")
+					maproot_group=$(setgroup "${nfs_maproot_group}")
+				        echo -n " -maproot=${nfs_maproot_user}:${nfs_maproot_group}"
+                                fi
+			fi
+			if [ -n "${nfs_network}" ]; then
+                echo -n " "
+				echo -n "${nfs_network}" | \
+				    awk -F" " '{ if ($0 !~ /\//) printf $0; else printf "-network %s",$0 }'
+			fi
+			echo
+		fi
+	done > /etc/exports
+
+	set_sysctl
+
+
+	if ! /etc/rc.d/mountd forcestatus 1>/dev/null 2>&1
+	then
+		force_depend mountd || return 1
+	else
+		/usr/sbin/service mountd onereload
+	fi
+}
+
+name="mx-nfsd"
+start_cmd='generate_exports'
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

@@ -1,0 +1,38 @@
+
+<h1>System Information</h1>
+<table>
+    <tr>
+        <th>{% trans "Hostname" %}</th>
+        <td>{{ hostname }}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Build" %}</th>
+        <td>{{ metanas_build }}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Platform" %}</th>
+        <td>{{ platform }}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Memory" %}</th>
+        <td>{{ physmem }}</td>
+    </tr>
+    <tr>
+        <th>{% trans "System Time" %}</th>
+        <td>{{ date }}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Uptime" %}</th>
+        <td class="descr">{{ uptime }}</td>
+    </tr>
+    <tr>
+        <th>{% trans "Load Average" %}</th>
+        <td class="descr">{{ loadavg }}</td>
+    </tr>
+    {% if host %}
+    <tr>
+        <th>{% trans "Connected through" %}</th>
+        <td class="descr">{{ host }}</td>
+    </tr>
+    {% endif %}
+</table>

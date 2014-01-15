@@ -1,0 +1,19 @@
+<ul>
+{% for alert in alerts %}
+<li>
+    {% if alert.status == 'OK'%}
+        <span style="color:green;font-weight:bold;">
+        {% trans "OK" %}:
+    {% else %}
+        {% if alert.status == 'WARN'%}
+            <span style="color:goldenrod;font-weight:bold;">
+            {% trans "WARNING" %}:
+        {% else %}
+            <span style="color:red;font-weight:bold;">
+            {% trans "CRITICAL" %}:
+        {% endif %}
+    {% endif %}
+    </span>
+    {{ alert.message }}</li>
+{% endfor %}
+</ul>

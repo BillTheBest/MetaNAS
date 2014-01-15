@@ -1,0 +1,558 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-nginx
+# REQUIRE: django
+# BEFORE: nginx
+
+. /etc/rc.metanas
+
+NGINX_PLUGINS_CONF="${HTTPDDIR}/plugins.conf"
+NGINX_FASTCGI_PARAMS="${HTTPDDIR}/fastcgi_params"
+NGINX_BACKUP_CONF="${HTTPDCONF}.working"
+
+
+backup_nginx_conf()
+{
+	if [ -f "${HTTPDCONF}" ]
+	then
+		cp "${HTTPDCONF}" "${NGINX_BACKUP_CONF}"
+		return $?
+	fi
+
+	return 1
+}
+
+
+restore_nginx_conf()
+{
+	if [ -f "${NGINX_BACKUP_CONF}" ]
+	then
+		mv "${NGINX_BACKUP_CONF}" "${HTTPDCONF}"
+		return $?
+	fi
+
+	return 1
+}
+
+
+nginx_cmd()
+{
+	local cmd="${1}" 
+
+	${HTTPDSCRIPT} "${cmd}" >/dev/null 2>&1
+	if [ "$?" = "0" ]
+	then
+		return 0
+	fi
+
+	return 1
+}
+
+
+nginx_start()
+{
+	local st="${1}"
+
+	nginx_cmd "start"
+	if [ "$?" = "0" ]
+	then
+		nginx_cmd "status"
+		if [ "$?" = "0" ]
+		then
+			if [ -n "${st}" ]
+			then
+				sleep "${st}" >/dev/null 2>&1
+			fi
+			return 0
+		fi
+	fi
+
+	return 1
+}
+
+
+nginx_reload()
+{
+	local st="${1}"
+
+	nginx_cmd "reload"
+	if [ "$?" = "0" ]
+	then
+		nginx_cmd "status"
+		if [ "$?" = "0" ]
+		then
+			if [ -n "${st}" ]
+			then
+				sleep "${st}" >/dev/null 2>&1
+			fi
+			return 0
+		fi
+	fi
+
+	return 1
+}
+
+
+nginx_stop()
+{
+	nginx_cmd "stop"
+	return $?
+}
+
+
+nginx_status()
+{
+	nginx_cmd "status"
+	return $?
+}
+
+
+generate_plugins_conf()
+{
+	local IFS="|"
+	local nginx_location
+
+	: > "${NGINX_PLUGINS_CONF}"
+	plugins_path=$(${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		plugins_path
+	FROM
+		services_pluginsjail
+	ORDER BY
+		-id
+	LIMIT 1")
+
+	ip=$(${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		jail_ipv4address
+	FROM
+		services_pluginsjail
+	ORDER BY
+		-id
+	LIMIT 1")
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		plugin_name,
+		plugin_enabled,
+		plugin_port,
+		plugin_path
+
+	FROM
+		plugins_plugins
+
+	ORDER BY
+		-id
+	" | \
+	while read -r name enabled port path
+	do
+
+		cat<<-__EOF__>>"${NGINX_PLUGINS_CONF}"
+		location ~ /plugins/${name}/ {
+		    fastcgi_pass   ${ip}:${port};
+		    include		fastcgi_params;
+		    root /usr/pbi/${name}-$(uname -m);
+__EOF__
+
+		nginx_location="${plugins_path}/pbi/${name}-$(uname -m)/nginx_location"
+		if [ -f ${nginx_location} ]; then
+			tmp=$(mktemp -t nginx)
+			echo "
+			events {}
+			http {
+				server {
+					location / {
+						$(cat ${nginx_location})
+					}
+				}
+			}
+			" > ${tmp}
+			${HTTPD} -t -c ${tmp} 2> /dev/null > /dev/null
+			if [ $? -eq 0 ]; then
+				cat ${nginx_location} >> "${NGINX_PLUGINS_CONF}"
+			fi
+
+		fi
+
+		cat<<-__EOF__>>"${NGINX_PLUGINS_CONF}"
+		}
+__EOF__
+
+	done
+}
+
+
+generate_nginx_conf()
+{
+	local res=1
+	local proto="${1}"
+	local addr="${2}"
+	local port="${3}"
+	local ssl_enable=0
+
+	if [ "${proto}" = "https" ]
+	then
+		ssl_enable=1
+	fi
+
+
+	mv "${HTTPDCONF}" "${HTTPDCONF}.tmp"
+	awk -v ssl_enable="${ssl_enable}" \
+		-v ssl_key="${HTTPDKEY}" \
+		-v ssl_cert="${HTTPDCERT}" \
+		-v httpd_addr="${addr}" \
+		-v httpd_port="${port}" '
+		BEGIN { }
+
+		function makeline(ch, len)
+		{
+			line = "";
+			for (i = 0;i < len;i++) {
+				line = line ch;
+			}
+			return line;
+		}
+
+		{
+			if (/^(( |\t)*)?listen( |\t)+/) {
+				fill = makeline(" ", index($0, "listen") - 1);
+
+				if (!httpd_port) {
+					httpd_port = ssl_enable ? 443 : 80;
+				}
+
+				if (ssl_enable) {
+					printf("%slisten %s:%d default_server ssl;\n",
+						fill, httpd_addr, httpd_port);
+				} else {
+					printf("%slisten %s:%d;\n", fill, httpd_addr, httpd_port);
+				}
+
+			} else if (/^(( |\t|#)*)?ssl_certificate( |\t)+/) {
+				if (/^(( |\t)+)?#/ && ssl_enable) {
+					fill = makeline(" ", index($0, "ssl_certificate") - 2);
+					printf("%sssl_certificate %s;\n", fill, ssl_cert);
+				} else if (ssl_enable) {
+					fill = makeline(" ", index($0, "ssl_certificate") - 1);
+					printf("%sssl_certificate %s;\n", fill, ssl_cert);
+				} else {
+					fill = makeline(" ", index($0, "ssl_certificate") - 1);
+					printf("%s#ssl_certificate %s;\n", fill, ssl_cert);
+				}
+			} else if (/^(( |\t|#)*)?ssl_certificate_key( |\t)+/) {
+				if (/^(( |\t)+)?#/ && ssl_enable) {
+					fill = makeline(" ", index($0, "ssl_certificate_key") - 2);
+					printf("%sssl_certificate_key %s;\n", fill, ssl_key);
+				} else if (ssl_enable) {
+					fill = makeline(" ", index($0, "ssl_certificate_key") - 1);
+					printf("%sssl_certificate_key %s;\n", fill, ssl_key);
+				} else {
+					fill = makeline(" ", index($0, "ssl_certificate_key") - 1);
+					printf("%s#ssl_certificate_key %s;\n", fill, ssl_key);
+				}
+			} else {
+				print $0;
+			}
+		}
+		END { }
+	' < "${HTTPDCONF}.tmp" > "${HTTPDCONF}"
+	rm -f "${HTTPDCONF}.tmp"
+}
+
+
+get_host_ip()
+{
+	local addr="${1}"
+
+	if [ -n "${addr}" -a "${addr}" != "0.0.0.0" ]
+	then
+		ifconfig -a inet| grep broadcast|cut -f2 -d' '|grep "${addr}"
+	else
+		ifconfig -a inet| grep broadcast|cut -f2 -d' '|head -n1
+	fi
+}
+
+
+test_nginx_conf()
+{
+	local proto="${1}"
+	local addr="${2}"
+	local port="${3}"
+	local ntries=5
+	local res=1
+	local try=0
+	local rc=1
+	
+	local host=$(get_host_ip "${addr}")
+	if [ -n "${port}" ]
+	then
+		host="${host}:${port}"
+	fi
+
+	export HTTP_TIMEOUT=1
+	export FTP_TIMEOUT=1
+
+	echo -n "Waiting for ${proto}... "
+	while [ "${try}" -lt "${ntries}" ]
+	do
+		fetch -q -o /dev/null "${proto}://${host}" >/dev/null 2>&1
+		if [ "$?" = "0" ]
+		then
+			rc=0
+			break		
+		fi
+
+		: $(( try += 1 ))
+		sleep 1
+	done
+	if [ "${rc}" = "0" ]
+	then
+		echo "Done."
+	else
+		echo "Failed."
+	fi
+
+	return $rc
+}
+
+
+set_stg_guiprotocol()
+{
+	local res=1
+	local proto="${1}"
+
+	if [ "${proto}" = "http" -o "${proto}" = "https" ]
+	then
+		${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+		UPDATE
+			system_settings
+		SET
+			stg_guiprotocol = '${proto}'
+		"
+		res=$?
+	fi
+
+	return ${res}
+}
+
+
+set_stg_guiport()
+{
+	local res=1
+	local port="${1}"
+
+	: $((port += 0))
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	UPDATE
+		system_settings
+	SET
+		stg_guiport = '${port}'
+	"
+	res=$?
+
+	return ${res}
+}
+
+
+generate_fastcgi_params()
+{
+	local IFS="|"
+
+	${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+	SELECT
+		stg_guiprotocol
+
+	FROM
+		system_settings
+
+	ORDER BY
+		-id
+
+	LIMIT 1
+	" | \
+	while read stg_guiprotocol
+	do
+		local ssl_enable=0
+
+		stg_guiprotocol=$(echo "${stg_guiprotocol}"|tr a-z A-Z)
+		case "${stg_guiprotocol}" in
+			HTTP) ssl_enable=0; ;;
+			HTTPS) ssl_enable=1; ;;
+		esac
+
+		local tmp="$(mktemp /tmp/tmp.XXXXXX)"
+		grep -Eiv '^( |\t)*fastcgi_param( |\t)+https( |\t)+' \
+			< "${NGINX_FASTCGI_PARAMS}" > "${tmp}"
+
+		if [ "${ssl_enable}" = "1" ]
+		then
+			echo "fastcgi_param HTTPS on;" >> "${tmp}"
+		fi
+		mv "${tmp}" "${NGINX_FASTCGI_PARAMS}"
+	done
+}
+
+
+get_nginx_settings()
+{
+	local settings=$(
+		local IFS="|"
+		${METANAS_SQLITE_CMD} ${METANAS_CONFIG} "
+		SELECT
+			stg_guiprotocol,
+			stg_guiaddress,
+			stg_guiport
+
+		FROM
+			system_settings
+
+		ORDER BY
+			-id
+
+		LIMIT 1
+		" | \
+		while read stg_guiprotocol stg_guiaddress stg_guiport
+		do
+			echo "${stg_guiprotocol}:${stg_guiaddress}:${stg_guiport}"
+		done
+	)
+
+	local proto=$(echo ${settings}|cut -f1 -d: -s|tr A-Z a-z)
+	local addr=$(echo ${settings}|cut -f2 -d: -s)
+	local port=$(echo ${settings}|cut -f3 -d: -s)
+
+	: ${proto:="http"}
+	: ${addr:="0.0.0.0"}
+
+	if [ "${proto}" = "https" -a -z "${port}" ]
+	then
+		port="443"
+	elif [ "${proto}" = "http" -a -z "${port}" ]
+	then
+		port="80"
+	fi
+
+	# XXX: IPv6
+	if [ "${addr}" != "0.0.0.0" -a -n "${addr}" -a \
+		-z "$(/sbin/ifconfig -a|grep ${addr})" ]; then
+		addr="0.0.0.0"
+	fi
+
+	echo "${proto}:${addr}:${port}"
+}
+
+
+verify_nginx_conf()
+{
+	${HTTPD} -t -q -c "${HTTPDCONF}" >/dev/null 2>&1
+	if [ "$?" != "0" ]
+	then
+		return 1
+	fi
+
+	return 0
+}
+
+
+ix_nginx_reload()
+{
+	local settings=$(get_nginx_settings)
+
+	local proto=$(echo "${settings}"|cut -f1 -d:)
+	local addr=$(echo "${settings}"|cut -f2 -d:)
+	local port=$(echo "${settings}"|cut -f3 -d:)
+
+	if [ "${proto}" = "https" -a ! -f "${SSLCONF}" ]
+	then
+		port="80"
+		proto="http"
+
+		set_stg_guiprotocol "${proto}"
+		set_stg_guiport "${port}"
+	fi
+
+	generate_plugins_conf
+	generate_fastcgi_params
+
+	backup_nginx_conf
+	generate_nginx_conf "${proto}" "${addr}" "${port}"
+
+	if ! test_nginx_conf "${proto}" "${addr}" "${port}"
+	then
+		restore_nginx_conf
+		nginx_reload
+		return 1
+	fi
+
+	if ! nginx_reload
+	then
+		restore_nginx_conf
+		nginx_reload
+		return 1
+	fi
+
+	return 0
+}
+
+
+ix_nginx_start()
+{
+	local settings=$(get_nginx_settings)
+
+	local proto=$(echo "${settings}"|cut -f1 -d:)
+	local addr=$(echo "${settings}"|cut -f2 -d:)
+	local port=$(echo "${settings}"|cut -f3 -d:)
+
+	if [ "${proto}" = "https" -a ! -f "${SSLCONF}" ]
+	then
+		port="80"
+		proto="http"
+
+		set_stg_guiprotocol "${proto}"
+		set_stg_guiport "${port}"
+	fi
+
+	generate_plugins_conf
+	generate_fastcgi_params
+
+	backup_nginx_conf
+	generate_nginx_conf "${proto}" "${addr}" "${port}"
+
+	if nginx_status
+	then
+		nginx_reload 5
+	else
+		nginx_start 5
+	fi
+	
+	if [ "$?" != "0" ]
+	then
+		restore_nginx_conf
+		nginx_stop
+		return 1
+	fi
+
+	if ! test_nginx_conf "${proto}" "${addr}" "${port}"
+	then
+		restore_nginx_conf
+		nginx_stop
+		return 1
+	fi
+
+	nginx_stop
+	return 0
+}
+
+
+name="mx-nginx"
+start_cmd='ix_nginx_start'
+reload_cmd='ix_nginx_reload'
+stop_cmd=':'
+            
+extra_commands="reload"
+load_rc_config $name
+run_rc_command "$1"

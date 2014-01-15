@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-kerberos
+# BEFORE: kerberos
+
+. /etc/rc.metanas
+
+: ${PATH_KRB5_TEMPLATE:="/etc/ix/templates/kerberos/krb5.conf"}
+: ${PATH_KRB5_CONFIG:="/etc/krb5.conf"}
+
+generate_krb5_conf()
+{
+	local _dcname="${1}"
+	local _domainname="${2}"
+	local _netbiosname="${3}"
+	local _adminname="${4}"
+	local _adminpw="${5}"
+	local _template
+
+	_template="${PATH_KRB5_TEMPLATE}"
+
+	if [ ! -f "${_template}" ]
+	then
+		return 1
+	fi
+
+	awk -v dcname="${_dcname}" \
+		-v domainname="${_domainname}" \
+		-v netbios="${_netbiosname}" \
+	'
+	BEGIN {
+		kdc = sprintf("%s", tolower(dcname));
+		vars["@@UPPER_REALM@@"]  = toupper(domainname);	
+		vars["@@LOWER_REALM@@"]  = tolower(domainname);	
+		vars["@@ADMIN_SERVER@@"]  = kdc;	
+		vars["@@DOMAIN@@"]  = tolower(domainname);
+		vars["@@KDC@@"]  = kdc;	
+	}
+	{
+		if (/@@.+@@/) {
+			for (var in vars) {
+				gsub(var, vars[var]);
+			}
+		}
+
+		print $0;
+	}
+	' < "${_template}" > "${PATH_KRB5_CONFIG}"
+
+	return 0
+}
+
+generate_kerberos_files()
+{
+	if srv_enabled activedirectory
+	then
+		AD_init
+
+		dcname=$(AD_get dcname)
+		domainname=$(AD_get domainname)
+		netbiosname=$(AD_get netbiosname)
+		adminname=$(AD_get adminname)
+		adminpw=$(AD_get adminpw)
+
+		generate_krb5_conf "${dcname}" "${domainname}" \
+			"${netbiosname}" "${adminname}" "${adminpw}"
+		
+	fi
+}
+
+name="mx-kerberos"
+start_cmd='generate_kerberos_files'
+stop_cmd=':'
+        
+load_rc_config $name
+run_rc_command "$1"

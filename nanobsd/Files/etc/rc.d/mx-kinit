@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-kinit
+# REQUIRE: kerberos
+# REQUIRE: mx-samba
+# REQUIRE: ntpd
+
+. /etc/rc.metanas
+
+
+kerberos_start()
+{
+	local ec pwfile
+
+	ec=1
+
+	if srv_enabled activedirectory
+	then
+		AD_init
+
+		domainname=$(AD_get domainname)
+		adminname=$(AD_get adminname)
+		adminpw=$(AD_get adminpw)
+
+		if [ -n "${adminname}" -a -n "${domainname}" -a -n "${adminpw}" ]
+		then
+			pwfile=$(mktemp /tmp/tmp.XXXXXXXX)
+			printf "${adminpw}" > ${pwfile}
+			domainname=$(echo "${domainname}" | tr a-z A-Z)
+			kinit --password-file="${pwfile}" \
+			    "${adminname}@${domainname}"
+			ec=$?
+			rm -f "${pwfile}"
+
+			sleep 10
+		fi
+	fi
+	return $ec
+}
+
+kerberos_status()
+{
+	local ec
+
+	ec=1
+
+	if srv_enabled activedirectory
+	then
+		AD_init
+
+		domainname=$(AD_get domainname)
+		adminname=$(AD_get adminname)
+		adminpw=$(AD_get adminpw)
+
+		if [ -n "${adminname}" -a -n "${domainname}" -a -n "${adminpw}" ]
+		then
+			domainname=$(echo "${domainname}"|tr a-z A-Z)
+			klist -l | grep -q "^${adminname}@${domainname}"
+			ec=$?
+		fi
+	fi
+	return $ec
+}
+
+kerberos_stop()
+{
+	kdestroy
+}
+
+name="mx-kinit"
+start_cmd='kerberos_start'
+status_cmd='kerberos_status'
+stop_cmd='kerberos_stop'
+
+load_rc_config $name
+run_rc_command "$1"

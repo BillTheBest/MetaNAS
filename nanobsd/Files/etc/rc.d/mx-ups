@@ -1,0 +1,157 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mx-ups
+# REQUIRE: FILESYSTEMS
+# BEFORE: nut
+
+. /etc/rc.subr
+
+UPS_CONFPATH="/usr/local/etc/nut"
+UPS_CONFIG="${UPS_CONFPATH}/ups.conf"
+UPS_MONFILE="${UPS_CONFPATH}/upsmon.conf"
+UPS_SCHEDFILE="${UPS_CONFPATH}/upssched.conf"
+UPS_USERSFILE="${UPS_CONFPATH}/upsd.users"
+UPS_DAEMONFILE="${UPS_CONFPATH}/upsd.conf"
+UPS_VARPATH="/var/db/nut"
+
+generate_ups()
+{
+    local IFS="|"
+    local f="id ups_identifier ups_driver ups_port ups_description"
+    eval local $f
+    local sf=$(var_to_sf $f)
+    local cmd cfg
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+	"SELECT $sf FROM services_ups ORDER BY -id LIMIT 1" | \
+	while eval read $f; do
+	    cat <<EOF
+[${ups_identifier}]
+    driver = $(echo "${ups_driver}"|tr -s " " "\n")
+    port = ${ups_port}
+    desc = "${ups_description}"
+EOF
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+    "SELECT ups_options FROM services_ups WHERE id = ${id}"
+    done
+}
+
+generate_upsmon()
+{
+    local IFS="|"
+    local f="ups_identifier ups_shutdown ups_shutdowntimer ups_emailnotify ups_toemail ups_subject ups_masterpwd"
+    eval local $f
+    local sf=$(var_to_sf $f)
+    local cmd cfg
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+	"SELECT $sf FROM services_ups ORDER BY -id LIMIT 1" | \
+	while eval read $f; do
+
+	    cat <<EOF
+FINALDELAY ${ups_shutdowntimer}
+MONITOR ${ups_identifier} 1 upsmon ${ups_masterpwd} master
+NOTIFYCMD "/usr/local/sbin/upssched"
+NOTIFYFLAG ONBATT SYSLOG+WALL+EXEC
+NOTIFYFLAG LOWBATT SYSLOG+WALL+EXEC
+NOTIFYFLAG ONLINE SYSLOG+WALL+EXEC
+NOTIFYFLAG FSD SYSLOG+EXEC
+NOTIFYFLAG SHUTDOWN SYSLOG+EXEC
+SHUTDOWNCMD "/sbin/shutdown -p now"
+EOF
+
+    done
+}
+
+generate_upsdusers()
+{
+
+    local passwd=$(${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+    "SELECT ups_masterpwd FROM services_ups ORDER BY -id LIMIT 1")
+	    cat <<EOF
+[upsmon]
+    password = ${passwd}
+    upsmon master
+
+EOF
+
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+    "SELECT ups_extrausers FROM services_ups ORDER BY -id LIMIT 1"
+
+}
+
+generate_upsd()
+{
+
+    local IFS="|"
+    local f="ups_rmonitor"
+    eval local $f
+    local cmd sf cfg
+    sf=$(echo $f | sed -e 's/ /, /g')
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+	"SELECT $sf FROM services_ups ORDER BY -id LIMIT 1" | \
+	while eval read $f; do
+        if [ "${ups_rmonitor}" -eq 1 ]; then
+	        echo "LISTEN 0.0.0.0"
+        else
+	        echo "LISTEN 127.0.0.1"
+        fi
+    done
+
+}
+
+generate_upssched()
+{
+
+    local IFS="|"
+    local f="ups_shutdown ups_shutdowntimer"
+    eval local $f
+    local cmd sf cfg
+    sf=$(var_to_sf $f)
+    ${METANAS_SQLITE_CMD} ${METANAS_CONFIG} \
+	"SELECT $sf FROM services_ups ORDER BY -id LIMIT 1" | \
+	while eval read $f; do
+
+        cat << __EOF__
+CMDSCRIPT   /usr/local/bin/custom-upssched-cmd
+PIPEFN      /var/db/nut/upssched.pipe
+LOCKFN      /var/db/nut/upssched.lock
+
+AT COMMBAD  * START-TIMER COMMBAD 10
+AT COMMOK   * CANCEL-TIMER COMMBAD COMMOK
+AT FSD      * EXECUTE FSD
+AT LOWBATT  * START-TIMER LOWBATT ${ups_shutdowntimer}
+AT LOWBATT  * EXECUTE EMAIL
+AT ONBATT   * START-TIMER ONBATT ${ups_shutdowntimer}
+AT ONBATT   * EXECUTE EMAIL
+AT ONLINE   * CANCEL-TIMER ONBATT ONLINE
+AT ONLINE   * CANCEL-TIMER LOWBATT ONLINE
+AT REPLBATT * EXECUTE REPLBATT
+AT SHUTDOWN * EXECUTE SHUTDOWN
+__EOF__
+
+    done
+
+}
+
+generate_ups_conf()
+{
+    mkdir -p ${UPS_CONFPATH}
+    mkdir -p ${UPS_VARPATH}
+    generate_ups > ${UPS_CONFIG}
+    generate_upsmon > ${UPS_MONFILE}
+    generate_upssched > ${UPS_SCHEDFILE}
+    generate_upsdusers > ${UPS_USERSFILE}
+    generate_upsd > ${UPS_DAEMONFILE}
+    chown root:uucp ${UPS_VARPATH} ${UPS_CONFIG} ${UPS_MONFILE} ${UPS_USERSFILE} ${UPS_DAEMONFILE} ${UPS_SCHEDFILE}
+    chmod 440 ${UPS_CONFIG} ${UPS_MONFILE} ${UPS_USERSFILE} ${UPS_DAEMONFILE} ${UPS_SCHEDFILE}
+    chmod g=rwx,o= ${UPS_VARPATH}
+}
+
+name="mx-ups"
+start_cmd='generate_ups_conf'
+stop_cmd=':'
+
+load_rc_config $name
+run_rc_command "$1"

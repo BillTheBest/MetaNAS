@@ -1,0 +1,240 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>MetaNAS</title>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<script type="text/javascript">
+<!--
+var BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+		this.version = this.searchVersion(navigator.userAgent)
+			|| this.searchVersion(navigator.appVersion)
+			|| "an unknown version";
+		this.OS = this.searchString(this.dataOS) || "an unknown OS";
+	},
+	searchString: function (data) {
+		for (var i=0;i<data.length;i++)	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			if (dataString) {
+				if (dataString.indexOf(data[i].subString) != -1)
+					return data[i].identity;
+			}
+			else if (dataProp)
+				return data[i].identity;
+		}
+	},
+	searchVersion: function (dataString) {
+		var index = dataString.indexOf(this.versionSearchString);
+		if (index == -1) return;
+		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	},
+	dataBrowser: [
+		{
+			string: navigator.userAgent,
+			subString: "Chrome",
+			identity: "Chrome"
+		},
+		{ 	string: navigator.userAgent,
+			subString: "OmniWeb",
+			versionSearch: "OmniWeb/",
+			identity: "OmniWeb"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Apple",
+			identity: "Safari",
+			versionSearch: "Version"
+		},
+		{
+			prop: window.opera,
+			identity: "Opera",
+			versionSearch: "Version"
+		},
+		{
+			string: navigator.vendor,
+			subString: "iCab",
+			identity: "iCab"
+		},
+		{
+			string: navigator.vendor,
+			subString: "KDE",
+			identity: "Konqueror"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Firefox",
+			identity: "Firefox"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Camino",
+			identity: "Camino"
+		},
+		{		// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			subString: "Netscape",
+			identity: "Netscape"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "MSIE",
+			identity: "Explorer",
+			versionSearch: "MSIE"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Gecko",
+			identity: "Mozilla",
+			versionSearch: "rv"
+		},
+		{ 		// for older Netscapes (4-)
+			string: navigator.userAgent,
+			subString: "Mozilla",
+			identity: "Netscape",
+			versionSearch: "Mozilla"
+		}
+	],
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: "Win",
+			identity: "Windows"
+		},
+		{
+			string: navigator.platform,
+			subString: "Mac",
+			identity: "Mac"
+		},
+		{
+			   string: navigator.userAgent,
+			   subString: "iPhone",
+			   identity: "iPhone/iPod"
+	    },
+		{
+			string: navigator.platform,
+			subString: "Linux",
+			identity: "Linux"
+		}
+	]
+
+};
+BrowserDetect.init();
+//---------
+function checkBrowser(){
+var loginform=document.getElementById("loginform");
+var errorepage=document.getElementById("errorepage");
+
+if ((BrowserDetect.browser=="Explorer")&&(BrowserDetect.version<9)){
+  // place your cod hear
+//   window.location = 'your_error_page.html';
+errorepage.style.display="block";
+}else{
+  loginform.style.display="block";
+}
+}
+// -->
+</script>
+
+
+<link rel="stylesheet" href="{{ STATIC_URL }}css/login.css" type="text/css" media="all" />
+<link rel="icon" type="image/png" href="/static/images/ui/login/favicon.png" />
+{% load i18n %}
+
+<script type="text/javascript">
+    dojo.require("dojo.data.ItemFileReadStore");
+    dojo.require("dojo.data.ItemFileWriteStore");
+    dojo.require("dijit.Tree");
+    dojo.require("dojo.io.iframe");
+    dojo.require("dojox.validate.regexp");
+    dojo.require("dijit.layout.BorderContainer");
+    dojo.require("dijit.layout.ContentPane");
+    dojo.require("dijit.layout.TabContainer");
+    dojo.require("dojo._base.xhr");
+    dojo.require("dijit.ProgressBar");
+    dojo.require("dijit.MenuBar");
+    dojo.require("dijit.MenuBarItem");
+    dojo.require("dijit.Dialog");
+    dojo.require("dijit.form.Form");
+    dojo.require("dojo.fx.easing");
+
+    dojo.addOnLoad(function() {
+          dijit.byId("login").show();
+    });
+</script>
+
+</head>
+
+<body onload="checkBrowser();">
+<div id="loginform" style="display:none;">
+
+
+<div class="login">
+
+<div class="logodiv"><img class="metanas" src="/static/images/ui/login/metanas-logo.png" /></div>
+
+<div class="logindiv">
+
+{% if form.errors %}
+<script type="dojo/method">
+    dojo.addOnLoad(function() {
+         var easingArea = dojo.byId("login");
+             var easingCoords = dojo.coords(easingArea);
+        dojo.animateProperty({
+             node: dojo.byId("login"),
+             easing: dojo.fx.easing["elasticInOut"],
+             duration: 1000,
+              properties: {
+                    left: easingCoords.x-5,
+                    top:easingCoords.y-5
+              }
+           }).play();
+    });
+</script>
+
+<img class="errorlogin" src="/static/images/invalid-alarm.png" />
+
+{% endif %}
+
+<form class="form" action="." method="post">{% csrf_token %}
+
+<input class="field" type="text" name="username" value="User Name" onBlur="javascript:if(this.value=='')this.value='User Name'"
+onClick="javascript:if(this.value=='User Name')this.value=''"><br />
+
+<input class="field" type="password" name="password" value="Password" onBlur="javascript:if(this.value=='')this.value='Password'"
+onClick="javascript:if(this.value=='Password')this.value=''"><br />
+
+<input class="submit" dojoType="dijit.form.Button" type="image" src="/static/images/ui/login/submit.png"></input>
+
+</form>
+
+</div>
+<div class="clear"></div>
+
+</div>
+
+<div class="footer"><p class="copyright">Copyright 2012 MetaComplex Corporation All Right Reserved.</p></div>
+
+</div>
+<div id="errorepage" style="display:none;">
+
+<div class="error">
+
+<p class="error-msg">MetaNAS Does Not Support Your Web Browser. Please Upgrade to Newer Version or We Offer Use Mozilla Firefox or Google Chrome.</p>
+</div>
+
+<div class="browser">
+<div class="fx"><p><a href="http://Firefox.Com" target="blank">Download<br />Mozilla Firefox</a></p></div>
+<div class="cr"><p><a href="http://Chrome.Google.Com" target="blank">Download<br />Google Chrome</a></p></div>
+<div class="clear"></div>
+</div>
+
+<div class="footer-fallback"><p class="copyright">Copyright 2012 MetaComplex Corporation All Right Reserved.</p></div>
+
+
+</div>
+</body>
+</html>
